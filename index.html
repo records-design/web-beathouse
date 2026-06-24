@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeatHouse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#artistas">Artistas</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#lanzamientos">Lanzamientos</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+    </ul>
+    <a href="#contacto" class="btn-contacto">Contactanos</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Copy izquierda -->
+    <div class="hero-copy">
+      <span class="hero-tag">Sello &amp; Management · Buenos Aires · Miami</span>
+      <h1 class="hero-headline">Construimos<br>carreras que crecen,<br><span style="white-space:nowrap">conectan y <em>dejan huella.</em></span></h1>
+      <p class="hero-sub">Beat House es un sello creativo donde artistas, productores y compositores encuentran estructura, visión y oportunidades reales. Combinamos arte, estrategia y tecnología para que tu música llegue más lejos.</p>
+      <div class="hero-actions">
+        <a href="#servicios" class="hero-btn hero-btn--primary">Cómo trabajamos</a>
+        <a href="#artistas" class="hero-btn hero-btn--ghost">Ver artistas</a>
+      </div>
+    </div>
+
+    <!-- Carousel 3D anillo -->
+    <div class="carousel3d-scene">
+      <div class="carousel3d-wobble">
+        <div class="carousel3d-ring">
+          <div class="card3d" style="--i:0"><img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" /></div>
+          <div class="card3d" style="--i:1"><img src="imagenes/foto-crash.jpeg" alt="Crash" /></div>
+          <div class="card3d" style="--i:2"><img src="imagenes/foto-maga.jpg" alt="Maga" /></div>
+          <div class="card3d" style="--i:3"><img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" /></div>
+          <div class="card3d" style="--i:4"><img src="imagenes/foto-cone.jpg" alt="El Cone" /></div>
+          <div class="card3d" style="--i:5"><img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" /></div>
+          <div class="card3d" style="--i:6"><img src="imagenes/foto-beruti.jpg" alt="Beruti" /></div>
+          <div class="card3d" style="--i:7"><img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER DE ARTISTAS -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>Tomas Gimenez</span><span class="dot">*</span>
+      <span>Maga</span><span class="dot">*</span>
+      <span>Ana Paula</span><span class="dot">*</span>
+      <span>Lucas Barros</span><span class="dot">*</span>
+      <span>Karen Quiroga</span><span class="dot">*</span>
+      <span>Crash</span><span class="dot">*</span>
+      <span>Renata Toscano</span><span class="dot">*</span>
+      <span>El Cone</span><span class="dot">*</span>
+      <span>Silvestre</span><span class="dot">*</span>
+      <!-- duplicado -->
+      <span>Tomas Gimenez</span><span class="dot">*</span>
+      <span>Maga</span><span class="dot">*</span>
+      <span>Ana Paula</span><span class="dot">*</span>
+      <span>Lucas Barros</span><span class="dot">*</span>
+      <span>Karen Quiroga</span><span class="dot">*</span>
+      <span>Crash</span><span class="dot">*</span>
+      <span>Renata Toscano</span><span class="dot">*</span>
+    </div>
+  </div>
+
+  <!-- ROSTER -->
+  <section class="roster" id="artistas">
+    <div class="roster-header">
+      <h2 class="section-title section-title--no-lines">[Roster de Artistas]</h2>
+      <p class="section-sub">Desarrollamos artistas con identidad, visión y proyección internacional.</p>
+    </div>
+
+    <div class="roster-showcase">
+
+      <!-- FEATURED -->
+      <div class="roster-featured" id="rosterFeatured">
+        <img src="imagenes/foto-tomas-gimenez.jpg" alt="" id="featImg" />
+        <div class="roster-featured-info">
+          <span class="roster-feat-genre" id="featGenre">Pop</span>
+          <h3 class="roster-feat-name" id="featName">TOMAS GIMENEZ</h3>
+          <p class="roster-feat-desc" id="featDesc">Voz potente y letras directas que conectan con una generación.</p>
+          <a href="#" class="roster-feat-btn">Escuchar →</a>
+        </div>
+      </div>
+
+      <!-- THUMBNAILS -->
+      <div class="roster-thumbs" id="rosterThumbs">
+        <div class="roster-thumb active" data-img="imagenes/foto-tomas-gimenez.jpg" data-name="TOMAS GIMENEZ" data-genre="Pop" data-desc="Voz potente y letras directas que conectan con una generación.">
+          <img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" /><span>TOMAS GIMENEZ</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-crash.jpeg" data-name="CRASH" data-genre="Pop" data-desc="Actitud, flow y una identidad visual que impacta antes de sonar.">
+          <img src="imagenes/foto-crash.jpeg" alt="Crash" /><span>CRASH</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-maga.jpg" data-name="MAGA" data-genre="Pop" data-desc="Canciones íntimas con producción contemporánea que trascienden fronteras.">
+          <img src="imagenes/foto-maga.jpg" alt="Maga" /><span>MAGA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-lucas-barros.jpeg" data-name="LUCAS BARROS" data-genre="Pop / R&amp;B" data-desc="Groove, melodía y una presencia escénica que se siente desde el primer acorde.">
+          <img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" /><span>LUCAS BARROS</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-cone.jpg" data-name="EL CONE" data-genre="Cuarteto" data-desc="El cuarteto que mueve multitudes con energía y ritmo desbordante.">
+          <img src="imagenes/foto-cone.jpg" alt="El Cone" /><span>EL CONE</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-Karen Quiroga.jpg" data-name="KAREN QUIROGA" data-genre="Pop" data-desc="Sensibilidad y fuerza en cada canción. Una artista que define su propio camino.">
+          <img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" /><span>KAREN QUIROGA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-beruti.jpg" data-name="BERUTI" data-genre="Pop" data-desc="Composición honesta y una conexión emocional que fideliza audiencias.">
+          <img src="imagenes/foto-beruti.jpg" alt="Beruti" /><span>BERUTI</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-silvestre.jpeg" data-name="SILVESTRE" data-genre="Folklore" data-desc="Raíces, territorio y una voz que conecta lo ancestral con lo moderno.">
+          <img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" /><span>SILVESTRE</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-Og Karma.jpeg" data-name="OG KARMA" data-genre="Urbano" data-desc="Trap, flow y letras que hablan de la calle con precisión poética.">
+          <img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" /><span>OG KARMA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-axelsun.jpg" data-name="AXEL SUN" data-genre="Pop" data-desc="Electrónica orgánica y una propuesta sonora que no suena a nada más.">
+          <img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" /><span>AXEL SUN</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-anapaula.jpg" data-name="ANA PAULA" data-genre="Pop" data-desc="Voz y presencia que no pasan desapercibidas. Pop con alma y actitud.">
+          <img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" /><span>ANA PAULA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-duende.jpeg" data-name="DUENDE" data-genre="Infantil" data-desc="Magia, color y canciones que los chicos aman, con millones de reproducciones.">
+          <img src="imagenes/foto-duende.jpeg" alt="Duende" /><span>DUENDE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIMINAR el bloque viejo de artist-cards que sigue abajo -->
+  <div style="display:none">
+      <div class="artist-card" style="--delay:0s">
+        <div class="artist-photo"><img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>TOMAS GIMENEZ</h3>
+          <p>Voz potente y letras directas que conectan con una generación.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">TOMAS GIMENEZ</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.08s">
+        <div class="artist-photo"><img src="imagenes/foto-crash.jpeg" alt="Crash" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>CRASH</h3>
+          <p>Actitud, flow y una identidad visual que impacta antes de sonar.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">CRASH</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.16s">
+        <div class="artist-photo"><img src="imagenes/foto-maga.jpg" alt="Maga" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>MAGA</h3>
+          <p>Canciones íntimas con producción contemporánea que trascienden fronteras.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">MAGA</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.24s">
+        <div class="artist-photo"><img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop / R&B</span>
+          <h3>LUCAS BARROS</h3>
+          <p>Groove, melodía y una presencia escénica que se siente desde el primer acorde.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">LUCAS BARROS</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.32s">
+        <div class="artist-photo"><img src="imagenes/foto-cone.jpg" alt="El Cone" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Cuarteto</span>
+          <h3>EL CONE</h3>
+          <p>El cuarteto que mueve multitudes con energía y ritmo desbordante.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">EL CONE</span><span class="genre-pill">Cuarteto</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.40s">
+        <div class="artist-photo"><img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>KAREN QUIROGA</h3>
+          <p>Sensibilidad y fuerza en cada canción. Una artista que define su propio camino.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">KAREN QUIROGA</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.48s">
+        <div class="artist-photo"><img src="imagenes/foto-beruti.jpg" alt="Beruti" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>BERUTI</h3>
+          <p>Composición honesta y una conexión emocional que fideliza audiencias.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">BERUTI</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.56s">
+        <div class="artist-photo"><img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Folklore</span>
+          <h3>SILVESTRE</h3>
+          <p>Raíces, territorio y una voz que conecta lo ancestral con lo moderno.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">SILVESTRE</span><span class="genre-pill">Folklore</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.64s">
+        <div class="artist-photo"><img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Urbano</span>
+          <h3>OG KARMA</h3>
+          <p>Trap, flow y letras que hablan de la calle con precisión poética.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">OG KARMA</span><span class="genre-pill">Urbano</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.72s">
+        <div class="artist-photo"><img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>AXEL SUN</h3>
+          <p>Electrónica orgánica y una propuesta sonora que no suena a nada más.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">AXEL SUN</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.80s">
+        <div class="artist-photo"><img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Pop</span>
+          <h3>ANA PAULA</h3>
+          <p>Voz y presencia que no pasan desapercibidas. Pop con alma y actitud.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Spotify" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">ANA PAULA</span><span class="genre-pill">Pop</span></div>
+      </div>
+
+      <div class="artist-card" style="--delay:.88s">
+        <div class="artist-photo"><img src="imagenes/foto-duende.jpeg" alt="Duende" /></div>
+        <div class="artist-overlay">
+          <span class="genre-tag">Infantil</span>
+          <h3>DUENDE</h3>
+          <p>Magia, color y canciones que los chicos aman, con millones de reproducciones.</p>
+          <div class="artist-socials">
+            <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+          <a href="#" class="artist-listen-btn">Escuchar <span>→</span></a>
+        </div>
+        <div class="artist-name-bar"><span class="artist-name-label">DUENDE</span><span class="genre-pill">Infantil</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER LOGOS -->
+  <div class="logo-ticker-wrap">
+    <div class="logo-ticker-track">
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" />
+    </div>
+  </div>
+
+  <!-- QUIENES SOMOS -->
+  <section class="nosotros" id="nosotros">
+    <div class="nosotros-inner">
+      <div class="nosotros-text">
+        <span class="nosotros-label">Nosotros</span>
+        <h2 class="nosotros-title">Donde el talento<br>encuentra dirección.</h2>
+        <p class="nosotros-lead">Beat House es un sello creativo donde artistas, productores y compositores encuentran estructura, visión y oportunidades reales para desarrollar su proyecto.</p>
+        <p>Combinamos arte, estrategia y tecnología para que tu música llegue más lejos, con procesos claros, transparencia total y acompañamiento profesional desde el primer día.</p>
+        <p>Porque creemos que el talento necesita algo más que inspiración: necesita dirección, equipo y un plan que funcione en la industria actual.</p>
+        <div class="nosotros-stats">
+          <div class="stat-item">
+            <span class="stat-number">11+</span>
+            <span class="stat-label">Artistas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100M+</span>
+            <span class="stat-label">Reproducciones</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Años</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Países</span>
+          </div>
+        </div>
+      </div>
+      <div class="nosotros-img-wrap">
+        <div class="nosotros-img">
+          <img src="imagenes/foto-estudio.png" alt="Estudio BeatHouse" />
+        </div>
+        <div class="nosotros-badges">
+          <div class="nosotros-img-badge">
+            <div class="nosotros-img-badge-dot"></div>
+            <div class="nosotros-img-badge-text">Estudio · Miami, FL</div>
+          </div>
+          <div class="nosotros-img-badge">
+            <div class="nosotros-img-badge-dot"></div>
+            <div class="nosotros-img-badge-text">Estudio · Bs. As, ARG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="servicios-inner">
+
+      <div class="servicios-header">
+        <div class="servicios-header-left">
+          <span class="servicios-label">Servicios</span>
+          <h2 class="servicios-title">Todo lo que tu<br>carrera necesita.</h2>
+        </div>
+        <div class="servicios-header-right">
+          <p class="servicios-desc">Desarrollamos artistas de forma integral — desde la identidad hasta la proyección internacional, combinando creatividad, estrategia e infraestructura de primer nivel.</p>
+          <a href="#contacto" class="servicios-cta-btn">Hablemos de tu proyecto →</a>
+        </div>
+      </div>
+
+      <div class="servicios-list">
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">01</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Distribución Digital</h3>
+            <p class="servicio-row-desc">+150 plataformas globales, gestión de derechos y royalties transparentes.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Spotify</span><span>Apple Music</span><span>Publishing</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">02</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Desarrollo Artístico</h3>
+            <p class="servicio-row-desc">Identidad, dirección y un plan real para crecer dentro de la industria.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Branding</span><span>Estrategia</span><span>Carrera</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">03</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Producción Musical</h3>
+            <p class="servicio-row-desc">Estudios en Miami y Bs. As. con productores de experiencia internacional.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Grabación</span><span>Mezcla</span><span>Mastering</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">04</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Marketing Digital</h3>
+            <p class="servicio-row-desc">Estrategias con creatividad, contenido y datos para amplificar cada lanzamiento.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Redes</span><span>Ads</span><span>Analytics</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">05</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Producción Audiovisual</h3>
+            <p class="servicio-row-desc">Videoclips, visualizers y contenido con IA para potenciar cada lanzamiento.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Video</span><span>IA</span><span>Contenido</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+        <a href="#contacto" class="servicio-row">
+          <span class="servicio-num">06</span>
+          <div class="servicio-row-body">
+            <h3 class="servicio-row-title">Publishing &amp; Sync</h3>
+            <p class="servicio-row-desc">Oportunidades reales en series, TV y formatos digitales globales.</p>
+          </div>
+          <span class="servicio-row-tags">
+            <span>Licencias</span><span>Sync</span><span>TV &amp; Film</span>
+          </span>
+          <span class="servicio-row-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section class="diferencial" id="diferencial">
+
+    <div class="dif-block dif-block--transparencia">
+      <div class="dif-block-text">
+        <span class="dif-label">Nuestro Diferencial</span>
+        <h2 class="dif-title">Transparencia total,<br>sin letra chica.</h2>
+        <p>Queremos que sepas exactamente qué está pasando con tu música. Por eso centralizamos regalías, estadísticas, acciones de marketing y resultados en un único panel de control.</p>
+        <p>Sin información confusa. Solo datos claros para que puedas tomar decisiones reales sobre tu carrera.</p>
+      </div>
+      <div class="dif-block-visual">
+        <div class="dif-panel-mock">
+          <div class="dif-panel-header">
+            <span class="dif-panel-dot"></span><span class="dif-panel-dot"></span><span class="dif-panel-dot"></span>
+            <span class="dif-panel-title">Control Panel</span>
+          </div>
+          <div class="dif-panel-rows">
+            <div class="dif-panel-row"><span>Reproducciones totales</span><span class="dif-panel-val dif-count" data-target="12400000" data-suffix="M" data-divisor="1000000" data-decimals="1">0</span></div>
+            <div class="dif-panel-row"><span>Regalías del mes</span><span class="dif-panel-val dif-val--green dif-count" data-target="4280" data-prefix="$" data-suffix="" data-divisor="1" data-decimals="0">$0</span></div>
+            <div class="dif-panel-row"><span>Plataformas activas</span><span class="dif-panel-val dif-count" data-target="150" data-suffix="+" data-divisor="1" data-decimals="0">0</span></div>
+            <div class="dif-panel-row"><span>Splits editoriales</span><span class="dif-panel-val dif-val--green">✓ OK</span></div>
+            <div class="dif-panel-row"><span>Campañas activas</span><span class="dif-panel-val dif-val--pink dif-count" data-target="3" data-suffix="" data-divisor="1" data-decimals="0">0</span></div>
+            <div class="dif-panel-row dif-panel-row--live"><span>Nuevo stream detectado</span><span class="dif-panel-val dif-val--green dif-live-badge">● LIVE</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+  </section>
+
+  <!-- LANZAMIENTOS -->
+  <section class="lanzamientos" id="lanzamientos">
+    <h2 class="section-title">[Próximo Lanzamiento]</h2>
+    <p class="section-sub">Crash vuelve con todo. El 26 de junio llega su nuevo single.</p>
+
+    <div class="lanz-featured">
+
+      <div class="lanz-featured-cover">
+        <img src="imagenes/arte de tapa-crash.jpeg" alt="Heart Roto – Crash" />
+        <div class="lanz-featured-glow"></div>
+      </div>
+
+      <div class="lanz-featured-info">
+        <h3 class="lanz-featured-artist">Crash</h3>
+        <h2 class="lanz-featured-title lanz-featured-title--rosa">HEART ROTO</h2>
+        <p class="lanz-featured-type">Single — 26 de junio de 2026</p>
+
+        <div class="lanz-countdown" id="countdown">
+          <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">días</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">horas</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">minutos</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">segundos</span></div>
+        </div>
+
+        <div class="lanz-presave">
+          <p class="lanz-presave-copy">Sé el primero en escucharla — guardala ahora.</p>
+          <a href="#" class="lanz-presave-btn" id="presaveBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Pre Save en Spotify
+          </a>
+          <div class="lanz-divider-or"><span>o</span></div>
+          <form class="lanz-form" id="dropForm">
+            <p class="lanz-notify-label">Dejá tu mail y te avisamos el día del drop</p>
+            <div class="lanz-form-row">
+              <input type="email" class="lanz-email-input" placeholder="tu@mail.com" required />
+              <button type="submit" class="lanz-form-btn">Avisame</button>
+            </div>
+          </form>
+          <p class="lanz-form-success" id="formSuccess">¡Listo! Te avisamos el 26 de junio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO / NEWSLETTER -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-img">
+        <!-- Guardá la foto del productor como imagenes/foto-estudio2.jpg -->
+        <img src="imagenes/foto-estudio2.jpg" alt="BeatHouse Studio" onerror="this.parentElement.style.background='#2e1035'" />
+      </div>
+      <div class="contacto-text">
+        <h2 class="contacto-title">Sé parte del universo BeatHouse</h2>
+        <p class="contacto-sub">Enterate antes que nadie de la música nueva, proyectos y movimientos de nuestros artistas.</p>
+        <form class="contacto-form" onsubmit="return false;">
+          <input type="email" placeholder="dejanos tu mail" class="contacto-input" />
+          <button type="submit" class="contacto-btn">suscribite</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" class="footer-logo" />
+        <p>En BeatHouse impulsamos artistas y proyectos musicales con una visión integral, combinando creatividad, estrategia e infraestructura internacional para llevar la música al siguiente nivel.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="#artistas">Artistas</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Dónde nos encontrás</h5>
+        <ul>
+          <li><a href="#">Spotify</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Apple Music</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:info@beathouse.com">info@beathouse.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Redes Sociales</h5>
+        <ul class="footer-socials">
+          <li>
+            <a href="#" class="footer-social-link">
+              <span class="footer-social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </span>
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-social-link">
+              <span class="footer-social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </span>
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-star">*</span>
+      <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" class="footer-bottom-logo" />
+      <span class="footer-star">*</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
