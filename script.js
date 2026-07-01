@@ -1,3 +1,27 @@
+// ── NAVBAR HIDE ON SCROLL ──
+(function () {
+  const nav = document.querySelector('.navbar')
+  if (!nav) return
+  let lastY = 0
+  let ticking = false
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        const currentY = window.scrollY
+        if (currentY > lastY && currentY > 120) {
+          nav.classList.add('navbar--hidden')
+        } else {
+          nav.classList.remove('navbar--hidden')
+        }
+        lastY = currentY
+        ticking = false
+      })
+      ticking = true
+    }
+  }, { passive: true })
+})();
+
 // ── ROSTER FEATURED ──
 (function () {
   const thumbs   = document.querySelectorAll('.roster-thumb')
@@ -20,8 +44,13 @@
     }, 200)
   }
 
+  const thumbsContainer = document.getElementById('rosterThumbs')
+
   thumbs.forEach(function (thumb) {
-    thumb.addEventListener('click', function () { setFeatured(thumb) })
+    thumb.addEventListener('click', function () {
+      setFeatured(thumb)
+      if (thumbsContainer) thumbsContainer.classList.add('interacted')
+    })
   })
 })();
 
