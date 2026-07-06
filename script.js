@@ -380,7 +380,7 @@
       if (res.ok) {
         this.style.display = 'none';
         document.getElementById('formHeader').style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'flex';
+        document.getElementById('formModalSuccess').style.display = 'flex';
         document.querySelector('.form-modal-card').classList.add('success-state');
       } else {
         btn.textContent = 'Error. Intentá de nuevo.'; btn.disabled = false;
@@ -391,7 +391,7 @@
   });
 
   document.getElementById('formSuccessReset')?.addEventListener('click', function () {
-    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('formModalSuccess').style.display = 'none';
     document.getElementById('formHeader').style.display = 'block';
     var form = document.getElementById('formWizard');
     form.style.display = 'block'; form.reset();

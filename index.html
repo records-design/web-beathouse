@@ -663,11 +663,25 @@
           <p class="form-intro">Artistas y proyectos que quieran ser parte del universo BeatHouse.</p>
         </div>
 
-        <div class="form-success" id="formSuccess" style="display:none;">
+        <div class="form-success" id="formModalSuccess" style="display:none;">
           <div class="form-success-icon">✦</div>
-          <h3 class="form-success-title">¡Recibimos tu proyecto!</h3>
-          <p class="form-success-msg">Revisamos cada propuesta con atención. Si tu proyecto avanza, nos ponemos en contacto con vos. Gracias por elegirnos.</p>
-          <button type="button" class="btn-primary" id="formSuccessReset" style="margin-top:24px;">Enviar otro →</button>
+          <h3 class="form-success-title">¡Tu proyecto llegó!</h3>
+          <p class="form-success-msg">Recibimos tu material y ya lo estamos analizando. Si tu proyecto encaja con lo que buscamos, nos ponemos en contacto con vos en los próximos días. Gracias por confiar en BeatHouse.</p>
+          <div class="form-success-items">
+            <div class="form-success-item">
+              <span class="form-success-item-icon">📁</span>
+              <span>Material recibido y analizado</span>
+            </div>
+            <div class="form-success-item">
+              <span class="form-success-item-icon">👀</span>
+              <span>Tu propuesta será revisada por nuestro equipo</span>
+            </div>
+            <div class="form-success-item">
+              <span class="form-success-item-icon">📲</span>
+              <span>Si avanzamos, te contactamos por email o WhatsApp</span>
+            </div>
+          </div>
+          <button type="button" id="formSuccessReset">Enviar otro proyecto →</button>
         </div>
 
         <form class="form-wizard" id="formWizard" novalidate action="https://formspree.io/f/maqgkepa" method="POST">

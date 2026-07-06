@@ -1902,7 +1902,7 @@ body {
 .form-success-icon { font-size: 44px; color: var(--fucsia); }
 .form-success-title { font-size: 26px; font-weight: 800; color: #fff; margin: 0; }
 .form-success-msg { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 380px; line-height: 1.6; margin: 0; }
-.form-modal-card.success-state { max-width: 440px; }
+.form-modal-card.success-state { max-width: 560px; }
 .form-modal-card.success-state .form-modal-logo { margin: 0 auto 12px; }
 
 /* Wizard progress */
@@ -2045,3 +2045,40 @@ body.modal-open { overflow: hidden; }
   .form-modal.open .form-modal-card { transform: translateY(0); }
   .form-wrap { padding: 28px 20px 24px; }
 }
+
+/* ── FORM SUCCESS STATE ── */
+.form-success-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 8px 0 4px;
+  text-align: left;
+}
+.form-success-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(230,0,126,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+.form-success-item-icon { font-size: 18px; flex-shrink: 0; }
+#formSuccessReset {
+  background: var(--fucsia);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 8px;
+}
+#formSuccessReset:hover { background: #c0006a; transform: translateY(-1px); }
