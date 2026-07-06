@@ -427,8 +427,8 @@ body {
     rgba(230,0,126,0.15) 55%,
     transparent 75%);
   pointer-events: none;
-  z-index: 2;
-  filter: blur(3px);
+  z-index: 0;
+  filter: blur(6px);
 }
 
 .ring-floor-shadow {
