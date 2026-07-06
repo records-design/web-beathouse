@@ -3,82 +3,78 @@
   var stage = document.getElementById('cfStage');
   if (!stage) return;
 
-  var cards  = Array.from(stage.querySelectorAll('.cf-card'));
-  var N      = cards.length;            // 12
-  var STEP   = 360 / N;                 // 30° per card
-  var RADIUS = 290;                     // ring radius px
-  var ROT_SPEED = 0.018;               // degrees per frame (~1°/s at 60fps)
+  var cards     = Array.from(stage.querySelectorAll('.cf-card'));
+  var N         = cards.length;     // 12
+  var center    = 0.0;              // float: current center position
+  var SPEED     = 0.012;            // cards/frame — very slow
+  var SPACING   = 118;              // px between card centres
+  var ROT_ANGLE = 42;               // rotateY degrees per slot
+  var MAX_VIS   = 4;                // slots visible each side (beyond = hidden)
 
-  var rotation  = 0;
   var hoveredIdx = -1;
-  // Per-card spring state for hover
-  var springs = cards.map(function() { return { val: 0, vel: 0 }; });
-
-  var SPRING_K    = 0.14;  // stiffness
-  var SPRING_DAMP = 0.72;  // damping
+  var springs    = cards.map(function () { return { val: 0, vel: 0 }; });
+  var SPRING_K   = 0.12;
+  var SPRING_D   = 0.74;
 
   function springStep(sp, target) {
-    var force = (target - sp.val) * SPRING_K;
-    sp.vel   = sp.vel * SPRING_DAMP + force;
-    sp.val  += sp.vel;
+    sp.vel = sp.vel * SPRING_D + (target - sp.val) * SPRING_K;
+    sp.val += sp.vel;
   }
 
   function frame() {
-    rotation += ROT_SPEED;
+    center = (center + SPEED) % N;
 
-    cards.forEach(function(card, i) {
-      // Angle of this card in the ring
-      var deg   = (rotation + i * STEP) % 360;
-      var rad   = deg * Math.PI / 180;
-      var sinT  = Math.sin(rad);
-      var cosT  = Math.cos(rad);
+    var anyHover = hoveredIdx !== -1;
 
-      // 3D position on ring
-      var x = sinT * RADIUS;
-      var z = cosT * RADIUS;          // -RADIUS (back) … +RADIUS (front)
+    cards.forEach(function (card, i) {
+      // Offset from current center, wrapped to [-N/2, N/2]
+      var raw = i - center;
+      if (raw >  N / 2) raw -= N;
+      if (raw < -N / 2) raw += N;
 
-      // Depth factor 0 (back) → 1 (front)
-      var depth = (cosT + 1) / 2;
+      var d   = raw;          // slot distance from center (can be fractional)
+      var abs = Math.abs(d);
 
-      // Base transforms
-      var baseScale   = 0.48 + depth * 0.62;   // 0.48 back → 1.1 front
-      var opacity     = 0.12 + depth * 0.88;   // 0.12 → 1.0
-      var rotY        = -deg;                   // card faces viewer
-
-      // Spring hover boost
-      var hoverTarget = (hoveredIdx === i) ? 1 : 0;
-      springStep(springs[i], hoverTarget);
+      // Spring hover
+      springStep(springs[i], hoveredIdx === i ? 1 : 0);
       var hv = springs[i].val;
 
-      var finalScale  = baseScale + hv * 0.14;
-      var finalZ      = z + hv * 55;
-      var finalOp     = Math.min(1, opacity + hv * 0.15);
-      var zIndex      = Math.round(depth * 100) + Math.round(hv * 20);
+      // Visibility cull
+      if (abs > MAX_VIS + 0.5) {
+        card.style.opacity = '0';
+        card.style.zIndex  = '0';
+        return;
+      }
+
+      var translateX = d * SPACING;
+      var rotateY    = -d * ROT_ANGLE;
+      // Push side cards back; front card stays at z=0
+      var translateZ = -(abs * abs) * 18;
+      var scale      = Math.max(0.35, 1 - abs * 0.13) + hv * 0.1;
+      var opacity    = Math.max(0,    1 - abs * 0.22) + hv * 0.05;
+      opacity        = Math.min(1, anyHover && hoveredIdx !== i ? opacity * 0.55 : opacity);
+      var zIndex     = Math.round((MAX_VIS - abs) * 10) + Math.round(hv * 15);
+
+      // Hover: push toward camera
+      translateZ += hv * 60;
 
       card.style.transform = [
-        'translateX(' + x.toFixed(2) + 'px)',
-        'translateZ(' + finalZ.toFixed(2) + 'px)',
-        'rotateY('    + rotY.toFixed(2) + 'deg)',
-        'scale('      + finalScale.toFixed(4) + ')'
+        'translateX(' + translateX.toFixed(1) + 'px)',
+        'translateZ(' + translateZ.toFixed(1) + 'px)',
+        'rotateY('    + rotateY.toFixed(2) + 'deg)',
+        'scale('      + scale.toFixed(4) + ')'
       ].join(' ');
-      card.style.opacity = finalOp.toFixed(3);
+      card.style.opacity = opacity.toFixed(3);
       card.style.zIndex  = zIndex;
-
-      // Front card glow
-      card.classList.toggle('cf-card--front', depth > 0.96);
-
-      // Dim non-hovered cards when any is hovered
-      if (hoveredIdx !== -1 && hoveredIdx !== i) {
-        card.style.opacity = (finalOp * (0.55 + depth * 0.3)).toFixed(3);
-      }
+      card.classList.toggle('cf-card--front', abs < 0.5);
     });
 
     requestAnimationFrame(frame);
   }
 
-  cards.forEach(function(card, i) {
-    card.addEventListener('mouseenter', function() { hoveredIdx = i; });
-    card.addEventListener('mouseleave', function() { hoveredIdx = -1; });
+  cards.forEach(function (card, i) {
+    card.addEventListener('mouseenter', function () { hoveredIdx = i; });
+    card.addEventListener('mouseleave', function () { hoveredIdx = -1; });
   });
 
   frame();

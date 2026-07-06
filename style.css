@@ -212,16 +212,22 @@ body {
 
 /* ── CAROUSEL 3D ANILLO ── */
 /* ── COVERFLOW 3D ── */
-.cf-scene {
+.cf-clip {
   position: relative;
   z-index: 1;
   height: 100%;
   max-height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.cf-scene {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 900px;
-  overflow: hidden;
+  perspective: 700px;
+  perspective-origin: 50% 50%;
 }
 
 .cf-stage {
