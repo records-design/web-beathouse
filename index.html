@@ -19,7 +19,7 @@
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#lanzamientos">Lanzamientos</a></li>
     </ul>
-    <button class="btn-contacto" id="openLoginModal">Dashboard →</button>
+    <button class="btn-contacto" id="openLoginModal">Dashboard de artistas →</button>
   </nav>
 
   <!-- HERO -->
@@ -666,6 +666,7 @@
         <div class="form-field"><label>Contraseña</label><input type="password" name="password" placeholder="••••••••" autocomplete="current-password"></div>
         <button type="submit" class="btn-login">Ingresar →</button>
       </form>
+      <p class="login-modal-hint">¿Querés presentar tu proyecto? <a href="#" id="loginContactLink">Envianos tu material →</a></p>
     </div>
   </div>
 
@@ -683,9 +684,23 @@
 
         <div class="form-success" id="formModalSuccess" style="display:none;">
           <div class="form-success-icon">✦</div>
-          <h3 class="form-success-title">¡Recibimos tu proyecto!</h3>
-          <p class="form-success-msg">Revisamos cada propuesta con atención. Si tu proyecto avanza, nos ponemos en contacto con vos. Gracias por elegirnos.</p>
-          <button type="button" id="formSuccessReset">Enviar otro →</button>
+          <h3 class="form-success-title">¡Tu proyecto llegó!</h3>
+          <p class="form-success-msg">Recibimos tu material y ya lo estamos analizando. Si tu proyecto encaja con lo que buscamos, nos ponemos en contacto con vos en los próximos días. Gracias por confiar en BeatHouse.</p>
+          <div class="form-success-items">
+            <div class="form-success-item">
+              <span class="form-success-item-icon">📁</span>
+              <span>Material recibido y analizado</span>
+            </div>
+            <div class="form-success-item">
+              <span class="form-success-item-icon">👀</span>
+              <span>Tu propuesta será revisada por nuestro equipo</span>
+            </div>
+            <div class="form-success-item">
+              <span class="form-success-item-icon">📲</span>
+              <span>Si avanzamos, te contactamos por email o WhatsApp</span>
+            </div>
+          </div>
+          <button type="button" id="formSuccessReset">Enviar otro proyecto →</button>
         </div>
 
         <form class="form-wizard" id="formWizard" novalidate action="https://formspree.io/f/maqgkepa" method="POST">
@@ -765,7 +780,7 @@
             <div class="form-field"><label>Apple Music</label><input type="url" name="apple" placeholder="https://music.apple.com/..."></div>
             <div class="form-field"><label>Instagram</label><input type="url" name="instagram-url" placeholder="https://instagram.com/@tuusuario"></div>
             <div class="form-field"><label>TikTok</label><input type="url" name="tiktok" placeholder="https://tiktok.com/@tuusuario"></div>
-            <span class="form-field-hint">Podés dejar en blanco los que no uses.</span>
+            <span class="form-field-hint">Podés dejar en blanco las plataformas que no uses.</span>
             <div class="wizard-nav">
               <button type="button" class="btn-wizard-back" data-back="2">← Volver</button>
               <button type="submit" class="btn-submit" id="btnSubmit">Enviar proyecto →</button>
