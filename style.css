@@ -416,19 +416,19 @@ body {
 /* Sombra pro debajo del carrusel */
 .ring-floor-glow {
   position: absolute;
-  bottom: -18%;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 140%;
-  height: 220px;
-  background: radial-gradient(ellipse 80% 55% at 50% 100%,
-    rgba(66,25,74,1) 0%,
-    rgba(230,0,126,0.45) 30%,
-    rgba(230,0,126,0.15) 55%,
+  height: 160px;
+  background: radial-gradient(ellipse 75% 55% at 50% 100%,
+    rgba(230,0,126,0.60) 0%,
+    rgba(66,25,74,0.45) 35%,
+    rgba(230,0,126,0.10) 60%,
     transparent 75%);
   pointer-events: none;
-  z-index: 0;
-  filter: blur(6px);
+  z-index: 3;
+  filter: blur(14px);
 }
 
 .ring-floor-shadow {
