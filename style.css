@@ -211,138 +211,64 @@ body {
 }
 
 /* ── CAROUSEL 3D ANILLO ── */
-/* ── RING CAROUSEL 3D ── */
-.ring-scene {
+/* ── CAROUSEL 3D ANILLO ── */
+.carousel3d-scene {
   position: relative;
   z-index: 1;
-  height: 100%;
-  max-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 900px;
-  perspective-origin: 50% 42%;
-  overflow: visible;
+  perspective: 1200px;
+  height: 100%;
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
 }
 
-.ring-wobble {
+.carousel3d-wobble {
   transform-style: preserve-3d;
-  animation: ringWobble 16s ease-in-out infinite;
+  animation: tilt3d 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-@keyframes ringWobble {
-  0%   { transform: rotateX(14deg) rotateZ(1.5deg); }
-  25%  { transform: rotateX(4deg)  rotateZ(-1deg); }
-  50%  { transform: rotateX(18deg) rotateZ(1.5deg); }
-  75%  { transform: rotateX(4deg)  rotateZ(-1deg); }
-  100% { transform: rotateX(14deg) rotateZ(1.5deg); }
+@keyframes tilt3d {
+  0%   { transform: rotateX(38deg)  rotateZ(5deg); }
+  25%  { transform: rotateX(5deg)   rotateZ(-3deg); }
+  50%  { transform: rotateX(-38deg) rotateZ(5deg); }
+  75%  { transform: rotateX(5deg)   rotateZ(-3deg); }
+  100% { transform: rotateX(38deg)  rotateZ(5deg); }
 }
 
-.ring-track {
+.carousel3d-ring {
   position: relative;
-  width: 158px;
-  height: 222px;
+  width: 160px;
+  height: 225px;
   transform-style: preserve-3d;
-  animation: ringSpin 28s linear infinite;
+  animation: spin3d 12s linear infinite;
 }
 
-@keyframes ringSpin {
+@keyframes spin3d {
   from { transform: rotateY(0deg); }
   to   { transform: rotateY(360deg); }
 }
 
-.ring-wobble:hover .ring-track,
-.ring-wobble:hover {
-  animation-play-state: paused;
-}
+.carousel3d-wobble:hover .carousel3d-ring,
+.carousel3d-wobble:hover { animation-play-state: paused; }
 
-.ring-card {
+.card3d {
   position: absolute;
   inset: 0;
-  border-radius: 28px;
+  border-radius: 16px;
   overflow: hidden;
-  transform: rotateY(calc(var(--i) * 30deg)) translateZ(330px);
-  box-shadow:
-    0 2px 0 rgba(255,255,255,0.08) inset,
-    0 24px 48px rgba(0,0,0,0.7),
-    0 4px 16px rgba(0,0,0,0.5);
-  transition: box-shadow 0.4s ease;
-  cursor: pointer;
-  will-change: transform;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.65);
+  transform: rotateY(calc(var(--i) * 40deg)) translateZ(310px);
+  transition: box-shadow 0.3s;
 }
 
-.ring-card:hover {
-  box-shadow:
-    0 2px 0 rgba(255,255,255,0.12) inset,
-    0 0 0 1.5px rgba(230,0,126,0.5),
-    0 32px 64px rgba(0,0,0,0.8),
-    0 0 40px rgba(230,0,126,0.2);
-}
-
-.ring-card img {
+.card3d img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: top;
   display: block;
-  pointer-events: none;
-}
-
-.ring-label {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 36px 14px 14px;
-  background: linear-gradient(to top, rgba(4,0,12,0.95) 0%, rgba(4,0,12,0.4) 60%, transparent 100%);
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.ring-label span {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 1;
-}
-.ring-label em {
-  font-size: 9px;
-  font-style: normal;
-  color: var(--fucsia);
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-/* Sombra pro debajo del carrusel */
-.ring-floor-glow {
-  position: absolute;
-  bottom: -18%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110%;
-  height: 160px;
-  background: radial-gradient(ellipse 80% 50% at 50% 100%,
-    rgba(120, 0, 220, 0.28) 0%,
-    rgba(230, 0, 126, 0.10) 40%,
-    transparent 70%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.ring-floor-shadow {
-  position: absolute;
-  bottom: -22%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 85%;
-  height: 40px;
-  background: radial-gradient(ellipse 70% 100% at 50% 0%,
-    rgba(0,0,0,0.55) 0%,
-    transparent 100%);
-  filter: blur(8px);
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* ── TICKER ARTISTAS ── */
