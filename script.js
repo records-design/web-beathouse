@@ -42,7 +42,6 @@
       featGenre.textContent = thumb.dataset.genre
       featDesc.textContent  = thumb.dataset.desc
       featImg.style.opacity = '1'
-      if (window.bhDisplacementSpike) window.bhDisplacementSpike()
     }, 200)
   }
 
@@ -56,62 +55,6 @@
   })
 })();
 
-// ── ROSTER DISPLACEMENT + GLITCH ──
-(function () {
-  var turb  = document.getElementById('bhTurb');
-  var disp  = document.getElementById('bhDisp');
-  var featPanel = document.getElementById('rosterFeatured');
-  if (!turb || !disp) return;
-
-  // Spike de displacement cuando cambia la imagen (llamado desde setFeatured)
-  window.bhDisplacementSpike = function () {
-    var start = performance.now();
-    var peak = 55, dur = 550;
-    function step(now) {
-      var t = Math.min((now - start) / dur, 1);
-      // ease: sube rápido, baja suave
-      var scale = t < 0.3
-        ? (t / 0.3) * peak
-        : peak * (1 - ((t - 0.3) / 0.7));
-      disp.setAttribute('scale', scale.toFixed(1));
-      // baseFrequency oscila levemente durante el spike
-      var freq = (0.012 + Math.sin(t * Math.PI * 4) * 0.008).toFixed(4);
-      turb.setAttribute('baseFrequency', freq + ' ' + freq);
-      if (t < 1) requestAnimationFrame(step);
-      else {
-        disp.setAttribute('scale', '0');
-        turb.setAttribute('baseFrequency', '0.012 0.012');
-      }
-    }
-    requestAnimationFrame(step);
-  };
-
-  // Mouse tracking sobre el panel — distorsión sutil continua
-  var mouseActive = false, mouseRaf = null;
-  if (featPanel) {
-    featPanel.addEventListener('mouseenter', function () { mouseActive = true; });
-    featPanel.addEventListener('mouseleave', function () {
-      mouseActive = false;
-      disp.setAttribute('scale', '0');
-      turb.setAttribute('baseFrequency', '0.012 0.012');
-    });
-    featPanel.addEventListener('mousemove', function (e) {
-      if (!mouseActive) return;
-      cancelAnimationFrame(mouseRaf);
-      mouseRaf = requestAnimationFrame(function () {
-        var rect = featPanel.getBoundingClientRect();
-        var nx = (e.clientX - rect.left) / rect.width;   // 0–1
-        var ny = (e.clientY - rect.top)  / rect.height;
-        var scale = 6 + nx * 8;
-        var fx = (0.008 + nx * 0.016).toFixed(4);
-        var fy = (0.008 + ny * 0.016).toFixed(4);
-        disp.setAttribute('scale', scale.toFixed(1));
-        turb.setAttribute('baseFrequency', fx + ' ' + fy);
-      });
-    });
-  }
-
-})();
 
 // ── ROSTER THUMB 3D TILT ──
 (function () {
