@@ -3,10 +3,9 @@
   "configurations": [
     {
       "name": "beathouse",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "."],
-      "port": 4567,
-      "autoPort": false
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4568"],
+      "port": 4568
     }
   ]
 }
