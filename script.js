@@ -286,13 +286,10 @@
         if (status === 'completed') {
           var stats = data.data.attributes.stats;
           var malicious  = stats.malicious  || 0;
-          var suspicious = stats.suspicious || 0;
-          var total = (stats.harmless || 0) + malicious + suspicious + (stats.undetected || 0);
+          var total = (stats.harmless || 0) + malicious + (stats.suspicious || 0) + (stats.undetected || 0);
           var result = malicious >= 3
             ? '✕ No permitido: ' + malicious + '/' + total + ' motores detectaron amenazas'
-            : suspicious >= 5
-              ? '⚠ Sospechoso: ' + suspicious + '/' + total + ' motores'
-              : '✓ Check';
+            : '✓ Check';
           finishScan(url, name, result);
         } else {
           setTimeout(function () { pollVT(id, url, name, attempts + 1); }, 4000);
