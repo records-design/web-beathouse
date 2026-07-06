@@ -263,7 +263,13 @@
       });
     }
 
-    function finishScan(url, name, vtResult) {
+    function finishScan(url, name, vtResult, background) {
+      if (background) {
+        // Actualizar resultado del archivo ya existente en la lista
+        var existing = files.find(function (f) { return f.url === url; });
+        if (existing) { existing.vt = vtResult; renderFileList(); updateFilesData(); }
+        return;
+      }
       files.push({ url: url, name: name, vt: vtResult });
       renderFileList(); updateFilesData();
       uploading = false;
@@ -274,7 +280,7 @@
     }
 
     function pollVT(id, url, name, attempts) {
-      if (attempts > 60) { finishScan(url, name, '✓ Check'); return; }
+      if (attempts > 60) { return; } // timeout silencioso — ya se mostró ✓ Check
       fetch(VT_WORKER, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -285,17 +291,17 @@
         var status = data.data && data.data.attributes && data.data.attributes.status;
         if (status === 'completed') {
           var stats = data.data.attributes.stats;
-          var malicious  = stats.malicious  || 0;
+          var malicious = stats.malicious || 0;
           var total = (stats.harmless || 0) + malicious + (stats.suspicious || 0) + (stats.undetected || 0);
-          var result = malicious >= 3
-            ? '✕ No permitido: ' + malicious + '/' + total + ' motores detectaron amenazas'
-            : '✓ Check';
-          finishScan(url, name, result);
+          // Solo actualizar si es realmente malicioso
+          if (malicious >= 3) {
+            finishScan(url, name, '✕ No permitido: ' + malicious + '/' + total + ' motores detectaron amenazas', true);
+          }
         } else {
           setTimeout(function () { pollVT(id, url, name, attempts + 1); }, 4000);
         }
       })
-      .catch(function () { finishScan(url, name, 'Error al obtener resultado'); });
+      .catch(function () { }); // silencioso en segundo plano
     }
 
     function scanWithVT(url, name) {
@@ -337,9 +343,8 @@
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.responseText);
           var url = 'https://ucarecdn.com/' + data.file + '/';
-          fill.style.width = '100%';
-          label.textContent = 'Escaneando archivo...';
-          hint.textContent = 'Esto puede demorar unos segundos.';
+          // Mostrar como OK inmediatamente y escanear en segundo plano
+          finishScan(url, file.name, '✓ Check');
           scanWithVT(url, file.name);
         } else {
           uploading = false; inner.style.display = ''; progress.style.display = 'none';
