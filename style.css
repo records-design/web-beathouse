@@ -2,17 +2,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:     #1a0a20;
-  --fucsia: #E6007E;
-  --rosa:   #FFB6E1;
-  --white:  #ffffff;
-  --card-bg:#1e0d28;
+  --bg:       #1E0720;
+  --bg-alt:   #250B23;
+  --purple:   #42194A;
+  --muted:    #8E849B;
+  --fucsia:   #E6007E;
+  --rosa:     #FFB6E1;
+  --white:    #FFFFFF;
+  --card-bg:  #250B23;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: linear-gradient(160deg, #0d0612 0%, #1a0a20 30%, #2a0e35 60%, #160820 100%);
+  background: linear-gradient(160deg, #1E0720 0%, #250B23 40%, #42194A 70%, #1E0720 100%);
   background-attachment: fixed;
   color: var(--white);
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -85,8 +88,8 @@ body {
   gap: 40px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 65% 80% at 18% 55%, rgba(160,0,255,0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 55% at 72% 65%, rgba(230,0,126,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 80% at 18% 55%, rgba(66,25,74,0.90) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 72% 65%, rgba(230,0,126,0.20) 0%, transparent 60%),
     var(--bg);
 }
 
@@ -95,7 +98,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
