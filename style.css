@@ -396,7 +396,7 @@ body {
 }
 
 .feat-photo-wrap {
-  flex: 0 0 58%;
+  flex: 0 0 55%;
   overflow: hidden;
 }
 
@@ -409,41 +409,40 @@ body {
   transition: opacity .4s ease;
 }
 
-/* Detail section */
+/* Detail section — sin scroll, todo entra */
 .feat-detail {
   flex: 1 1 0;
-  overflow-y: auto;
-  padding: 16px 20px 16px;
+  overflow: hidden;
+  padding: 14px 18px 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(230,0,126,0.3) transparent;
+  gap: 9px;
 }
 
 .feat-detail-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .roster-feat-genre {
   display: inline-block;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
   background: var(--fucsia);
   color: #fff;
-  padding: 3px 10px;
+  padding: 2px 9px;
   border-radius: 50px;
   flex-shrink: 0;
   transition: opacity .3s;
 }
 
 .roster-feat-name {
-  font-size: clamp(14px, 1.6vw, 22px);
+  font-size: clamp(12px, 1.3vw, 18px);
   font-weight: 900;
   color: #fff;
   letter-spacing: .06em;
@@ -451,26 +450,33 @@ body {
   margin: 0;
   transition: opacity .3s;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feat-detail-bio {
-  font-size: 12px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
   margin: 0;
   transition: opacity .3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .feat-detail-socials {
   display: flex;
-  gap: 8px;
+  gap: 7px;
 }
 
 .feat-social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 32px; height: 32px;
   border-radius: 50%;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.15);
@@ -479,7 +485,7 @@ body {
   flex-shrink: 0;
 }
 .feat-social-btn svg {
-  width: 16px; height: 16px;
+  width: 14px; height: 14px;
   fill: currentColor;
 }
 .feat-social-ig:hover { background: rgba(230,0,126,0.25); border-color: var(--fucsia); color: #fff; }
@@ -487,9 +493,15 @@ body {
 .feat-social-yt:hover { background: rgba(255,0,0,0.15); border-color: #ff0000; color: #ff4444; }
 .feat-social-tt:hover { background: rgba(0,242,234,0.1); border-color: #00f2ea; color: #00f2ea; }
 
+.feat-detail-player {
+  flex: 1 1 0;
+  min-height: 0;
+}
 .feat-detail-player iframe {
   width: 100%;
-  height: 80px;
+  height: 100%;
+  min-height: 72px;
+  max-height: 90px;
   border: none;
   border-radius: 10px;
   display: block;
