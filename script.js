@@ -516,6 +516,137 @@
   setInterval(tick, 1000)
 })();
 
+// ── NOSOTROS IMG TILT ──
+(function () {
+  const img = document.querySelector('.nosotros-img')
+  if (!img) return
+
+  img.style.transition = 'transform 0.1s ease, box-shadow 0.4s ease'
+
+  img.addEventListener('mousemove', function (e) {
+    const rect = img.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width  - 0.5
+    const y = (e.clientY - rect.top)  / rect.height - 0.5
+    const rotY =  x * 12
+    const rotX = -y * 8
+    const moveX = x * 8
+    const moveY = y * 6
+    img.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translate(' + moveX + 'px,' + moveY + 'px) scale(1.03)'
+  })
+
+  img.addEventListener('mouseleave', function () {
+    img.style.transition = 'transform 0.5s ease, box-shadow 0.4s ease'
+    img.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translate(0,0) scale(1)'
+  })
+
+  img.addEventListener('mouseenter', function () {
+    img.style.transition = 'transform 0.1s ease, box-shadow 0.4s ease'
+  })
+})();
+
+// ── ARTIST MODAL ──
+(function () {
+  var SVG_IG  = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>'
+  var SVG_SP  = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>'
+  var SVG_YT  = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>'
+  var SVG_TK  = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg>'
+
+  var ARTISTS = {
+    'tomas gimenez': { name:'Tomas Gimenez', genre:'Pop', img:'imagenes/foto-tomas-gimenez.jpg', pos:'center top', bio:'Voz potente y letras directas que conectan con una generación. Uno de los artistas más prometedores del pop argentino.', ig:'https://instagram.com/tomasgimenezok', sp:'5mCPDVBb16scAbCjmfZaq7', yt:'https://www.youtube.com/@tomasgimenez', tk:'https://www.tiktok.com/@tomasgimenezok' },
+    'crash':         { name:'Crash',         genre:'Pop', img:'imagenes/foto-crash.jpeg',         pos:'center top', bio:'Actitud, flow y una identidad visual que impacta antes de sonar. Pop con personalidad y energía sin límites.',             ig:'https://instagram.com/crash.music',   sp:'5AIFs6bO6XZLbfeTplCHkL', yt:'https://www.youtube.com/@crashmusic', tk:'https://www.tiktok.com/@crash.music' },
+    'maga':          { name:'Maga',          genre:'Pop', img:'imagenes/foto-maga.jpg',           pos:'center 20%',  bio:'Canciones íntimas con producción contemporánea que trascienden fronteras. Una artista que emociona desde el primer verso.',   ig:'https://instagram.com/magamusica',    sp:'', yt:'', tk:'' },
+    'lucas barros':  { name:'Lucas Barros',  genre:'Pop / R&B', img:'imagenes/foto-lucas-barros.jpeg', pos:'center top', bio:'Groove, melodía y una presencia escénica que se siente desde el primer acorde. R&B con raíces latinas.',              ig:'https://instagram.com/lucasbarrosmusic', sp:'', yt:'', tk:'' },
+    'el cone':       { name:'El Cone',       genre:'Cuarteto', img:'imagenes/foto-cone.jpg',      pos:'center 15%',  bio:'El cuarteto que mueve multitudes con energía y ritmo desbordante. Tradición y modernidad en perfecta sintonía.',            ig:'https://instagram.com/elconeoficial', sp:'', yt:'', tk:'' },
+    'karen quiroga': { name:'Karen Quiroga', genre:'Pop', img:'imagenes/foto-Karen Quiroga.jpg',  pos:'center top',  bio:'Sensibilidad y fuerza en cada canción. Una artista que define su propio camino con autenticidad y visión clara.',            ig:'https://instagram.com/karenquiroga', sp:'', yt:'', tk:'' },
+    'beruti':        { name:'Beruti',        genre:'Pop', img:'imagenes/foto-beruti.jpg',         pos:'center top',  bio:'Composición honesta y una conexión emocional que fideliza audiencias. El pop argentino con alma y sustancia.',               ig:'https://instagram.com/berutimusica', sp:'', yt:'', tk:'' },
+    'silvestre':     { name:'Silvestre',     genre:'Folklore', img:'imagenes/foto-silvestre.jpeg', pos:'center top', bio:'La tradición del folklore argentino con una mirada contemporánea. Raíces profundas, horizonte amplio.',                   ig:'https://instagram.com/silvestreoficial', sp:'', yt:'', tk:'' },
+    'og karma':      { name:'OG Karma',      genre:'Urbano', img:'imagenes/foto-Og Karma.jpeg',   pos:'center top',  bio:'Flow urbano con identidad propia. Un artista que construye su universo desde las calles hasta los escenarios.',              ig:'https://instagram.com/ogkarmaoficial', sp:'', yt:'', tk:'' },
+    'axel sun':      { name:'Axel Sun',      genre:'Pop', img:'imagenes/foto-axelsun.jpg',        pos:'center top',  bio:'Pop con energía solar y melodías que se quedan. Una propuesta fresca y directa al corazón del oyente.',                    ig:'https://instagram.com/axelsunmusic', sp:'', yt:'', tk:'' },
+    'ana paula':     { name:'Ana Paula',     genre:'Pop', img:'imagenes/foto-anapaula.jpg',       pos:'center top',  bio:'Voz cálida y canciones auténticas que conectan desde el primer segundo. Pop argentino con proyección internacional.',        ig:'https://instagram.com/anapaulamusica', sp:'', yt:'', tk:'' },
+    'duende':        { name:'Duende',        genre:'Infantil', img:'imagenes/foto-duende.jpeg',   pos:'center top',  bio:'Música infantil con calidad musical adulta. Un proyecto que hace cantar y bailar a las familias argentinas.',               ig:'https://instagram.com/duendemusica', sp:'', yt:'', tk:'' },
+  }
+
+  var modal    = document.getElementById('artistModal')
+  var backdrop = document.getElementById('artistModalBackdrop')
+  var btnClose = document.getElementById('closeArtistModal')
+  if (!modal) return
+
+  function socialBtn(href, svg, label) {
+    if (!href) return ''
+    return '<a href="' + href + '" target="_blank" class="artist-modal-social-btn" aria-label="' + label + '">' + svg + '</a>'
+  }
+
+  function open(key) {
+    var a = ARTISTS[key.toLowerCase()]
+    if (!a) return
+    var imgEl = document.getElementById('artistModalImg')
+    imgEl.src = a.img
+    imgEl.alt = a.name
+    imgEl.style.objectPosition = a.pos || 'center top'
+    document.getElementById('artistModalGenre').textContent = a.genre
+    document.getElementById('artistModalName').textContent = a.name
+    document.getElementById('artistModalBio').textContent = a.bio
+    document.getElementById('artistModalSocials').innerHTML =
+      socialBtn(a.ig, SVG_IG, 'Instagram') +
+      socialBtn(a.sp ? 'https://open.spotify.com/artist/' + a.sp : '', SVG_SP, 'Spotify') +
+      socialBtn(a.yt, SVG_YT, 'YouTube') +
+      socialBtn(a.tk, SVG_TK, 'TikTok')
+    var spotifyEl = document.getElementById('artistModalSpotify')
+    if (a.sp) {
+      spotifyEl.innerHTML = '<iframe src="https://open.spotify.com/embed/artist/' + a.sp + '?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+    } else {
+      spotifyEl.innerHTML = ''
+    }
+    modal.classList.add('open')
+    modal.setAttribute('aria-hidden', 'false')
+    document.body.classList.add('modal-open')
+  }
+
+  function close() {
+    modal.classList.remove('open')
+    modal.setAttribute('aria-hidden', 'true')
+    document.body.classList.remove('modal-open')
+    document.getElementById('artistModalSpotify').innerHTML = ''
+  }
+
+  // Wire up roster thumbs
+  document.querySelectorAll('.roster-thumb').forEach(function (thumb) {
+    thumb.style.cursor = 'pointer'
+    thumb.addEventListener('click', function () {
+      var name = thumb.querySelector('.roster-name')
+      if (name) open(name.textContent.trim())
+    })
+  })
+
+  // Wire up ring-cards
+  document.querySelectorAll('.ring-card').forEach(function (card) {
+    card.style.cursor = 'pointer'
+    card.addEventListener('click', function () {
+      var label = card.querySelector('.ring-label span')
+      if (label) open(label.textContent.trim())
+    })
+  })
+
+  btnClose.addEventListener('click', close)
+  backdrop.addEventListener('click', close)
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close() })
+})();
+
+// ── SCROLL REVEAL ──
+(function () {
+  const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+  if (!targets.length) return
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed')
+        obs.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.12 })
+  targets.forEach(function (el) { obs.observe(el) })
+})();
+
 // ── LANZ CARD ENTRANCE ──
 (function () {
   const card = document.querySelector('.lanz-card')
