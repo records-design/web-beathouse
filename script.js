@@ -515,3 +515,16 @@
   tick()
   setInterval(tick, 1000)
 })();
+
+// ── LANZ CARD ENTRANCE ──
+(function () {
+  const card = document.querySelector('.lanz-card')
+  if (!card) return
+  const obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      card.classList.add('is-visible')
+      obs.disconnect()
+    }
+  }, { threshold: 0.2 })
+  obs.observe(card)
+})();

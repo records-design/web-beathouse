@@ -784,7 +784,7 @@ body {
 .roster-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   max-width: 1300px;
   margin: 20px auto 0;
   padding-top: 16px;
@@ -1000,7 +1000,6 @@ body {
 .logo-ticker-wrap {
   overflow: hidden;
   padding: 30px 0;
-  background: #1c0b26;
 }
 
 .logo-ticker-track {
@@ -1012,9 +1011,9 @@ body {
 }
 
 .logo-ticker-track img {
-  height: 32px;
+  height: 56px;
   width: auto;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 /* ── QUIENES SOMOS ── */
@@ -1409,12 +1408,223 @@ body {
 }
 
 .lanzamientos .section-title {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--rosa);
 }
 
 .lanzamientos .section-sub {
-  margin-bottom: 40px;
-  color: rgba(255,255,255,0.4);
+  margin-bottom: 48px;
+  color: rgba(255,255,255,0.65);
+  font-size: 16px;
+}
+
+/* ── RELEASE CARD ── */
+.lanz-card {
+  display: flex;
+  gap: 0;
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(66,25,74,0.45);
+  border: 1px solid rgba(230,0,126,0.2);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset, 0 32px 80px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  /* entrada */
+  opacity: 0;
+  transform: translateY(48px) scale(0.97);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.4s ease;
+  animation: lanzCardGlow 4s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.lanz-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation-play-state: running;
+}
+
+@keyframes lanzCardGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset,
+                0 0 0 1px rgba(230,0,126,0.15),
+                0 32px 80px rgba(0,0,0,0.5),
+                0 0 30px rgba(230,0,126,0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.10) inset,
+                0 0 0 1.5px rgba(230,0,126,0.55),
+                0 32px 80px rgba(0,0,0,0.5),
+                0 0 60px rgba(230,0,126,0.22),
+                0 0 100px rgba(66,25,74,0.30);
+  }
+}
+
+.lanz-card-cover {
+  position: relative;
+  flex: 0 0 320px;
+}
+
+.lanz-card-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 35%,
+    rgba(255,255,255,0.12) 48%,
+    rgba(255,255,255,0.20) 50%,
+    rgba(255,255,255,0.12) 52%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  animation: lanzShimmer 4s ease-in-out infinite 1.2s;
+  pointer-events: none;
+}
+
+@keyframes lanzShimmer {
+  0%   { background-position: 200% 0; opacity: 0; }
+  10%  { opacity: 1; }
+  55%  { background-position: -100% 0; opacity: 1; }
+  70%  { opacity: 0; }
+  100% { background-position: -100% 0; opacity: 0; }
+}
+
+.lanz-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lanz-card-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(66,25,74,0.9) 100%);
+  pointer-events: none;
+}
+
+.lanz-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--fucsia);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.lanz-card-body {
+  flex: 1;
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lanz-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.lanz-card-dot { color: var(--fucsia); }
+
+.lanz-card-artist {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--rosa);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.lanz-card-title {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.lanz-card-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+.lanz-card-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.lanz-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: border-color .2s, background .2s, color .2s;
+}
+
+.lanz-social-btn:hover {
+  border-color: var(--fucsia);
+  background: rgba(230,0,126,0.15);
+  color: #fff;
+}
+
+.lanz-card-player {
+  margin-top: 4px;
+}
+
+.lanz-card-player iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+}
+
+.lanz-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  align-self: flex-start;
+  background: var(--fucsia);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  transition: background .2s, transform .2s;
+}
+
+.lanz-card-btn:hover {
+  background: #ff2d96;
+  transform: translateY(-1px);
 }
 
 /* ── FEATURED RELEASE ── */
