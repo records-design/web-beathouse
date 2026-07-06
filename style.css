@@ -2082,3 +2082,86 @@ body.modal-open { overflow: hidden; }
   margin-top: 8px;
 }
 #formSuccessReset:hover { background: #c0006a; transform: translateY(-1px); }
+
+/* ══════════════════════════════════════════
+   LOGIN MODAL — BeatHouse
+══════════════════════════════════════════ */
+.login-modal {
+  position: fixed; inset: 0; z-index: 600;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.login-modal.open { opacity: 1; pointer-events: all; }
+.login-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(10, 2, 16, 0.8);
+  backdrop-filter: blur(10px);
+}
+.login-modal-card {
+  position: relative; z-index: 1;
+  background: #170825;
+  border: 1px solid rgba(230,0,126,0.2);
+  border-radius: 24px;
+  padding: 44px 40px 36px;
+  width: 100%; max-width: 400px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(230,0,126,0.1);
+  display: flex; flex-direction: column; align-items: center;
+}
+.login-modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(255,255,255,0.07); border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 15px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6); transition: background 0.2s, color 0.2s;
+}
+.login-modal-close:hover { background: rgba(230,0,126,0.2); color: #fff; }
+.login-modal-logo { margin-bottom: 24px; }
+.login-modal-title {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.02em;
+  color: #fff; margin-bottom: 6px; text-align: center;
+}
+.login-modal-sub {
+  font-size: 14px; color: rgba(255,255,255,0.45); text-align: center;
+  margin-bottom: 28px; line-height: 1.5;
+}
+.login-form { width: 100%; display: flex; flex-direction: column; gap: 0; }
+.login-form .form-field { margin-bottom: 16px; }
+.btn-login {
+  width: 100%; margin-top: 8px;
+  background: var(--fucsia); color: #fff; border: none;
+  border-radius: 100px; padding: 14px;
+  font-size: 15px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.04em;
+}
+.btn-login:hover { background: #c0006a; transform: translateY(-1px); }
+.login-modal-hint {
+  font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 20px; text-align: center;
+}
+.login-modal-hint a {
+  color: var(--rosa); font-weight: 600; text-decoration: none; transition: color 0.2s;
+}
+.login-modal-hint a:hover { color: #fff; }
+
+/* Dashboard btn en navbar */
+.navbar .btn-contacto {
+  background: none;
+  border: 1.5px solid rgba(230,0,126,0.5);
+  cursor: pointer;
+  font-family: inherit;
+}
+.navbar .btn-contacto:hover {
+  background: var(--fucsia);
+  border-color: var(--fucsia);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .login-modal { padding: 0; align-items: flex-end; }
+  .login-modal-card {
+    border-radius: 20px 20px 0 0; max-width: 100%;
+    padding: 32px 24px 32px;
+  }
+}

@@ -19,7 +19,7 @@
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#lanzamientos">Lanzamientos</a></li>
     </ul>
-    <a href="#contacto" class="btn-contacto">Contactanos</a>
+    <button class="btn-contacto" id="openLoginModal">Dashboard →</button>
   </nav>
 
   <!-- HERO -->
@@ -650,6 +650,25 @@
       <span class="footer-star">*</span>
     </div>
   </footer>
+
+  <!-- MODAL: LOGIN DASHBOARD -->
+  <div class="login-modal" id="loginModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="login-modal-backdrop" id="loginModalBackdrop"></div>
+    <div class="login-modal-card">
+      <button class="login-modal-close" id="closeLoginModal" aria-label="Cerrar">✕</button>
+      <div class="login-modal-logo">
+        <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" style="height:48px; width:auto;">
+      </div>
+      <h2 class="login-modal-title">Dashboard de Artistas</h2>
+      <p class="login-modal-sub">Ingresá con tu cuenta para acceder a tu panel.</p>
+      <form class="login-form" id="loginForm" novalidate>
+        <div class="form-field"><label>Usuario</label><input type="text" name="usuario" placeholder="Tu usuario o email" autocomplete="username"></div>
+        <div class="form-field"><label>Contraseña</label><input type="password" name="password" placeholder="••••••••" autocomplete="current-password"></div>
+        <button type="submit" class="btn-login">Ingresar →</button>
+      </form>
+      <p class="login-modal-hint">¿Querés presentar tu proyecto? <a href="#" id="loginContactLink">Envianos tu material →</a></p>
+    </div>
+  </div>
 
   <!-- MODAL: PRESENTÁ TU PROYECTO -->
   <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true">

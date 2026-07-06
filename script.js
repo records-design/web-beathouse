@@ -405,6 +405,53 @@
   });
 })();
 
+// ── LOGIN MODAL ──
+(function () {
+  var loginModal = document.getElementById('loginModal');
+  if (!loginModal) return;
+
+  function openLoginModal() {
+    loginModal.classList.add('open');
+    loginModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function closeLoginModal() {
+    loginModal.classList.remove('open');
+    loginModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.getElementById('openLoginModal')?.addEventListener('click', function (e) {
+    e.preventDefault(); openLoginModal();
+  });
+  document.getElementById('closeLoginModal')?.addEventListener('click', closeLoginModal);
+  document.getElementById('loginModalBackdrop')?.addEventListener('click', closeLoginModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLoginModal();
+  });
+
+  // Link "Envianos tu material" → abre form modal
+  document.getElementById('loginContactLink')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeLoginModal();
+    setTimeout(function () {
+      document.getElementById('formModal')?.classList.add('open');
+      document.getElementById('formModal')?.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }, 300);
+  });
+
+  // Login form submit (placeholder — conectar con backend real)
+  document.getElementById('loginForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var usuario = this.querySelector('[name="usuario"]').value.trim();
+    var password = this.querySelector('[name="password"]').value.trim();
+    if (!usuario || !password) return;
+    // TODO: conectar con sistema de auth real
+    alert('Dashboard próximamente disponible.');
+  });
+})();
+
 // ── COUNTDOWN ──
 (function () {
   const target = new Date('2026-06-26T00:00:00-03:00').getTime()
