@@ -226,39 +226,96 @@
     }
   });
 
-  // File upload via Uploadcare
+  // File upload via Uploadcare + VirusTotal scan
   (function () {
-    var UPLOADCARE_PK = 'demopublickey';
+    var UPLOADCARE_PK = 'd95f11db670abc7ce278'; // mismo key que babidibu — reemplazá si tenés uno propio
+    var VT_WORKER = 'https://vt-proxy-beathouse.TU-USUARIO.workers.dev'; // reemplazá con tu worker URL
     var MAX_MB = 100;
     var ALLOWED = ['mp3', 'wav', 'mp4', 'pdf', 'zip'];
-    var zone    = document.getElementById('ucUploadZone');
-    var inner   = document.getElementById('ucUploadInner');
+    var zone     = document.getElementById('ucUploadZone');
+    var inner    = document.getElementById('ucUploadInner');
     var progress = document.getElementById('ucProgress');
-    var fill    = document.getElementById('ucProgressFill');
-    var label   = document.getElementById('ucProgressLabel');
-    var hint    = document.getElementById('ucProgressHint');
+    var fill     = document.getElementById('ucProgressFill');
+    var label    = document.getElementById('ucProgressLabel');
+    var hint     = document.getElementById('ucProgressHint');
     var fileList = document.getElementById('ucFileList');
     if (!zone) return;
     var files = [], uploading = false;
 
     function updateFilesData() {
       document.getElementById('ucFilesData').value = files.map(function (f) {
-        return f.name + ': ' + f.url + (f.vt ? ' [' + f.vt + ']' : '');
+        return f.name + ': ' + f.url + ' [' + f.vt + ']';
       }).join(' | ');
     }
+
     function renderFileList() {
       fileList.innerHTML = '';
       files.forEach(function (f, i) {
-        var row = document.createElement('div');
-        row.className = 'uc-upload-done';
-        var icon = document.createElement('span'); icon.className = 'uc-done-icon'; icon.textContent = '✓';
-        var name = document.createElement('span'); name.className = 'uc-done-name'; name.textContent = f.name;
+        var row  = document.createElement('div'); row.className = 'uc-upload-done';
+        var icon = document.createElement('span'); icon.className = 'uc-done-icon';
+        icon.textContent = (f.vt.indexOf('No permitido') > -1 || f.vt.indexOf('Sospechoso') > -1) ? '⚠️' : '✓';
+        var name = document.createElement('span'); name.className = 'uc-done-name';
+        name.textContent = f.name + (f.vt ? ' — ' + f.vt : '');
         var btn  = document.createElement('button'); btn.type = 'button'; btn.className = 'uc-remove-btn'; btn.textContent = '✕';
         btn.addEventListener('click', function () { files.splice(i, 1); renderFileList(); updateFilesData(); });
         row.appendChild(icon); row.appendChild(name); row.appendChild(btn);
         fileList.appendChild(row);
       });
     }
+
+    function finishScan(url, name, vtResult) {
+      files.push({ url: url, name: name, vt: vtResult });
+      renderFileList(); updateFilesData();
+      uploading = false;
+      hint.textContent = '';
+      progress.style.display = 'none';
+      inner.style.display = '';
+      fill.style.width = '0%';
+    }
+
+    function pollVT(id, url, name, attempts) {
+      if (attempts > 30) { finishScan(url, name, 'Tiempo agotado'); return; }
+      fetch(VT_WORKER, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'result', id: id })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var status = data.data && data.data.attributes && data.data.attributes.status;
+        if (status === 'completed') {
+          var stats = data.data.attributes.stats;
+          var malicious  = stats.malicious  || 0;
+          var suspicious = stats.suspicious || 0;
+          var total = (stats.harmless || 0) + malicious + suspicious + (stats.undetected || 0);
+          var result = malicious > 0
+            ? '✕ No permitido: ' + malicious + '/' + total + ' motores detectaron amenazas'
+            : suspicious > 0
+              ? '⚠ Sospechoso: ' + suspicious + '/' + total + ' motores'
+              : '✓ Check';
+          finishScan(url, name, result);
+        } else {
+          setTimeout(function () { pollVT(id, url, name, attempts + 1); }, 4000);
+        }
+      })
+      .catch(function () { finishScan(url, name, 'Error al obtener resultado'); });
+    }
+
+    function scanWithVT(url, name) {
+      fetch(VT_WORKER, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'scan', url: url })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var id = data.data && data.data.id;
+        if (!id) { finishScan(url, name, 'No se pudo escanear'); return; }
+        pollVT(id, url, name, 0);
+      })
+      .catch(function () { finishScan(url, name, 'Error de conexión'); });
+    }
+
     function uploadFile(file) {
       if (uploading) { alert('Esperá que termine el archivo actual.'); return; }
       var ext = file.name.split('.').pop().toLowerCase();
@@ -274,16 +331,23 @@
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://upload.uploadcare.com/base/');
       xhr.upload.addEventListener('progress', function (ev) {
-        if (ev.lengthComputable) { var pct = Math.round(ev.loaded / ev.total * 100); fill.style.width = pct + '%'; label.textContent = pct + '%'; }
+        if (ev.lengthComputable) {
+          var pct = Math.round(ev.loaded / ev.total * 100);
+          fill.style.width = pct + '%'; label.textContent = pct + '%';
+        }
       });
       xhr.addEventListener('load', function () {
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.responseText);
           var url = 'https://ucarecdn.com/' + data.file + '/';
-          files.push({ url: url, name: file.name, vt: '' });
-          renderFileList(); updateFilesData();
+          fill.style.width = '100%';
+          label.textContent = 'Escaneando archivo...';
+          hint.textContent = 'Esto puede demorar unos segundos.';
+          scanWithVT(url, file.name);
+        } else {
+          uploading = false; inner.style.display = ''; progress.style.display = 'none';
+          alert('Error al subir el archivo. Intentá de nuevo.');
         }
-        uploading = false; progress.style.display = 'none'; inner.style.display = ''; fill.style.width = '0%';
       });
       xhr.addEventListener('error', function () {
         uploading = false; inner.style.display = ''; progress.style.display = 'none';
@@ -291,6 +355,7 @@
       });
       xhr.send(fd);
     }
+
     zone.addEventListener('click', function () {
       if (uploading) return;
       var inp = document.createElement('input');
