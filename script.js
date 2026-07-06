@@ -1,3 +1,89 @@
+// ── COVERFLOW 3D ──
+(function () {
+  var stage = document.getElementById('cfStage');
+  if (!stage) return;
+
+  var cards  = Array.from(stage.querySelectorAll('.cf-card'));
+  var N      = cards.length;            // 12
+  var STEP   = 360 / N;                 // 30° per card
+  var RADIUS = 290;                     // ring radius px
+  var ROT_SPEED = 0.018;               // degrees per frame (~1°/s at 60fps)
+
+  var rotation  = 0;
+  var hoveredIdx = -1;
+  // Per-card spring state for hover
+  var springs = cards.map(function() { return { val: 0, vel: 0 }; });
+
+  var SPRING_K    = 0.14;  // stiffness
+  var SPRING_DAMP = 0.72;  // damping
+
+  function springStep(sp, target) {
+    var force = (target - sp.val) * SPRING_K;
+    sp.vel   = sp.vel * SPRING_DAMP + force;
+    sp.val  += sp.vel;
+  }
+
+  function frame() {
+    rotation += ROT_SPEED;
+
+    cards.forEach(function(card, i) {
+      // Angle of this card in the ring
+      var deg   = (rotation + i * STEP) % 360;
+      var rad   = deg * Math.PI / 180;
+      var sinT  = Math.sin(rad);
+      var cosT  = Math.cos(rad);
+
+      // 3D position on ring
+      var x = sinT * RADIUS;
+      var z = cosT * RADIUS;          // -RADIUS (back) … +RADIUS (front)
+
+      // Depth factor 0 (back) → 1 (front)
+      var depth = (cosT + 1) / 2;
+
+      // Base transforms
+      var baseScale   = 0.48 + depth * 0.62;   // 0.48 back → 1.1 front
+      var opacity     = 0.12 + depth * 0.88;   // 0.12 → 1.0
+      var rotY        = -deg;                   // card faces viewer
+
+      // Spring hover boost
+      var hoverTarget = (hoveredIdx === i) ? 1 : 0;
+      springStep(springs[i], hoverTarget);
+      var hv = springs[i].val;
+
+      var finalScale  = baseScale + hv * 0.14;
+      var finalZ      = z + hv * 55;
+      var finalOp     = Math.min(1, opacity + hv * 0.15);
+      var zIndex      = Math.round(depth * 100) + Math.round(hv * 20);
+
+      card.style.transform = [
+        'translateX(' + x.toFixed(2) + 'px)',
+        'translateZ(' + finalZ.toFixed(2) + 'px)',
+        'rotateY('    + rotY.toFixed(2) + 'deg)',
+        'scale('      + finalScale.toFixed(4) + ')'
+      ].join(' ');
+      card.style.opacity = finalOp.toFixed(3);
+      card.style.zIndex  = zIndex;
+
+      // Front card glow
+      card.classList.toggle('cf-card--front', depth > 0.96);
+
+      // Dim non-hovered cards when any is hovered
+      if (hoveredIdx !== -1 && hoveredIdx !== i) {
+        card.style.opacity = (finalOp * (0.55 + depth * 0.3)).toFixed(3);
+      }
+    });
+
+    requestAnimationFrame(frame);
+  }
+
+  cards.forEach(function(card, i) {
+    card.addEventListener('mouseenter', function() { hoveredIdx = i; });
+    card.addEventListener('mouseleave', function() { hoveredIdx = -1; });
+  });
+
+  frame();
+})();
+
 // ── NAVBAR HIDE ON SCROLL ──
 (function () {
   const nav = document.querySelector('.navbar')

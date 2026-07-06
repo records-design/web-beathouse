@@ -211,63 +211,94 @@ body {
 }
 
 /* ── CAROUSEL 3D ANILLO ── */
-.carousel3d-scene {
+/* ── COVERFLOW 3D ── */
+.cf-scene {
   position: relative;
   z-index: 1;
+  height: 100%;
+  max-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1200px;
-  height: 100%;
-  max-height: calc(100vh - 120px);
+  perspective: 900px;
   overflow: hidden;
 }
 
-.carousel3d-wobble {
-  transform-style: preserve-3d;
-  animation: tilt3d 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-}
-
-@keyframes tilt3d {
-  0%   { transform: rotateX(38deg)  rotateZ(5deg); }
-  25%  { transform: rotateX(5deg)   rotateZ(-3deg); }
-  50%  { transform: rotateX(-38deg) rotateZ(5deg); }
-  75%  { transform: rotateX(5deg)   rotateZ(-3deg); }
-  100% { transform: rotateX(38deg)  rotateZ(5deg); }
-}
-
-.carousel3d-ring {
+.cf-stage {
   position: relative;
-  width: 160px;
-  height: 225px;
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
-  animation: spin3d 12s linear infinite;
 }
 
-@keyframes spin3d {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
-
-.carousel3d-wobble:hover .carousel3d-ring,
-.carousel3d-wobble:hover { animation-play-state: paused; }
-
-.card3d {
+.cf-card {
   position: absolute;
-  inset: 0;
-  border-radius: 16px;
+  top: 50%;
+  left: 50%;
+  width: 155px;
+  height: 218px;
+  margin-top: -109px;
+  margin-left: -77px;
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.65);
-  transform: rotateY(calc(var(--i) * 40deg)) translateZ(310px);
-  transition: box-shadow 0.3s;
+  will-change: transform, opacity;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: box-shadow 0.3s ease;
 }
 
-.card3d img {
+.cf-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center 15%;
   display: block;
+  pointer-events: none;
+}
+
+.cf-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 32px 14px 14px;
+  background: linear-gradient(to top, rgba(5,0,15,0.92) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cf-label span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.cf-label em {
+  font-size: 9px;
+  font-style: normal;
+  color: var(--fucsia);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.cf-card--front {
+  box-shadow:
+    0 0 0 1px rgba(230,0,126,0.2),
+    0 20px 60px rgba(0,0,0,0.6),
+    0 0 40px rgba(100,0,180,0.18);
+}
+
+.cf-floor {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(100,0,200,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ── TICKER ARTISTAS ── */
