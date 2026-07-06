@@ -361,13 +361,13 @@
         </div>
         <div class="servicios-header-right">
           <p class="servicios-desc">Desarrollamos artistas de forma integral — desde la identidad hasta la proyección internacional, combinando creatividad, estrategia e infraestructura de primer nivel.</p>
-          <a href="#contacto" class="servicios-cta-btn">Hablemos de tu proyecto →</a>
+          <a href="#" class="servicios-cta-btn" id="openFormModal">Hablemos de tu proyecto →</a>
         </div>
       </div>
 
       <div class="servicios-list">
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">01</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Distribución Digital</h3>
@@ -379,7 +379,7 @@
           <span class="servicio-row-arrow">→</span>
         </a>
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">02</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Desarrollo Artístico</h3>
@@ -391,7 +391,7 @@
           <span class="servicio-row-arrow">→</span>
         </a>
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">03</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Producción Musical</h3>
@@ -403,7 +403,7 @@
           <span class="servicio-row-arrow">→</span>
         </a>
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">04</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Marketing Digital</h3>
@@ -415,7 +415,7 @@
           <span class="servicio-row-arrow">→</span>
         </a>
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">05</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Producción Audiovisual</h3>
@@ -427,7 +427,7 @@
           <span class="servicio-row-arrow">→</span>
         </a>
 
-        <a href="#contacto" class="servicio-row">
+        <a href="#" class="servicio-row open-form-modal">
           <span class="servicio-num">06</span>
           <div class="servicio-row-body">
             <h3 class="servicio-row-title">Publishing &amp; Sync</h3>
@@ -650,6 +650,113 @@
       <span class="footer-star">*</span>
     </div>
   </footer>
+
+  <!-- MODAL: PRESENTÁ TU PROYECTO -->
+  <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="form-modal-backdrop" id="formModalBackdrop"></div>
+    <div class="form-modal-card">
+      <button class="form-modal-close" id="closeFormModal" aria-label="Cerrar">✕</button>
+      <div class="form-wrap">
+        <img src="imagenes/Beathouse_Logo_Magenta (1).png" alt="BeatHouse" class="form-modal-logo">
+        <div class="form-header" id="formHeader">
+          <h2 class="form-heading">Presentá tu proyecto.</h2>
+          <p class="form-intro">Artistas y proyectos que quieran ser parte del universo BeatHouse.</p>
+        </div>
+
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="form-success-icon">✦</div>
+          <h3 class="form-success-title">¡Recibimos tu proyecto!</h3>
+          <p class="form-success-msg">Revisamos cada propuesta con atención. Si tu proyecto avanza, nos ponemos en contacto con vos. Gracias por elegirnos.</p>
+          <button type="button" class="btn-primary" id="formSuccessReset" style="margin-top:24px;">Enviar otro →</button>
+        </div>
+
+        <form class="form-wizard" id="formWizard" novalidate action="https://formspree.io/f/xdkopkao" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo proyecto recibido — BeatHouse">
+          <input type="hidden" name="_replyto" id="replyToField" value="">
+
+          <div class="wizard-progress">
+            <div class="wizard-steps">
+              <div class="wizard-step active" data-step="1"><span class="wizard-step-dot"></span><span class="wizard-step-label">Contacto</span></div>
+              <div class="wizard-step-line"></div>
+              <div class="wizard-step" data-step="2"><span class="wizard-step-dot"></span><span class="wizard-step-label">Proyecto</span></div>
+              <div class="wizard-step-line"></div>
+              <div class="wizard-step" data-step="3"><span class="wizard-step-dot"></span><span class="wizard-step-label">Material</span></div>
+            </div>
+          </div>
+
+          <div class="wizard-panel active" data-panel="1">
+            <p class="wizard-panel-label">01 — Datos de contacto</p>
+            <div class="form-field"><label>Nombre</label><input type="text" name="nombre" autocomplete="name" placeholder="Ej: Juan García"></div>
+            <div class="form-field"><label>Email</label><input type="email" name="email" autocomplete="email" placeholder="Ej: hola@tuartista.com"></div>
+            <div class="form-field"><label>WhatsApp</label><input type="tel" name="whatsapp" placeholder="Ej: +54 9 11 1234-5678"></div>
+            <div class="wizard-nav"><span></span><button type="button" class="btn-wizard-next" data-next="2">Continuar →</button></div>
+          </div>
+
+          <div class="wizard-panel" data-panel="2">
+            <p class="wizard-panel-label">02 — Tu proyecto</p>
+            <div class="form-field">
+              <label>¿Qué querés presentar?</label>
+              <div class="form-select" id="categorySelect">
+                <button class="form-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" id="categoryTrigger">
+                  <span class="form-select-value" id="categoryValue">Seleccioná una categoría</span>
+                  <span class="form-select-arrow" aria-hidden="true">↓</span>
+                </button>
+                <input type="hidden" name="categoria" id="categoriaInput">
+                <div class="form-select-menu" role="listbox" id="categoryMenu">
+                  <button class="form-select-option" type="button" data-value="artista" role="option">Artista musical</button>
+                  <button class="form-select-option" type="button" data-value="banda" role="option">Banda</button>
+                  <button class="form-select-option" type="button" data-value="productor" role="option">Productor / Compositor</button>
+                  <button class="form-select-option" type="button" data-value="manager" role="option">Manager / Representante</button>
+                  <button class="form-select-option" type="button" data-value="marca" role="option">Marca o proyecto</button>
+                  <button class="form-select-option" type="button" data-value="otro" role="option">Otro</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Descripción</label>
+              <textarea name="descripcion" rows="4" placeholder="Contanos quién sos, qué hacés y qué buscás lograr."></textarea>
+              <span class="form-field-hint">Cuanto más detalle, mejor podemos evaluar tu propuesta.</span>
+            </div>
+            <div class="wizard-nav">
+              <button type="button" class="btn-wizard-back" data-back="1">← Volver</button>
+              <button type="button" class="btn-wizard-next" data-next="3">Agregar material →</button>
+            </div>
+          </div>
+
+          <div class="wizard-panel" data-panel="3">
+            <p class="wizard-panel-label">03 — Material y enlaces</p>
+            <div class="form-field">
+              <label>Subí tu material <span style="font-weight:400;opacity:0.5;">(MP3 · WAV · MP4 · PDF · ZIP)</span></label>
+              <div class="uc-file-list" id="ucFileList"></div>
+              <div class="uc-upload-zone" id="ucUploadZone">
+                <div class="uc-upload-inner" id="ucUploadInner">
+                  <span class="uc-upload-icon">↑</span>
+                  <span class="uc-upload-text">Arrastrá o hacé click para subir</span>
+                  <span class="uc-upload-formats">Máx. 100 MB por archivo</span>
+                </div>
+                <div class="uc-upload-progress" id="ucProgress" style="display:none;">
+                  <div class="uc-progress-bar"><div class="uc-progress-fill" id="ucProgressFill"></div></div>
+                  <span class="uc-progress-label" id="ucProgressLabel">Subiendo...</span>
+                  <span class="uc-progress-hint" id="ucProgressHint"></span>
+                </div>
+              </div>
+              <input type="hidden" name="archivos" id="ucFilesData">
+            </div>
+            <div class="form-field"><label>Spotify</label><input type="url" name="spotify" placeholder="https://open.spotify.com/artist/..."></div>
+            <div class="form-field"><label>YouTube</label><input type="url" name="youtube" placeholder="https://youtube.com/@tucanal"></div>
+            <div class="form-field"><label>Apple Music</label><input type="url" name="apple" placeholder="https://music.apple.com/..."></div>
+            <div class="form-field"><label>Instagram</label><input type="url" name="instagram-url" placeholder="https://instagram.com/@tuusuario"></div>
+            <div class="form-field"><label>TikTok</label><input type="url" name="tiktok" placeholder="https://tiktok.com/@tuusuario"></div>
+            <span class="form-field-hint">Podés dejar en blanco los que no uses.</span>
+            <div class="wizard-nav">
+              <button type="button" class="btn-wizard-back" data-back="2">← Volver</button>
+              <button type="submit" class="btn-submit" id="btnSubmit">Enviar proyecto →</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

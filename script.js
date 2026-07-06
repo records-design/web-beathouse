@@ -142,6 +142,207 @@
   })
 })();
 
+// ── FORM MODAL ──
+(function () {
+  var modal = document.getElementById('formModal');
+  if (!modal) return;
+
+  function openModal() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.getElementById('openFormModal')?.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+  document.querySelectorAll('.open-form-modal').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+  });
+  document.getElementById('closeFormModal')?.addEventListener('click', closeModal);
+  document.getElementById('formModalBackdrop')?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  // Wizard
+  var panels = document.querySelectorAll('.wizard-panel');
+  var steps  = document.querySelectorAll('.wizard-step');
+
+  function showPanel(n) {
+    panels.forEach(function (p) { p.classList.toggle('active', +p.dataset.panel === n); });
+    steps.forEach(function (s) {
+      var sn = +s.dataset.step;
+      s.classList.toggle('active', sn === n);
+      s.classList.toggle('done', sn < n);
+    });
+  }
+
+  document.querySelectorAll('[data-next]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var from = +btn.closest('[data-panel]')?.dataset.panel;
+      if (from === 1) {
+        var nombre = document.querySelector('#formWizard [name="nombre"]');
+        var email  = document.querySelector('#formWizard [name="email"]');
+        var ok = true;
+        [nombre, email].forEach(function (field) {
+          var empty = !field.value.trim();
+          var badEmail = field === email && field.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+          field.closest('.form-field').classList.toggle('field-error', empty || badEmail);
+          if (empty || badEmail) ok = false;
+        });
+        if (!ok) return;
+      }
+      showPanel(+btn.dataset.next);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(function (btn) {
+    btn.addEventListener('click', function () { showPanel(+btn.dataset.back); });
+  });
+  document.querySelectorAll('#formWizard [name="nombre"], #formWizard [name="email"]').forEach(function (f) {
+    f.addEventListener('input', function () { f.closest('.form-field').classList.remove('field-error'); });
+  });
+
+  // Category dropdown
+  var trigger = document.getElementById('categoryTrigger');
+  var menu    = document.getElementById('categoryMenu');
+  trigger?.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('.form-select-option').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      document.getElementById('categoryValue').textContent = opt.textContent;
+      document.getElementById('categoriaInput').value = opt.dataset.value;
+      trigger.classList.add('has-value');
+      menu.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (menu && !menu.contains(e.target) && e.target !== trigger) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // File upload via Uploadcare
+  (function () {
+    var UPLOADCARE_PK = 'demopublickey';
+    var MAX_MB = 100;
+    var ALLOWED = ['mp3', 'wav', 'mp4', 'pdf', 'zip'];
+    var zone    = document.getElementById('ucUploadZone');
+    var inner   = document.getElementById('ucUploadInner');
+    var progress = document.getElementById('ucProgress');
+    var fill    = document.getElementById('ucProgressFill');
+    var label   = document.getElementById('ucProgressLabel');
+    var hint    = document.getElementById('ucProgressHint');
+    var fileList = document.getElementById('ucFileList');
+    if (!zone) return;
+    var files = [], uploading = false;
+
+    function updateFilesData() {
+      document.getElementById('ucFilesData').value = files.map(function (f) {
+        return f.name + ': ' + f.url + (f.vt ? ' [' + f.vt + ']' : '');
+      }).join(' | ');
+    }
+    function renderFileList() {
+      fileList.innerHTML = '';
+      files.forEach(function (f, i) {
+        var row = document.createElement('div');
+        row.className = 'uc-upload-done';
+        var icon = document.createElement('span'); icon.className = 'uc-done-icon'; icon.textContent = '✓';
+        var name = document.createElement('span'); name.className = 'uc-done-name'; name.textContent = f.name;
+        var btn  = document.createElement('button'); btn.type = 'button'; btn.className = 'uc-remove-btn'; btn.textContent = '✕';
+        btn.addEventListener('click', function () { files.splice(i, 1); renderFileList(); updateFilesData(); });
+        row.appendChild(icon); row.appendChild(name); row.appendChild(btn);
+        fileList.appendChild(row);
+      });
+    }
+    function uploadFile(file) {
+      if (uploading) { alert('Esperá que termine el archivo actual.'); return; }
+      var ext = file.name.split('.').pop().toLowerCase();
+      if (!ALLOWED.includes(ext)) { alert('Formato no permitido. Usá MP3, WAV, MP4, PDF o ZIP.'); return; }
+      if (file.size > MAX_MB * 1024 * 1024) { alert('El archivo supera los 100 MB.'); return; }
+      uploading = true;
+      inner.style.display = 'none'; progress.style.display = '';
+      fill.style.width = '0%'; label.textContent = 'Subiendo...';
+      var fd = new FormData();
+      fd.append('UPLOADCARE_PUB_KEY', UPLOADCARE_PK);
+      fd.append('UPLOADCARE_STORE', 'auto');
+      fd.append('file', file);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://upload.uploadcare.com/base/');
+      xhr.upload.addEventListener('progress', function (ev) {
+        if (ev.lengthComputable) { var pct = Math.round(ev.loaded / ev.total * 100); fill.style.width = pct + '%'; label.textContent = pct + '%'; }
+      });
+      xhr.addEventListener('load', function () {
+        if (xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          var url = 'https://ucarecdn.com/' + data.file + '/';
+          files.push({ url: url, name: file.name, vt: '' });
+          renderFileList(); updateFilesData();
+        }
+        uploading = false; progress.style.display = 'none'; inner.style.display = ''; fill.style.width = '0%';
+      });
+      xhr.addEventListener('error', function () {
+        uploading = false; inner.style.display = ''; progress.style.display = 'none';
+        alert('Error de red. Intentá de nuevo.');
+      });
+      xhr.send(fd);
+    }
+    zone.addEventListener('click', function () {
+      if (uploading) return;
+      var inp = document.createElement('input');
+      inp.type = 'file'; inp.accept = '.mp3,.wav,.mp4,.pdf,.zip';
+      inp.addEventListener('change', function () { if (this.files[0]) uploadFile(this.files[0]); });
+      inp.click();
+    });
+    zone.addEventListener('dragover', function (e) { e.preventDefault(); zone.classList.add('drag-over'); });
+    zone.addEventListener('dragleave', function () { zone.classList.remove('drag-over'); });
+    zone.addEventListener('drop', function (e) {
+      e.preventDefault(); zone.classList.remove('drag-over');
+      if (e.dataTransfer.files[0]) uploadFile(e.dataTransfer.files[0]);
+    });
+  })();
+
+  // Form submit
+  document.getElementById('formWizard')?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var emailVal = this.querySelector('[name="email"]')?.value;
+    if (emailVal) document.getElementById('replyToField').value = emailVal;
+    var btn = document.getElementById('btnSubmit');
+    btn.textContent = 'Enviando...'; btn.disabled = true;
+    try {
+      var res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('formHeader').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'flex';
+        document.querySelector('.form-modal-card').classList.add('success-state');
+      } else {
+        btn.textContent = 'Error. Intentá de nuevo.'; btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Error. Intentá de nuevo.'; btn.disabled = false;
+    }
+  });
+
+  document.getElementById('formSuccessReset')?.addEventListener('click', function () {
+    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('formHeader').style.display = 'block';
+    var form = document.getElementById('formWizard');
+    form.style.display = 'block'; form.reset();
+    document.querySelector('.form-modal-card').classList.remove('success-state');
+    document.getElementById('btnSubmit').textContent = 'Enviar proyecto →';
+    document.getElementById('btnSubmit').disabled = false;
+    document.getElementById('categoryValue').textContent = 'Seleccioná una categoría';
+    document.getElementById('categoriaInput').value = '';
+    document.getElementById('categoryTrigger').classList.remove('has-value');
+    showPanel(1);
+  });
+})();
+
 // ── COUNTDOWN ──
 (function () {
   const target = new Date('2026-06-26T00:00:00-03:00').getTime()

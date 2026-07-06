@@ -1830,3 +1830,218 @@ body {
 @media (max-width: 900px) {
   .hero-copy { left: 24px; right: 24px; }
 }
+
+/* ══════════════════════════════════════════
+   FORM MODAL — BeatHouse
+══════════════════════════════════════════ */
+.form-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.form-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.form-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 2, 16, 0.75);
+  backdrop-filter: blur(10px);
+}
+.form-modal-card {
+  position: relative;
+  background: #170825;
+  border: 1px solid rgba(230, 0, 126, 0.2);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(230,0,126,0.1);
+  transform: translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.form-modal.open .form-modal-card { transform: translateY(0); }
+.form-modal-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 34px; height: 34px;
+  border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.6);
+  font-size: 15px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2; transition: background 0.2s, color 0.2s;
+}
+.form-modal-close:hover { background: rgba(230,0,126,0.2); color: #fff; }
+
+.form-wrap { padding: 44px 40px 40px; }
+.form-modal-logo { height: 36px; width: auto; display: block; margin-bottom: 20px; }
+.form-header { margin-bottom: 32px; }
+.form-heading {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900; letter-spacing: -0.02em;
+  color: #fff; margin: 0 0 8px;
+}
+.form-intro { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0; }
+
+/* Success state */
+.form-success {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  padding: 20px 0 32px; gap: 12px;
+}
+.form-success-icon { font-size: 44px; color: var(--fucsia); }
+.form-success-title { font-size: 26px; font-weight: 800; color: #fff; margin: 0; }
+.form-success-msg { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 380px; line-height: 1.6; margin: 0; }
+.form-modal-card.success-state { max-width: 440px; }
+.form-modal-card.success-state .form-modal-logo { margin: 0 auto 12px; }
+
+/* Wizard progress */
+.wizard-progress { margin-bottom: 36px; }
+.wizard-steps { display: flex; align-items: center; gap: 0; }
+.wizard-step { display: flex; align-items: center; gap: 8px; flex: none; }
+.wizard-step-dot {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: transparent; transition: all 0.3s;
+}
+.wizard-step.active .wizard-step-dot { border-color: var(--fucsia); background: var(--fucsia); }
+.wizard-step.done .wizard-step-dot { border-color: var(--fucsia); background: var(--fucsia); }
+.wizard-step-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.35); }
+.wizard-step.active .wizard-step-label { color: #fff; }
+.wizard-step.done .wizard-step-label { color: var(--rosa); }
+.wizard-step-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); margin: 0 12px; min-width: 40px; }
+
+/* Panels */
+.wizard-panel { display: none; }
+.wizard-panel.active { display: block; }
+.wizard-panel-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  margin-bottom: 22px;
+}
+
+/* Fields */
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 8px; color: rgba(255,255,255,0.55);
+}
+.form-field input, .form-field textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 12px; font-size: 14px; font-family: inherit;
+  background: rgba(255,255,255,0.04); color: #fff;
+  transition: border-color 0.2s; outline: none; box-sizing: border-box;
+}
+.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-field input:focus, .form-field textarea:focus { border-color: var(--fucsia); background: rgba(230,0,126,0.05); }
+.form-field.field-error input, .form-field.field-error textarea { border-color: #ff4466; }
+.form-field.field-error::after { content: 'Campo requerido'; display: block; font-size: 11px; color: #ff4466; margin-top: 5px; }
+.form-field.field-error:has([type="email"])::after { content: 'Ingresá un email válido'; }
+.form-field.field-error:has([type="email"]:placeholder-shown)::after { content: 'Campo requerido'; }
+.form-field textarea { resize: vertical; min-height: 90px; }
+.form-field-hint { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 6px; display: block; }
+
+/* Custom select */
+.form-select { position: relative; }
+.form-select-trigger {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 12px; font-size: 14px; font-family: inherit;
+  background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5);
+  cursor: pointer; text-align: left;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: border-color 0.2s; outline: none;
+}
+.form-select-trigger.has-value { color: #fff; }
+.form-select-trigger:focus, .form-select-trigger:hover { border-color: var(--fucsia); }
+.form-select-menu {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #1e0b2e; border: 1.5px solid rgba(230,0,126,0.25);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  display: none; z-index: 20;
+}
+.form-select-menu.open { display: block; }
+.form-select-option {
+  width: 100%; padding: 11px 16px; border: none;
+  background: none; font-size: 14px; font-family: inherit;
+  text-align: left; cursor: pointer; color: rgba(255,255,255,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.15s, color 0.15s;
+}
+.form-select-option:last-child { border-bottom: none; }
+.form-select-option:hover { background: rgba(230,0,126,0.15); color: #fff; }
+
+/* Upload zone */
+.uc-upload-zone {
+  border: 1.5px dashed rgba(255,255,255,0.15); border-radius: 14px;
+  cursor: pointer; transition: border-color 0.2s, background 0.2s; overflow: hidden;
+}
+.uc-upload-zone:hover, .uc-upload-zone.drag-over { border-color: var(--fucsia); background: rgba(230,0,126,0.05); }
+.uc-upload-inner { display: flex; flex-direction: column; align-items: center; padding: 28px 24px; gap: 4px; }
+.uc-upload-icon { font-size: 24px; color: var(--fucsia); }
+.uc-upload-text { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.uc-upload-formats { font-size: 11px; color: rgba(255,255,255,0.3); }
+.uc-upload-progress { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.uc-progress-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+.uc-progress-fill { height: 100%; background: var(--fucsia); border-radius: 99px; transition: width 0.2s; width: 0%; }
+.uc-progress-label { font-size: 13px; color: rgba(255,255,255,0.5); text-align: center; }
+.uc-progress-hint { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; }
+.uc-file-list { margin-bottom: 8px; }
+.uc-upload-done { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,0.04); border-radius: 10px; margin-bottom: 6px; }
+.uc-done-icon { color: var(--fucsia); font-size: 16px; font-weight: 700; flex-shrink: 0; }
+.uc-done-name { font-size: 13px; font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgba(255,255,255,0.8); }
+.uc-remove-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 14px; padding: 4px; flex-shrink: 0; transition: color 0.2s; }
+.uc-remove-btn:hover { color: #ff4466; }
+
+/* Nav buttons */
+.wizard-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+.btn-wizard-next {
+  background: var(--fucsia); color: #fff; border: none; border-radius: 100px;
+  padding: 12px 24px; font-size: 14px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background 0.2s, transform 0.15s; letter-spacing: 0.04em;
+}
+.btn-wizard-next:hover { background: #c0006a; transform: translateY(-1px); }
+.btn-wizard-back {
+  background: none; border: none; font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.35); cursor: pointer; font-family: inherit; transition: color 0.2s;
+}
+.btn-wizard-back:hover { color: rgba(255,255,255,0.7); }
+.btn-submit {
+  background: var(--fucsia); color: #fff; border: none; border-radius: 100px;
+  padding: 13px 28px; font-size: 14px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background 0.2s, transform 0.15s; letter-spacing: 0.04em;
+}
+.btn-submit:hover { background: #c0006a; transform: translateY(-1px); }
+
+/* Success reset btn */
+#formSuccessReset {
+  background: var(--fucsia); color: #fff; border: none; border-radius: 100px;
+  padding: 12px 24px; font-size: 14px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background 0.2s;
+}
+#formSuccessReset:hover { background: #c0006a; }
+
+/* Body lock when modal open */
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .form-modal { padding: 0; align-items: flex-end; }
+  .form-modal-card {
+    border-radius: 20px 20px 0 0; max-height: 90dvh;
+    transform: translateY(100%); width: 100%;
+  }
+  .form-modal.open .form-modal-card { transform: translateY(0); }
+  .form-wrap { padding: 28px 20px 24px; }
+}
