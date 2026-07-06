@@ -244,7 +244,7 @@ body {
   width: 158px;
   height: 222px;
   transform-style: preserve-3d;
-  animation: ringSpin 28s linear infinite;
+  animation: ringSpin 18s linear infinite;
 }
 
 @keyframes ringSpin {
@@ -264,20 +264,93 @@ body {
   overflow: hidden;
   transform: rotateY(calc(var(--i) * 30deg)) translateZ(330px);
   box-shadow:
+    0 0 0 1px rgba(255,255,255,0.10) inset,
     0 2px 0 rgba(255,255,255,0.08) inset,
     0 24px 48px rgba(0,0,0,0.7),
     0 4px 16px rgba(0,0,0,0.5);
-  transition: box-shadow 0.4s ease;
+  animation: cardBorderPulse 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.33s);
   cursor: pointer;
   will-change: transform;
 }
 
+@keyframes cardBorderPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.10) inset,
+      0 2px 0 rgba(255,255,255,0.08) inset,
+      0 0 0 1px rgba(230,0,126,0.15),
+      0 24px 48px rgba(0,0,0,0.7),
+      0 4px 16px rgba(0,0,0,0.5),
+      0 0 16px rgba(100,0,200,0.10);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.12) inset,
+      0 2px 0 rgba(255,255,255,0.08) inset,
+      0 0 0 1.5px rgba(230,0,126,0.50),
+      0 24px 48px rgba(0,0,0,0.7),
+      0 4px 16px rgba(0,0,0,0.5),
+      0 0 28px rgba(180,0,220,0.28),
+      0 0 8px rgba(230,0,126,0.18);
+  }
+}
+
+/* Glass highlight – reflejo de vidrio en el borde superior */
+.ring-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0%,
+    rgba(255,255,255,0.04) 55%,
+    transparent 100%
+  );
+  border-radius: 28px 28px 0 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Shimmer sweep – brillo diagonal animado */
+.ring-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 38%,
+    rgba(255,255,255,0.10) 48%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.10) 52%,
+    transparent 62%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  animation: cardShimmer 5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.42s);
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 28px;
+}
+
+@keyframes cardShimmer {
+  0%   { background-position: 200% 0; opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { background-position: -100% 0; opacity: 1; }
+  65%  { opacity: 0; }
+  100% { background-position: -100% 0; opacity: 0; }
+}
+
 .ring-card:hover {
   box-shadow:
+    0 0 0 1px rgba(255,255,255,0.15) inset,
     0 2px 0 rgba(255,255,255,0.12) inset,
-    0 0 0 1.5px rgba(230,0,126,0.5),
+    0 0 0 1.5px rgba(230,0,126,0.6),
     0 32px 64px rgba(0,0,0,0.8),
-    0 0 40px rgba(230,0,126,0.2);
+    0 0 50px rgba(230,0,126,0.28),
+    0 0 100px rgba(120,0,200,0.18);
 }
 
 .ring-card img {
@@ -321,14 +394,16 @@ body {
   bottom: -18%;
   left: 50%;
   transform: translateX(-50%);
-  width: 110%;
-  height: 160px;
-  background: radial-gradient(ellipse 80% 50% at 50% 100%,
-    rgba(120, 0, 220, 0.28) 0%,
-    rgba(230, 0, 126, 0.10) 40%,
-    transparent 70%);
+  width: 130%;
+  height: 200px;
+  background: radial-gradient(ellipse 80% 55% at 50% 100%,
+    rgba(180, 0, 255, 0.38) 0%,
+    rgba(230, 0, 126, 0.22) 35%,
+    rgba(230, 0, 126, 0.06) 60%,
+    transparent 75%);
   pointer-events: none;
   z-index: -1;
+  filter: blur(2px);
 }
 
 .ring-floor-shadow {
