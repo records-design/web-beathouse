@@ -84,6 +84,21 @@ body {
   padding: 72px 60px 40px;
   gap: 40px;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 65% 80% at 18% 55%, rgba(160,0,255,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 72% 65%, rgba(230,0,126,0.12) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* Patrón de puntos sobre el hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-logo-bg {
@@ -103,7 +118,6 @@ body {
 .hero-copy {
   position: relative;
   z-index: 10;
-  max-width: 540px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,6 +125,7 @@ body {
 
 .hero-tag {
   display: inline-block;
+  align-self: flex-start;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -119,7 +134,14 @@ body {
   border: 1px solid rgba(230,0,126,0.4);
   padding: 5px 14px;
   border-radius: 50px;
-  margin-bottom: 18px;
+  margin-bottom: 36px;
+}
+
+.hero-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
 }
 
 .hero-headline {
@@ -128,7 +150,7 @@ body {
   color: var(--white);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 14px;
+  margin-bottom: 28px;
 }
 
 .hero-headline em {
@@ -138,11 +160,11 @@ body {
 }
 
 .hero-sub {
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
-  margin-bottom: 28px;
-  max-width: 420px;
+  margin: 0;
+  max-width: none;
 }
 
 .hero-actions {
