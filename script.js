@@ -55,6 +55,35 @@
   })
 })();
 
+// ── ROSTER THUMB 3D TILT ──
+(function () {
+  const thumbs = document.querySelectorAll('.roster-thumb')
+  if (!thumbs.length) return
+
+  thumbs.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const cx = rect.width / 2
+      const cy = rect.height / 2
+      const rotateY =  ((x - cx) / cx) * 10
+      const rotateX = -((y - cy) / cy) * 8
+      card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.04)'
+      card.style.transition = 'border-color .25s, box-shadow .25s, transform .08s ease-out'
+      const pctX = ((x / rect.width) * 100).toFixed(1) + '%'
+      const pctY = ((y / rect.height) * 100).toFixed(1) + '%'
+      card.style.setProperty('--mx', pctX)
+      card.style.setProperty('--my', pctY)
+    })
+
+    card.addEventListener('mouseleave', function () {
+      card.style.transition = 'border-color .25s, box-shadow .25s, transform .4s ease-out'
+      card.style.transform = ''
+    })
+  })
+})();
+
 // ── PANEL ANIMADO ──
 (function () {
   const rows = document.querySelectorAll('.dif-panel-row')

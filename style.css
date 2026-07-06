@@ -477,8 +477,10 @@ body {
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border-color .2s, transform .2s;
   min-height: 0;
+  transform-style: preserve-3d;
+  transition: border-color .25s, box-shadow .25s, transform .08s ease-out;
+  will-change: transform;
 }
 
 .roster-thumb img {
@@ -487,7 +489,8 @@ body {
   object-fit: cover;
   object-position: center 20%;
   display: block;
-  transition: transform .3s ease;
+  transition: transform .4s ease;
+  pointer-events: none;
 }
 
 .roster-thumb span {
@@ -495,23 +498,43 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px 8px 8px;
+  padding: 24px 8px 10px;
   font-size: 9px;
   font-weight: 800;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
   text-align: center;
   opacity: 0;
-  transition: opacity .2s;
+  transform: translateY(6px);
+  transition: opacity .25s, transform .25s;
 }
 
-.roster-thumb:hover img { transform: scale(1.05); }
-.roster-thumb:hover span { opacity: 1; }
-.roster-thumb:hover { transform: translateY(-3px); }
+/* Reflejo de brillo que sigue al mouse */
+.roster-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(230,0,126,0.18) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  border-radius: 8px;
+}
 
-.roster-thumb.active { border-color: var(--fucsia); }
-.roster-thumb.active span { opacity: 1; color: var(--rosa); }
+.roster-thumb:hover::after { opacity: 1; }
+.roster-thumb:hover img { transform: scale(1.08); }
+.roster-thumb:hover span { opacity: 1; transform: translateY(0); }
+.roster-thumb:hover {
+  border-color: rgba(230,0,126,0.7);
+  box-shadow: 0 0 20px rgba(230,0,126,0.35), 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.roster-thumb.active {
+  border-color: var(--fucsia);
+  box-shadow: 0 0 24px rgba(230,0,126,0.5);
+}
+.roster-thumb.active span { opacity: 1; transform: translateY(0); color: var(--rosa); }
 
 /* Animación de invitación */
 @keyframes thumb-invite {
