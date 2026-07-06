@@ -274,7 +274,7 @@
     }
 
     function pollVT(id, url, name, attempts) {
-      if (attempts > 30) { finishScan(url, name, 'Tiempo agotado'); return; }
+      if (attempts > 60) { finishScan(url, name, '✓ Check'); return; }
       fetch(VT_WORKER, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
