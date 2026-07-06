@@ -90,72 +90,67 @@
       <p class="section-sub">Desarrollamos artistas con identidad, visión y proyección internacional.</p>
     </div>
 
-    <div class="roster-grid">
-      <div class="rg-card" data-img="imagenes/foto-tomas-gimenez.jpg" data-name="TOMAS GIMENEZ" data-genre="Pop" data-desc="Voz potente y letras directas que conectan con una generación.">
-        <img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">TOMAS GIMENEZ</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-crash.jpeg" data-name="CRASH" data-genre="Pop" data-desc="Actitud, flow y una identidad visual que impacta antes de sonar.">
-        <img src="imagenes/foto-crash.jpeg" alt="Crash" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">CRASH</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-maga.jpg" data-name="MAGA" data-genre="Pop" data-desc="Canciones íntimas con producción contemporánea que trascienden fronteras.">
-        <img src="imagenes/foto-maga.jpg" alt="Maga" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">MAGA</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-lucas-barros.jpeg" data-name="LUCAS BARROS" data-genre="Pop / R&amp;B" data-desc="Groove, melodía y una presencia escénica que se siente desde el primer acorde.">
-        <img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" />
-        <div class="rg-overlay"><span class="rg-genre">Pop / R&amp;B</span><span class="rg-name">LUCAS BARROS</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-cone.jpg" data-name="EL CONE" data-genre="Cuarteto" data-desc="El cuarteto que mueve multitudes con energía y ritmo desbordante.">
-        <img src="imagenes/foto-cone.jpg" alt="El Cone" />
-        <div class="rg-overlay"><span class="rg-genre">Cuarteto</span><span class="rg-name">EL CONE</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-Karen Quiroga.jpg" data-name="KAREN QUIROGA" data-genre="Pop" data-desc="Sensibilidad y fuerza en cada canción. Una artista que define su propio camino.">
-        <img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">KAREN QUIROGA</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-beruti.jpg" data-name="BERUTI" data-genre="Pop" data-desc="Composición honesta y una conexión emocional que fideliza audiencias.">
-        <img src="imagenes/foto-beruti.jpg" alt="Beruti" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">BERUTI</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-silvestre.jpeg" data-name="SILVESTRE" data-genre="Folklore" data-desc="Raíces, territorio y una voz que conecta lo ancestral con lo moderno.">
-        <img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" />
-        <div class="rg-overlay"><span class="rg-genre">Folklore</span><span class="rg-name">SILVESTRE</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-Og Karma.jpeg" data-name="OG KARMA" data-genre="Urbano" data-desc="Trap, flow y letras que hablan de la calle con precisión poética.">
-        <img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" />
-        <div class="rg-overlay"><span class="rg-genre">Urbano</span><span class="rg-name">OG KARMA</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-axelsun.jpg" data-name="AXEL SUN" data-genre="Pop" data-desc="Electrónica orgánica y una propuesta sonora que no suena a nada más.">
-        <img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">AXEL SUN</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-anapaula.jpg" data-name="ANA PAULA" data-genre="Pop" data-desc="Voz y presencia que no pasan desapercibidas. Pop con alma y actitud.">
-        <img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" />
-        <div class="rg-overlay"><span class="rg-genre">Pop</span><span class="rg-name">ANA PAULA</span></div>
-      </div>
-      <div class="rg-card" data-img="imagenes/foto-duende.jpeg" data-name="DUENDE" data-genre="Infantil" data-desc="Magia, color y canciones que los chicos aman, con millones de reproducciones.">
-        <img src="imagenes/foto-duende.jpeg" alt="Duende" />
-        <div class="rg-overlay"><span class="rg-genre">Infantil</span><span class="rg-name">DUENDE</span></div>
-      </div>
-    </div>
-  </section>
+    <div class="roster-showcase">
 
-  <!-- ARTIST MODAL -->
-  <div class="artist-modal" id="artistModal" aria-hidden="true">
-    <div class="am-backdrop"></div>
-    <div class="am-panel">
-      <button class="am-close" id="amClose">✕</button>
-      <img class="am-img" id="amImg" src="" alt="" />
-      <div class="am-info">
-        <span class="am-genre" id="amGenre"></span>
-        <h3 class="am-name" id="amName"></h3>
-        <p class="am-desc" id="amDesc"></p>
-        <a href="#" class="am-btn">Escuchar →</a>
+      <!-- FEATURED -->
+      <div class="roster-featured" id="rosterFeatured">
+        <img src="imagenes/foto-tomas-gimenez.jpg" alt="" id="featImg" />
+        <div class="roster-featured-info">
+          <span class="roster-feat-genre" id="featGenre">Pop</span>
+          <h3 class="roster-feat-name" id="featName">TOMAS GIMENEZ</h3>
+          <p class="roster-feat-desc" id="featDesc">Voz potente y letras directas que conectan con una generación.</p>
+          <a href="#" class="roster-feat-btn">Escuchar →</a>
+        </div>
+      </div>
+
+      <!-- THUMBNAILS -->
+      <div class="roster-thumbs" id="rosterThumbs">
+        <div class="roster-thumb active" data-img="imagenes/foto-tomas-gimenez.jpg" data-name="TOMAS GIMENEZ" data-genre="Pop" data-desc="Voz potente y letras directas que conectan con una generación.">
+          <img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" /><span>TOMAS GIMENEZ</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-crash.jpeg" data-name="CRASH" data-genre="Pop" data-desc="Actitud, flow y una identidad visual que impacta antes de sonar.">
+          <img src="imagenes/foto-crash.jpeg" alt="Crash" /><span>CRASH</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-maga.jpg" data-name="MAGA" data-genre="Pop" data-desc="Canciones íntimas con producción contemporánea que trascienden fronteras." data-pos="center 40%">
+          <img src="imagenes/foto-maga.jpg" alt="Maga" /><span>MAGA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-lucas-barros.jpeg" data-name="LUCAS BARROS" data-genre="Pop / R&amp;B" data-desc="Groove, melodía y una presencia escénica que se siente desde el primer acorde.">
+          <img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" /><span>LUCAS BARROS</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-cone.jpg" data-name="EL CONE" data-genre="Cuarteto" data-desc="El cuarteto que mueve multitudes con energía y ritmo desbordante." data-pos="center 65%">
+          <img src="imagenes/foto-cone.jpg" alt="El Cone" /><span>EL CONE</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-Karen Quiroga.jpg" data-name="KAREN QUIROGA" data-genre="Pop" data-desc="Sensibilidad y fuerza en cada canción. Una artista que define su propio camino.">
+          <img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" /><span>KAREN QUIROGA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-beruti.jpg" data-name="BERUTI" data-genre="Pop" data-desc="Composición honesta y una conexión emocional que fideliza audiencias.">
+          <img src="imagenes/foto-beruti.jpg" alt="Beruti" /><span>BERUTI</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-silvestre.jpeg" data-name="SILVESTRE" data-genre="Folklore" data-desc="Raíces, territorio y una voz que conecta lo ancestral con lo moderno.">
+          <img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" /><span>SILVESTRE</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-Og Karma.jpeg" data-name="OG KARMA" data-genre="Urbano" data-desc="Trap, flow y letras que hablan de la calle con precisión poética." data-pos="center 30%">
+          <img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" /><span>OG KARMA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-axelsun.jpg" data-name="AXEL SUN" data-genre="Pop" data-desc="Electrónica orgánica y una propuesta sonora que no suena a nada más.">
+          <img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" /><span>AXEL SUN</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-anapaula.jpg" data-name="ANA PAULA" data-genre="Pop" data-desc="Voz y presencia que no pasan desapercibidas. Pop con alma y actitud.">
+          <img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" /><span>ANA PAULA</span>
+        </div>
+        <div class="roster-thumb" data-img="imagenes/foto-duende.jpeg" data-name="DUENDE" data-genre="Infantil" data-desc="Magia, color y canciones que los chicos aman, con millones de reproducciones.">
+          <img src="imagenes/foto-duende.jpeg" alt="Duende" /><span>DUENDE</span>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- CIERRE -->
+    <div class="roster-footer">
+      <p class="roster-footer-count"><span>12</span> artistas en nuestro roster</p>
+      <a href="#servicios" class="roster-footer-cta">Trabajá con nosotros →</a>
+    </div>
+
+  </section>
 
   <!-- ELIMINAR el bloque viejo de artist-cards que sigue abajo -->
   <div style="display:none">

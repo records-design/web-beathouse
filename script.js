@@ -22,42 +22,36 @@
   }, { passive: true })
 })();
 
-// ── ROSTER MODAL ──
+// ── ROSTER FEATURED ──
 (function () {
-  const cards    = document.querySelectorAll('.rg-card')
-  const modal    = document.getElementById('artistModal')
-  const backdrop = modal && modal.querySelector('.am-backdrop')
-  const closeBtn = document.getElementById('amClose')
-  const amImg    = document.getElementById('amImg')
-  const amName   = document.getElementById('amName')
-  const amGenre  = document.getElementById('amGenre')
-  const amDesc   = document.getElementById('amDesc')
-  if (!cards.length || !modal) return
+  const thumbs   = document.querySelectorAll('.roster-thumb')
+  const featImg  = document.getElementById('featImg')
+  const featName = document.getElementById('featName')
+  const featGenre= document.getElementById('featGenre')
+  const featDesc = document.getElementById('featDesc')
+  if (!thumbs.length || !featImg) return
 
-  function openModal(card) {
-    amImg.src           = card.dataset.img
-    amImg.alt           = card.dataset.name
-    amName.textContent  = card.dataset.name
-    amGenre.textContent = card.dataset.genre
-    amDesc.textContent  = card.dataset.desc
-    modal.classList.add('is-open')
-    document.body.style.overflow = 'hidden'
+  function setFeatured(thumb) {
+    thumbs.forEach(t => t.classList.remove('active'))
+    thumb.classList.add('active')
+    featImg.style.opacity = '0'
+    setTimeout(function () {
+      featImg.src = thumb.dataset.img
+      featImg.style.objectPosition = thumb.dataset.pos || 'top'
+      featName.textContent  = thumb.dataset.name
+      featGenre.textContent = thumb.dataset.genre
+      featDesc.textContent  = thumb.dataset.desc
+      featImg.style.opacity = '1'
+    }, 200)
   }
 
-  function closeModal() {
-    modal.classList.remove('is-open')
-    document.body.style.overflow = ''
-  }
+  const thumbsContainer = document.getElementById('rosterThumbs')
 
-  cards.forEach(function (card) {
-    card.addEventListener('click', function () { openModal(card) })
-  })
-
-  if (backdrop) backdrop.addEventListener('click', closeModal)
-  if (closeBtn) closeBtn.addEventListener('click', closeModal)
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal()
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      setFeatured(thumb)
+      if (thumbsContainer) thumbsContainer.classList.add('interacted')
+    })
   })
 })();
 
