@@ -229,7 +229,7 @@
   // File upload via Uploadcare + VirusTotal scan
   (function () {
     var UPLOADCARE_PK = 'd95f11db670abc7ce278'; // mismo key que babidibu — reemplazá si tenés uno propio
-    var VT_WORKER = 'https://vt-proxy-beathouse.TU-USUARIO.workers.dev'; // reemplazá con tu worker URL
+    var VT_WORKER = 'https://vt-proxy.babidibu-records.workers.dev';
     var MAX_MB = 100;
     var ALLOWED = ['mp3', 'wav', 'mp4', 'pdf', 'zip'];
     var zone     = document.getElementById('ucUploadZone');
