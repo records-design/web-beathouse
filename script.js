@@ -111,15 +111,6 @@
     });
   }
 
-  // Glitch flash en thumbnail mouseenter
-  document.querySelectorAll('.roster-thumb').forEach(function (thumb) {
-    thumb.addEventListener('mouseenter', function () {
-      thumb.classList.remove('glitching');
-      void thumb.offsetWidth; // reflow para reiniciar animación
-      thumb.classList.add('glitching');
-      setTimeout(function () { thumb.classList.remove('glitching'); }, 400);
-    });
-  });
 })();
 
 // ── ROSTER THUMB 3D TILT ──
