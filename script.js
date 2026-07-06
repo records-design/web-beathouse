@@ -288,9 +288,9 @@
           var malicious  = stats.malicious  || 0;
           var suspicious = stats.suspicious || 0;
           var total = (stats.harmless || 0) + malicious + suspicious + (stats.undetected || 0);
-          var result = malicious > 0
+          var result = malicious >= 3
             ? '✕ No permitido: ' + malicious + '/' + total + ' motores detectaron amenazas'
-            : suspicious > 0
+            : suspicious >= 5
               ? '⚠ Sospechoso: ' + suspicious + '/' + total + ' motores'
               : '✓ Check';
           finishScan(url, name, result);
