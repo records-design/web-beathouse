@@ -591,23 +591,22 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform .45s ease, filter .35s ease;
-  opacity: 0.92;
+  transition: transform .45s ease, filter .4s ease;
+  opacity: 1;
 }
 .rcard:hover .rcard-photo img {
-  transform: scale(1.07);
-  filter: brightness(1.08) saturate(1.12);
+  transform: scale(1.05);
+  filter: grayscale(1) brightness(0.82);
 }
 
 .rcard::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(8,2,14,1) 0%, rgba(8,2,14,0.55) 45%, rgba(8,2,14,0.05) 100%);
+  background: linear-gradient(to top, rgba(8,2,14,0.95) 0%, rgba(8,2,14,0.3) 35%, transparent 60%);
   z-index: 1;
-  transition: opacity .3s;
+  pointer-events: none;
 }
-.rcard:hover::before { opacity: 0; }
 
 .rcard-info {
   position: absolute;
@@ -678,21 +677,18 @@ body {
 .rcard:nth-child(11) { animation-delay: .55s; }
 .rcard:nth-child(12) { animation-delay: .60s; }
 
-/* Glass hover overlay — solo cubre la mitad inferior */
+/* Glass hover overlay — cubre toda la card */
 .rcard-hover {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  top: 48%;
+  inset: 0;
   z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 14px 16px 16px;
-  background: rgba(8, 2, 14, 0.62);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  padding: 18px 16px 16px;
+  background: linear-gradient(to top, rgba(8,2,14,0.92) 0%, rgba(8,2,14,0.6) 55%, rgba(8,2,14,0.1) 100%);
   opacity: 0;
-  transition: opacity .28s ease;
+  transition: opacity .3s ease;
 }
 .rcard:hover .rcard-hover { opacity: 1; }
 
