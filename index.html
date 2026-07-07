@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=11" />
 </head>
 <body>
 
@@ -1003,5 +1003,18 @@
   </svg>
 
   <script src="script.js"></script>
+  <!-- MINI PLAYER -->
+  <div class="mini-player" id="miniPlayer" aria-live="polite">
+    <div class="mini-player-artist">
+      <img class="mini-player-img" id="miniPlayerImg" src="" alt="" />
+      <div class="mini-player-meta">
+        <p class="mini-player-name" id="miniPlayerName"></p>
+        <span class="mini-player-genre" id="miniPlayerGenre"></span>
+      </div>
+    </div>
+    <div class="mini-player-embed" id="miniPlayerEmbed"></div>
+    <button class="mini-player-close" id="miniPlayerClose" aria-label="Cerrar player">✕</button>
+  </div>
+
 </body>
 </html>

@@ -3457,3 +3457,100 @@ body.modal-open { overflow: hidden; }
   .nosotros-actions { flex-direction: column; align-items: flex-start; }
   .nos-btn-primary, .nos-btn-secondary { width: 100%; justify-content: center; }
 }
+
+/* ── MINI PLAYER ── */
+.mini-player {
+  position: fixed;
+  bottom: -130px;
+  left: 0; right: 0;
+  z-index: 600;
+  background: rgba(10, 2, 16, 0.92);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border-top: 1px solid rgba(230,0,126,0.3);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 28px 10px 20px;
+  transition: bottom .38s cubic-bezier(.22,.68,0,1.2);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.5);
+}
+.mini-player.open { bottom: 0; }
+
+.mini-player-artist {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 160px;
+}
+.mini-player-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(230,0,126,0.3);
+  flex-shrink: 0;
+}
+.mini-player-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 2px;
+  white-space: nowrap;
+}
+.mini-player-genre {
+  font-size: 10px;
+  color: #E6007E;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mini-player-embed {
+  flex: 1;
+  min-width: 0;
+}
+.mini-player-embed iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  display: block;
+}
+.mini-player-close {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, color .2s;
+}
+.mini-player-close:hover { background: rgba(230,0,126,0.2); color: #fff; border-color: #E6007E; }
+
+/* Play button en las cards */
+.rcard-btn-play {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #E6007E;
+  border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .2s, transform .15s;
+  text-decoration: none;
+}
+.rcard-btn-play:hover { background: #ff1a8c; transform: scale(1.1); }
+.rcard-btn-play svg { width: 13px; height: 13px; fill: #fff; margin-left: 2px; }
+
+@media (max-width: 768px) {
+  .mini-player { padding: 8px 16px; gap: 12px; }
+  .mini-player-artist { min-width: 100px; }
+  .mini-player-name { font-size: 11px; }
+}

@@ -709,3 +709,53 @@
   }, { threshold: 0.2 })
   obs.observe(card)
 })();
+
+// ── MINI PLAYER ──
+(function () {
+  var player   = document.getElementById('miniPlayer')
+  var embedEl  = document.getElementById('miniPlayerEmbed')
+  var nameEl   = document.getElementById('miniPlayerName')
+  var genreEl  = document.getElementById('miniPlayerGenre')
+  var imgEl    = document.getElementById('miniPlayerImg')
+  var closeBtn = document.getElementById('miniPlayerClose')
+  if (!player) return
+
+  var currentSp = null
+
+  var SVG_PLAY = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'
+
+  // Insertar botón play en cada card con Spotify
+  document.querySelectorAll('.rcard[data-spotify]').forEach(function (card) {
+    var actions = card.querySelector('.rcard-hover-actions')
+    if (!actions) return
+    var btn = document.createElement('button')
+    btn.className = 'rcard-btn-play'
+    btn.setAttribute('aria-label', 'Escuchar preview')
+    btn.innerHTML = SVG_PLAY
+    btn.addEventListener('click', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      var sp = card.dataset.spotify
+      if (sp === currentSp) return
+      currentSp = sp
+      var name  = card.querySelector('.rcard-hover-name')
+      var genre = card.querySelector('.rcard-hover-genre')
+      var photo = card.querySelector('.rcard-photo img')
+      nameEl.textContent  = name  ? name.textContent  : ''
+      genreEl.textContent = genre ? genre.textContent : ''
+      imgEl.src = photo ? photo.src : ''
+      imgEl.alt = name  ? name.textContent : ''
+      embedEl.innerHTML = '<iframe src="https://open.spotify.com/embed/artist/' + sp +
+        '?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+      player.classList.add('open')
+    })
+    // Insertar antes del botón Escuchar
+    actions.insertBefore(btn, actions.firstChild)
+  })
+
+  closeBtn.addEventListener('click', function () {
+    player.classList.remove('open')
+    embedEl.innerHTML = ''
+    currentSp = null
+  })
+})();
