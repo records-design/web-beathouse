@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   --card-bg:  #250B23;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: linear-gradient(160deg, #1E0720 0%, #250B23 40%, #42194A 70%, #1E0720 100%);
@@ -3105,7 +3105,8 @@ body.modal-open { overflow: hidden; }
     gap: 0;
   }
   .ring-scene { display: none; }
-  .hero-headline { font-size: clamp(32px, 9vw, 52px); }
+  .hero-headline { font-size: clamp(28px, 8vw, 44px); }
+  .hero-headline span { white-space: normal !important; }
   .hero-sub { font-size: 15px; }
 
   /* Roster */
