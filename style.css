@@ -3158,6 +3158,11 @@ body.modal-open { overflow: hidden; }
 
   /* Lanzamientos */
   .lanzamientos { padding: 56px 16px 40px; }
+  .section-title {
+    left: 0 !important;
+    display: block !important;
+    width: 100% !important;
+  }
   .lanz-featured {
     grid-template-columns: 1fr;
     gap: 28px;
