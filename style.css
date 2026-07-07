@@ -1772,44 +1772,62 @@ body {
 
 /* ── LANZAMIENTOS ── */
 .lanzamientos {
-  padding: 50px 60px 40px;
+  padding: 80px 0 80px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background glow blob */
+.lanzamientos::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px; height: 500px;
+  background: radial-gradient(ellipse, rgba(230,0,126,0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .lanzamientos .section-title {
-  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  left: 0;
+  transform: none;
+  text-align: center;
+  margin-bottom: 8px;
   text-transform: none;
   letter-spacing: normal;
   color: var(--rosa);
-  text-align: center;
+  font-size: clamp(26px, 4vw, 48px);
 }
 
 .lanzamientos .section-sub {
-  margin-bottom: 48px;
-  color: rgba(255,255,255,0.65);
-  font-size: 16px;
+  text-align: center;
+  margin-bottom: 52px;
+  color: rgba(255,255,255,0.55);
+  font-size: 15px;
 }
 
 /* ── RELEASE CARD ── */
 .lanz-card {
   display: flex;
   gap: 0;
-  max-width: 860px;
+  width: min(1100px, 92vw);
   margin: 0 auto;
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  background: rgba(66,25,74,0.45);
-  border: 1px solid rgba(230,0,126,0.2);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset, 0 32px 80px rgba(0,0,0,0.5);
-  backdrop-filter: blur(12px);
-  /* entrada */
+  background: rgba(18,4,28,0.7);
+  border: 1px solid rgba(230,0,126,0.25);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05) inset, 0 40px 100px rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
   opacity: 0;
   transform: translateY(48px) scale(0.97);
-  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.4s ease;
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
   animation: lanzCardGlow 4s ease-in-out infinite;
   animation-play-state: paused;
 }
@@ -1838,7 +1856,7 @@ body {
 
 .lanz-card-cover {
   position: relative;
-  flex: 0 0 320px;
+  flex: 0 0 420px;
 }
 
 .lanz-card-cover::after {
@@ -1897,10 +1915,11 @@ body {
 
 .lanz-card-body {
   flex: 1;
-  padding: 32px 32px 28px;
+  padding: 44px 44px 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+  justify-content: center;
 }
 
 .lanz-card-meta {
@@ -1917,27 +1936,27 @@ body {
 .lanz-card-dot { color: var(--fucsia); }
 
 .lanz-card-artist {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--rosa);
-  letter-spacing: .1em;
+  color: var(--fucsia);
+  letter-spacing: .18em;
   text-transform: uppercase;
-  margin-top: 4px;
 }
 
 .lanz-card-title {
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 800;
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 900;
   color: var(--white);
-  line-height: 1.05;
+  line-height: 1;
   margin: 0;
+  letter-spacing: -.02em;
 }
 
 .lanz-card-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.65;
-  max-width: 380px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  max-width: 420px;
 }
 
 .lanz-card-socials {
