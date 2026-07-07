@@ -1,3 +1,47 @@
+// ── HAMBURGER MENU ──
+(function () {
+  var btn = document.getElementById('navHamburger')
+  var menu = document.getElementById('navMobileMenu')
+  var close = document.getElementById('navMobileClose')
+  var dashMobile = document.getElementById('openLoginModalMobile')
+  if (!btn || !menu) return
+
+  function openMenu() {
+    menu.classList.add('open')
+    btn.classList.add('open')
+    menu.setAttribute('aria-hidden', 'false')
+    document.body.classList.add('modal-open')
+  }
+  function closeMenu() {
+    menu.classList.remove('open')
+    btn.classList.remove('open')
+    menu.setAttribute('aria-hidden', 'true')
+    document.body.classList.remove('modal-open')
+  }
+
+  btn.addEventListener('click', openMenu)
+  close.addEventListener('click', closeMenu)
+
+  menu.querySelectorAll('.nav-mobile-links a').forEach(function (a) {
+    a.addEventListener('click', closeMenu)
+  })
+
+  if (dashMobile) {
+    dashMobile.addEventListener('click', function () {
+      closeMenu()
+      var loginModal = document.getElementById('loginModal')
+      if (loginModal) {
+        loginModal.classList.add('open')
+        document.body.classList.add('modal-open')
+      }
+    })
+  }
+
+  menu.addEventListener('click', function (e) {
+    if (e.target === menu) closeMenu()
+  })
+})();
+
 // ── NAVBAR HIDE ON SCROLL ──
 (function () {
   const nav = document.querySelector('.navbar')
