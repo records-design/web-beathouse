@@ -116,6 +116,12 @@
     }, 200)
   }
 
+  // Apply data-pos to each thumb's img on init
+  thumbs.forEach(function (thumb) {
+    var img = thumb.querySelector('img')
+    if (img && thumb.dataset.pos) img.style.objectPosition = thumb.dataset.pos
+  })
+
   var thumbsContainer = document.getElementById('rosterThumbs')
   thumbs.forEach(function (thumb) {
     thumb.addEventListener('click', function () {

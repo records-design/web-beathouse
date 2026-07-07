@@ -4,7 +4,7 @@
     {
       "name": "beathouse",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4568"],
+      "runtimeArgs": ["-m", "http.server", "4568", "--directory", "/Users/onceloopsdiseno/Desktop/Proyectos/web beathouse"],
       "port": 4568
     }
   ]
