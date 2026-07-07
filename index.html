@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -110,112 +110,185 @@
       <p class="section-sub">Desarrollamos artistas con identidad, visión y proyección internacional.</p>
     </div>
 
-    <div class="roster-showcase">
+    <div class="roster-grid">
 
-      <!-- FEATURED -->
-      <div class="roster-featured" id="rosterFeatured">
-        <div class="feat-photo-wrap">
-          <img src="imagenes/foto-tomas-gimenez.jpg" alt="" id="featImg" />
-        </div>
-        <div class="feat-detail">
-          <div class="feat-detail-header">
-            <span class="roster-feat-genre" id="featGenre">Pop</span>
-            <h3 class="roster-feat-name" id="featName">TOMAS GIMENEZ</h3>
-          </div>
-          <p class="feat-detail-bio" id="featBio">Cantante tucumano criado en la Patagonia. Debutó a los 14 años y en 2024 lanzó su álbum 'Tiempo'.</p>
-          <div class="feat-detail-socials" id="featSocials"></div>
-          <div class="feat-detail-player" id="featPlayer">
-            <iframe src="https://open.spotify.com/embed/artist/5fMwlAHh96WMf9t8dwtyKK?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="rcard" data-spotify="5fMwlAHh96WMf9t8dwtyKK" data-ig="tomasgimeneza">
+        <div class="rcard-photo"><img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">TOMAS GIMENEZ</h3><p class="rcard-stat">La Voz Argentina</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">TOMAS GIMENEZ</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Voz potente y letras directas que conectan con una generación. Uno de los artistas más prometedores del pop argentino.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/5fMwlAHh96WMf9t8dwtyKK" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/tomasgimeneza" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
           </div>
         </div>
       </div>
 
-      <!-- THUMBNAILS -->
-      <div class="roster-thumbs" id="rosterThumbs">
-        <div class="roster-thumb active"
-          data-img="imagenes/foto-tomas-gimenez.jpg" data-name="TOMAS GIMENEZ" data-genre="Pop"
-          data-desc="Voz potente y letras directas que conectan con una generación."
-          data-bio="Cantante tucumano criado en la Patagonia. Debutó a los 14 años y en 2024 lanzó su álbum 'Tiempo'."
-          data-spotify="5fMwlAHh96WMf9t8dwtyKK" data-instagram="tomasgimeneza">
-          <img src="imagenes/foto-tomas-gimenez.jpg" alt="Tomas Gimenez" /><span>TOMAS GIMENEZ</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-crash.jpeg" data-name="CRASH" data-genre="Pop"
-          data-desc="Actitud, flow y una identidad visual que impacta antes de sonar."
-          data-bio="Actriz y cantante, protagonizó 'Go! Vive a tu manera' en Netflix. Pop con identidad propia."
-          data-spotify="5AIFs6bO6XZLbfeTplCHkL" data-instagram="crash.music">
-          <img src="imagenes/foto-crash.jpeg" alt="Crash" /><span>CRASH</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-maga.jpg" data-name="MAGA" data-genre="Pop"
-          data-desc="Canciones íntimas con producción contemporánea que trascienden fronteras." data-pos="center 40%"
-          data-bio="Pop íntimo con producción contemporánea. Canciones que conectan emocionalmente con una nueva generación.">
-          <img src="imagenes/foto-maga.jpg" alt="Maga" /><span>MAGA</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-lucas-barros.jpeg" data-name="LUCAS BARROS" data-genre="Pop / R&amp;B"
-          data-desc="Groove, melodía y una presencia escénica que se siente desde el primer acorde."
-          data-bio="Pop y R&B con más de 531K seguidores. Participó en La Voz Argentina 2025."
-          data-spotify="6xfNuiMrfZbMrq0JI0xMZU" data-instagram="lucasbarrosok">
-          <img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" /><span>LUCAS BARROS</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-cone.jpg" data-name="EL CONE" data-genre="Cuarteto"
-          data-desc="El cuarteto que mueve multitudes con energía y ritmo desbordante." data-pos="center top"
-          data-bio="Conocido por Gran Hermano 2022. En 2024 debutó con el cuarteto 'Ya no eres'."
-          data-spotify="7g2XFRYtQn450kkXCKKNIB" data-instagram="alexis_quirogaaa">
-          <img src="imagenes/foto-cone.jpg" alt="El Cone" /><span>EL CONE</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-Karen Quiroga.jpg" data-name="KAREN QUIROGA" data-genre="Pop"
-          data-desc="Sensibilidad y fuerza en cada canción. Una artista que define su propio camino."
-          data-bio="Cordobesa radicada en Buenos Aires. Fusiona pop, folklore y ritmos alternativos."
-          data-spotify="3Ho3YtSse8d6srqI1Zgo4L" data-instagram="karen.quirogaa">
-          <img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" /><span>KAREN QUIROGA</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-beruti.jpg" data-name="BERUTI" data-genre="Pop"
-          data-desc="Composición honesta y una conexión emocional que fideliza audiencias."
-          data-bio="Dúo de hermanos gemelos con más de 10M de streams. Giras por Latinoamérica y Europa."
-          data-spotify="4Ozcco9RkNmJtg7qkCy8zI" data-instagram="beruti.arg">
-          <img src="imagenes/foto-beruti.jpg" alt="Beruti" /><span>BERUTI</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-silvestre.jpeg" data-name="SILVESTRE" data-genre="Folklore"
-          data-desc="Raíces, territorio y una voz que conecta lo ancestral con lo moderno."
-          data-bio="Radicado en Salta, con décadas en el folklore argentino. Raíces ancestrales con sonoridad contemporánea."
-          data-spotify="2xVUJLo9DaJWBlAqQqmUNY" data-instagram="silvestrecantante">
-          <img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" /><span>SILVESTRE</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-Og Karma.jpeg" data-name="OG KARMA" data-genre="Urbano"
-          data-desc="Trap, flow y letras que hablan de la calle con precisión poética." data-pos="center 30%"
-          data-bio="Trap argentino con letras precisas y crudas. Su single 'X1000' lo puso en el radar urbano nacional."
-          data-spotify="5vdyF599XjA2Dx0RnNNM8h">
-          <img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" /><span>OG KARMA</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-axelsun.jpg" data-name="AXEL SUN" data-genre="Pop"
-          data-desc="Electrónica orgánica y una propuesta sonora que no suena a nada más."
-          data-bio="Pop electrónico independiente. Su track 'Nadie' superó las 466K reproducciones."
-          data-spotify="4WFODPflKqAY447fZsN4zi" data-instagram="axel_sun">
-          <img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" /><span>AXEL SUN</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-anapaula.jpg" data-name="ANA PAULA" data-genre="Pop"
-          data-desc="Voz y presencia que no pasan desapercibidas. Pop con alma y actitud."
-          data-bio="Conocida por 'Go! Vive a tu manera' en Netflix. En 2025 lanzó 'No pasa nada'."
-          data-spotify="5AHBeq2Oxxi9lJgeyYNskU">
-          <img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" /><span>ANA PAULA</span>
-        </div>
-        <div class="roster-thumb"
-          data-img="imagenes/foto-duende.jpeg" data-name="DUENDE" data-genre="Infantil"
-          data-desc="Magia, color y canciones que los chicos aman, con millones de reproducciones."
-          data-bio="Música infantil con millones de reproducciones. Referente del género en español."
-          data-spotify="6RqzIj3qOKsNemp4GZMDH9" data-instagram="duende_musica">
-          <img src="imagenes/foto-duende.jpeg" alt="Duende" /><span>DUENDE</span>
+      <div class="rcard" data-spotify="5AIFs6bO6XZLbfeTplCHkL" data-ig="crash.music">
+        <div class="rcard-photo"><img src="imagenes/foto-crash.jpeg" alt="Crash" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">CRASH</h3><p class="rcard-stat">Netflix · Go!</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">CRASH</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Actriz y cantante, protagonizó 'Go! Vive a tu manera' en Netflix. Pop con identidad propia y energía sin límites.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/5AIFs6bO6XZLbfeTplCHkL" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/crash.music" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
         </div>
       </div>
+
+      <div class="rcard">
+        <div class="rcard-photo"><img src="imagenes/foto-maga.jpg" alt="Maga" style="object-position:center 40%" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">MAGA</h3><p class="rcard-stat">Pop íntimo contemporáneo</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">MAGA</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Canciones íntimas con producción contemporánea. Conecta emocionalmente con una nueva generación que cruza fronteras.</p>
+          <div class="rcard-hover-actions">
+            <span class="rcard-btn-listen rcard-btn-disabled">Sin Spotify</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="6xfNuiMrfZbMrq0JI0xMZU" data-ig="lucasbarrosok">
+        <div class="rcard-photo"><img src="imagenes/foto-lucas-barros.jpeg" alt="Lucas Barros" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop / R&amp;B</span><h3 class="rcard-name">LUCAS BARROS</h3><p class="rcard-stat">531K seguidores</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop / R&amp;B</span>
+          <h3 class="rcard-hover-name">LUCAS BARROS</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Groove, melodía y presencia escénica que se siente desde el primer acorde. Participó en La Voz Argentina 2025.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/6xfNuiMrfZbMrq0JI0xMZU" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/lucasbarrosok" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="7g2XFRYtQn450kkXCKKNIB" data-ig="alexis_quirogaaa">
+        <div class="rcard-photo"><img src="imagenes/foto-cone.jpg" alt="El Cone" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Cuarteto</span><h3 class="rcard-name">EL CONE</h3><p class="rcard-stat">Gran Hermano 2022</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Cuarteto</span>
+          <h3 class="rcard-hover-name">EL CONE</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Conocido por Gran Hermano 2022. En 2024 debutó con el cuarteto 'Ya no eres'. Mueve multitudes con energía desbordante.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/7g2XFRYtQn450kkXCKKNIB" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/alexis_quirogaaa" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="3Ho3YtSse8d6srqI1Zgo4L" data-ig="karen.quirogaa">
+        <div class="rcard-photo"><img src="imagenes/foto-Karen Quiroga.jpg" alt="Karen Quiroga" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">KAREN QUIROGA</h3><p class="rcard-stat">Córdoba · Buenos Aires</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">KAREN QUIROGA</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Cordobesa radicada en Buenos Aires. Fusiona pop, folklore y ritmos alternativos con autenticidad y visión clara.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/3Ho3YtSse8d6srqI1Zgo4L" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/karen.quirogaa" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="4Ozcco9RkNmJtg7qkCy8zI" data-ig="beruti.arg">
+        <div class="rcard-photo"><img src="imagenes/foto-beruti.jpg" alt="Beruti" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">BERUTI</h3><p class="rcard-stat">+10M de streams</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">BERUTI</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Dúo de hermanos gemelos con más de 10M de streams. Giras por Latinoamérica y Europa. Pop con alma y sustancia.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/4Ozcco9RkNmJtg7qkCy8zI" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/beruti.arg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="2xVUJLo9DaJWBlAqQqmUNY" data-ig="silvestrecantante">
+        <div class="rcard-photo"><img src="imagenes/foto-silvestre.jpeg" alt="Silvestre" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Folklore</span><h3 class="rcard-name">SILVESTRE</h3><p class="rcard-stat">Salta · Argentina</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Folklore</span>
+          <h3 class="rcard-hover-name">SILVESTRE</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Décadas en el folklore argentino con raíces ancestrales y sonoridad contemporánea. Territorio, identidad y voz propia.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/2xVUJLo9DaJWBlAqQqmUNY" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/silvestrecantante" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="5vdyF599XjA2Dx0RnNNM8h">
+        <div class="rcard-photo"><img src="imagenes/foto-Og Karma.jpeg" alt="OG Karma" style="object-position:center 30%" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Urbano</span><h3 class="rcard-name">OG KARMA</h3><p class="rcard-stat">Trap argentino</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Urbano</span>
+          <h3 class="rcard-hover-name">OG KARMA</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Trap argentino con letras precisas y crudas. Su single 'X1000' lo puso en el radar urbano nacional.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/5vdyF599XjA2Dx0RnNNM8h" target="_blank" rel="noopener">Escuchar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="4WFODPflKqAY447fZsN4zi" data-ig="axel_sun">
+        <div class="rcard-photo"><img src="imagenes/foto-axelsun.jpg" alt="Axel Sun" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">AXEL SUN</h3><p class="rcard-stat">466K reproducciones</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">AXEL SUN</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Pop electrónico independiente. Su track 'Nadie' superó las 466K reproducciones. Propuesta fresca y directa.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/4WFODPflKqAY447fZsN4zi" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/axel_sun" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="5AHBeq2Oxxi9lJgeyYNskU">
+        <div class="rcard-photo"><img src="imagenes/foto-anapaula.jpg" alt="Ana Paula" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Pop</span><h3 class="rcard-name">ANA PAULA</h3><p class="rcard-stat">Netflix · Go!</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Pop</span>
+          <h3 class="rcard-hover-name">ANA PAULA</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Conocida por 'Go! Vive a tu manera' en Netflix. En 2025 lanzó 'No pasa nada'. Voz cálida y presencia que no pasa desapercibida.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/5AHBeq2Oxxi9lJgeyYNskU" target="_blank" rel="noopener">Escuchar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcard" data-spotify="6RqzIj3qOKsNemp4GZMDH9" data-ig="duende_musica">
+        <div class="rcard-photo"><img src="imagenes/foto-duende.jpeg" alt="Duende" style="object-position:center top" /></div>
+        <div class="rcard-info"><span class="rcard-genre">Infantil</span><h3 class="rcard-name">DUENDE</h3><p class="rcard-stat">Millones de reproducciones</p></div>
+        <div class="rcard-hover">
+          <span class="rcard-hover-genre">Infantil</span>
+          <h3 class="rcard-hover-name">DUENDE</h3>
+          <div class="rcard-hover-line"></div>
+          <p class="rcard-hover-bio">Música infantil con calidad musical adulta. Referente del género en español con millones de reproducciones.</p>
+          <div class="rcard-hover-actions">
+            <a class="rcard-btn-listen" href="https://open.spotify.com/artist/6RqzIj3qOKsNemp4GZMDH9" target="_blank" rel="noopener">Escuchar</a>
+            <a class="rcard-btn-ig" href="https://instagram.com/duende_musica" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- CIERRE -->
