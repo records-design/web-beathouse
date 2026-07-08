@@ -710,6 +710,44 @@
   obs.observe(card)
 })();
 
+// ── ESTUDIO SLIDESHOW ──
+(function () {
+  var wrap = document.getElementById('estudioSlideshow')
+  if (!wrap) return
+  var slides = wrap.querySelectorAll('img.slide')
+  var dotsEl = document.getElementById('slideshowDots')
+  if (!slides.length) return
+
+  var current = 0
+  var timer = null
+
+  // Build dots
+  slides.forEach(function (_, i) {
+    var d = document.createElement('button')
+    d.className = 'slideshow-dot' + (i === 0 ? ' active' : '')
+    d.setAttribute('aria-label', 'Foto ' + (i + 1))
+    d.addEventListener('click', function () { goTo(i); resetTimer() })
+    dotsEl.appendChild(d)
+  })
+
+  function goTo(n) {
+    slides[current].classList.remove('active')
+    dotsEl.children[current].classList.remove('active')
+    current = (n + slides.length) % slides.length
+    slides[current].classList.add('active')
+    dotsEl.children[current].classList.add('active')
+  }
+
+  function next() { goTo(current + 1) }
+
+  function resetTimer() {
+    clearInterval(timer)
+    timer = setInterval(next, 4000)
+  }
+
+  resetTimer()
+})();
+
 // ── MINI PLAYER + SOCIAL ICONS ──
 (function () {
   var player   = document.getElementById('miniPlayer')

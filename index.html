@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
 
@@ -643,8 +643,13 @@
       <!-- RIGHT: image + location cards -->
       <div class="nosotros-img-wrap reveal-right reveal-delay-2">
         <div class="nosotros-halo"></div>
-        <div class="nosotros-img">
-          <img src="imagenes/foto-estudio.png" alt="Estudio BeatHouse" />
+        <div class="nosotros-img nosotros-slideshow" id="estudioSlideshow">
+          <img src="imagenes/foto-estudio.png"   alt="Estudio BeatHouse" class="slide active" />
+          <img src="imagenes/foto estudio 2.png" alt="Estudio BeatHouse" class="slide" />
+          <img src="imagenes/foto estudio 3.png" alt="Estudio BeatHouse" class="slide" />
+          <img src="imagenes/foto estudio 4.png" alt="Estudio BeatHouse" class="slide" />
+          <img src="imagenes/foto estudio 5.png" alt="Estudio BeatHouse" class="slide" />
+          <div class="slideshow-dots" id="slideshowDots"></div>
         </div>
         <div class="nosotros-locations">
           <div class="nos-location-card">
@@ -1005,7 +1010,7 @@
     <div class="mini-player-embed" id="miniPlayerEmbed"></div>
     <button class="mini-player-close" id="miniPlayerClose" aria-label="Cerrar player">✕</button>
   </div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 
 </body>
 </html>
