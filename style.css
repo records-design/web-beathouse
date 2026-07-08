@@ -1539,20 +1539,39 @@ body {
 }
 
 .nos-location-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(32px) saturate(1.2);
-  -webkit-backdrop-filter: blur(32px) saturate(1.2);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-top-color: rgba(255,255,255,0.22);
-  border-radius: 16px;
-  padding: 16px 18px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(66,25,74,0.55) 0%, rgba(18,4,28,0.45) 100%);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(230,0,126,0.22);
+  border-top-color: rgba(255,182,225,0.28);
+  border-radius: 18px;
+  padding: 18px 20px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
   box-shadow:
-    0 4px 24px rgba(0,0,0,0.30),
-    inset 0 1px 0 rgba(255,255,255,0.18),
-    inset 0 -1px 0 rgba(0,0,0,0.10);
+    0 8px 32px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    inset 0 1px 0 rgba(255,182,225,0.20),
+    0 0 24px rgba(230,0,126,0.08);
+  overflow: hidden;
+  transition: border-color .25s, box-shadow .25s;
+}
+.nos-location-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,182,225,0.5), transparent);
+}
+.nos-location-card:hover {
+  border-color: rgba(230,0,126,0.45);
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.08) inset,
+    inset 0 1px 0 rgba(255,182,225,0.30),
+    0 0 40px rgba(230,0,126,0.15);
 }
 
 .nos-location-dot {
