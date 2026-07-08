@@ -1534,7 +1534,7 @@ body {
   box-shadow: 0 0 8px var(--fucsia);
 }
 
-/* scanlines fucsia al hover */
+/* scanlines fucsia — siempre visibles */
 .nosotros-img::before {
   content: '';
   position: absolute;
@@ -1542,18 +1542,31 @@ body {
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 4px,
-    rgba(230,0,126,0.14) 4px,
-    rgba(230,0,126,0.14) 5px
+    transparent 3px,
+    rgba(230,0,126,0.10) 3px,
+    rgba(230,0,126,0.10) 4px
   );
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1;
   pointer-events: none;
   z-index: 3;
   border-radius: 24px;
 }
 
-.nosotros-img:hover::before { opacity: 1; }
+/* overlay de color para unificar fotos */
+.nosotros-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(66,25,74,0.38) 0%,
+    rgba(230,0,126,0.10) 50%,
+    rgba(18,4,28,0.50) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 24px;
+}
 
 .nosotros-img:hover {
   box-shadow:
