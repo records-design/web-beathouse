@@ -1259,7 +1259,7 @@ body {
 /* ── QUIENES SOMOS ── */
 /* ── NOSOTROS ── */
 .nosotros {
-  padding: 120px 60px;
+  padding: 90px 60px;
   position: relative;
   overflow: hidden;
   background:
@@ -1280,23 +1280,18 @@ body {
 .nosotros-inner {
   position: relative;
   z-index: 1;
-}
-
-.nosotros-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: stretch;
-  min-height: 540px;
 }
 
 /* Left column */
 .nosotros-text {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 540px;
 }
 
 .nosotros-label {
@@ -1395,13 +1390,15 @@ body {
   line-height: 1.55;
 }
 
-/* Foto de fondo fundida con la sección */
+/* Foto de fondo fundida con la sección: altura ligada al bloque de texto, no a toda la sección */
 .nosotros-bg {
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
-  width: 62%;
+  right: -60px;
+  width: 68%;
+  min-height: 460px;
+  max-height: 620px;
   z-index: 0;
   pointer-events: none;
   -webkit-mask-image: radial-gradient(ellipse 85% 95% at 68% 45%, black 35%, transparent 74%);
@@ -1499,7 +1496,7 @@ body {
   position: relative;
   z-index: 1;
   max-width: 1200px;
-  margin: 72px auto 0;
+  margin: 48px auto 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2442,8 +2439,7 @@ body {
   .lanz-featured-title { font-size: 56px; }
   .lanz-countdown { flex-wrap: wrap; justify-content: center; gap: 10px; }
   .lanzamientos { padding: 60px 20px; }
-  .nosotros-inner { grid-template-columns: 1fr; min-height: 0; }
-  .nosotros-bg { width: 100%; opacity: 0.3; }
+  .nosotros-bg { width: 100%; right: 0; opacity: 0.3; }
 }
 
 /* ── CONTACTO / NEWSLETTER ── */
@@ -2665,8 +2661,8 @@ body {
   .servicios-cta-banner { padding: 0 24px; }
   .servicios-cta-banner-inner { flex-direction: column; text-align: center; }
   .nosotros { padding: 70px 24px; }
-  .nosotros-inner { grid-template-columns: 1fr; gap: 40px; min-height: 0; }
-  .nosotros-bg { width: 100%; opacity: 0.3; }
+  .nosotros-text { max-width: none; }
+  .nosotros-bg { width: 100%; right: 0; opacity: 0.3; }
   .nosotros-stats { margin-top: 48px; }
 }
 
@@ -3403,8 +3399,8 @@ body.modal-open { overflow: hidden; }
 
   /* Nosotros */
   .nosotros { padding: 56px 24px; }
-  .nosotros-inner { grid-template-columns: 1fr; gap: 36px; min-height: 0; }
-  .nosotros-bg { width: 100%; opacity: 0.25; }
+  .nosotros-text { max-width: none; }
+  .nosotros-bg { width: 100%; right: 0; opacity: 0.25; min-height: 0; max-height: none; }
   .nosotros-locations { flex-direction: column; gap: 16px; margin-top: 28px; }
   .nos-loc + .nos-loc { border-left: none; padding-left: 0; }
   .nosotros-title { font-size: clamp(24px, 7vw, 42px); }
