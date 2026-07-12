@@ -17,14 +17,14 @@ h1, h2, h3, h4, h5, h6 {
   --card-bg:  #250B23;
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   background: linear-gradient(160deg, #1E0720 0%, #250B23 40%, #42194A 70%, #1E0720 100%);
   background-attachment: fixed;
   color: var(--white);
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ── NAVBAR ── */
