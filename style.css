@@ -1770,7 +1770,7 @@ body {
 
 .serv-card:hover {
   border-color: rgba(230,0,126,0.35);
-  background: rgba(230,0,126,0.05);
+  background: linear-gradient(rgba(230,0,126,0.05), rgba(230,0,126,0.05)), var(--card-bg);
 }
 
 .serv-card:nth-child(1) { top: calc(var(--serv-top) + 0 * var(--serv-offset)); }
