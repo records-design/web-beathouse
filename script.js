@@ -831,3 +831,63 @@
     currentSp = null
   })
 })();
+
+// ── SERVICIOS: STICKY STACKED CARDS ──
+(function () {
+  var stack = document.getElementById('servStack')
+  if (!stack) return
+  var cards = Array.prototype.slice.call(stack.querySelectorAll('.serv-card'))
+  if (!cards.length) return
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Reveal escalonado de los items "+" cuando la card entra en viewport
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view')
+        io.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.35 })
+  cards.forEach(function (card) { io.observe(card) })
+
+  if (reduceMotion) return
+
+  // Efecto de apilado: mientras la card siguiente sube y tapa a la actual,
+  // la actual se achica y se atenúa suavemente.
+  var MAX_SCALE_DROP = 0.06
+  var MAX_DIM = 0.35
+
+  function update() {
+    var vh = window.innerHeight
+    cards.forEach(function (card, i) {
+      var next = cards[i + 1]
+      var cardTop = card.getBoundingClientRect().top
+
+      // la card todavía no llegó a su posición sticky: sin efecto
+      if (!next || cardTop > vh) { card.style.transform = ''; card.style.filter = ''; return }
+
+      var nextTop = next.getBoundingClientRect().top
+      var start = vh
+      var end = cardTop + 40
+      var p = end < start ? (start - nextTop) / (start - end) : 0
+      p = Math.min(1, Math.max(0, p))
+
+      var scale = 1 - MAX_SCALE_DROP * p
+      var dim = 1 - MAX_DIM * p
+      card.style.transform = 'scale(' + scale + ')'
+      card.style.filter = 'brightness(' + dim + ')'
+    })
+  }
+
+  var ticking = false
+  function onScroll() {
+    if (ticking) return
+    ticking = true
+    requestAnimationFrame(function () { update(); ticking = false })
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+  update()
+})();
