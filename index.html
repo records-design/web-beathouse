@@ -639,6 +639,14 @@
 
   <!-- QUIENES SOMOS -->
   <section class="nosotros" id="nosotros">
+
+    <!-- Foto de fondo fundida con la sección -->
+    <div class="nosotros-bg" id="estudioSlideshow" aria-hidden="true">
+      <img src="imagenes/foto-estudio.png"   alt="" class="slide active" />
+      <img src="imagenes/foto estudio 2.png" alt="" class="slide" />
+      <div class="slideshow-dots" id="slideshowDots"></div>
+    </div>
+
     <div class="nosotros-inner">
 
       <!-- LEFT: text -->
@@ -647,78 +655,61 @@
         <h2 class="nosotros-title">Donde el talento<br>encuentra <em>dirección.</em></h2>
         <p class="nosotros-lead">BeatHouse es un sello creativo donde artistas, productores y compositores encuentran estructura, visión y oportunidades reales para desarrollar su proyecto.</p>
 
-        <hr class="nosotros-divider" />
-
         <ul class="nosotros-bullets">
           <li class="nosotros-bullet">
             <div class="nos-bullet-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 12 9 4 13 20 16 9 18 12 22 12"/></svg>
             </div>
             <div>
               <strong>Dirección artística</strong>
-              <span>Desarrollamos tu identidad y concepto musical.</span>
+              <span>Desarrollamos identidad, concepto y posicionamiento musical.</span>
             </div>
           </li>
           <li class="nosotros-bullet">
             <div class="nos-bullet-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></svg>
             </div>
             <div>
               <strong>Producción integral</strong>
-              <span>Cuidamos cada detalle del sonido y la calidad.</span>
+              <span>Cuidamos cada detalle del sonido, la imagen y el desarrollo audiovisual.</span>
             </div>
           </li>
           <li class="nosotros-bullet">
             <div class="nos-bullet-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg>
             </div>
             <div>
-              <strong>Estrategia real</strong>
-              <span>Te conectamos con oportunidades y crecimiento global.</span>
+              <strong>Estrategia global</strong>
+              <span>Conectamos talento con oportunidades y crecimiento en la industria.</span>
             </div>
           </li>
         </ul>
-
-        <div class="nosotros-actions">
-          <a href="#servicios" class="nos-btn-primary">Conocé cómo trabajamos →</a>
-          <a href="#artistas" class="nos-btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-            Ver artistas
-          </a>
-        </div>
       </div>
 
-      <!-- RIGHT: image + location cards -->
-      <div class="nosotros-img-wrap reveal-right reveal-delay-2">
-        <div class="nosotros-halo"></div>
-        <div class="nosotros-img nosotros-slideshow" id="estudioSlideshow">
-          <img src="imagenes/foto-estudio.png"   alt="Estudio BeatHouse" class="slide active" />
-          <img src="imagenes/foto estudio 2.png" alt="Estudio BeatHouse" class="slide" />
-          <img src="imagenes/foto estudio 3.png" alt="Estudio BeatHouse" class="slide" />
-          <img src="imagenes/foto estudio 4.png" alt="Estudio BeatHouse" class="slide" />
-          <img src="imagenes/foto estudio 5.png" alt="Estudio BeatHouse" class="slide" />
-          <div class="slideshow-dots" id="slideshowDots"></div>
-        </div>
+      <!-- RIGHT: ubicaciones sobre la foto -->
+      <div class="nosotros-right reveal-right reveal-delay-2">
         <div class="nosotros-locations">
-          <div class="nos-location-card">
-            <div class="nos-location-dot"></div>
+          <div class="nos-loc">
+            <span class="nos-loc-dot"></span>
             <div>
               <strong>Miami, FL</strong>
-              <span>Estudio de grabación</span>
-              <p>Conectados con la industria global.</p>
+              <span>Recording Studio</span>
             </div>
           </div>
-          <div class="nos-location-card">
-            <div class="nos-location-dot"></div>
+          <div class="nos-loc nos-loc--alt">
+            <span class="nos-loc-dot"></span>
             <div>
-              <strong>Bs. As., ARG</strong>
-              <span>Estudio de grabación</span>
-              <p>Creatividad y talento local.</p>
+              <strong>Buenos Aires, ARG</strong>
+              <span>Creative Hub</span>
             </div>
           </div>
         </div>
       </div>
 
+    </div>
+
+    <div class="nosotros-stats reveal">
+      <span>2 Estudios</span><i>·</i><span>Producción 360°</span><i>·</i><span>Desarrollo Internacional</span>
     </div>
   </section>
 
