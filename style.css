@@ -2559,6 +2559,38 @@ body {
 }
 .contacto-btn:hover { opacity: 0.85; }
 
+/* ── CIERRE ── */
+.cierre {
+  padding: 100px 40px 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cierre-frase {
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.25;
+  max-width: 900px;
+  margin: 0;
+  letter-spacing: -.02em;
+}
+
+.cierre-pill {
+  display: inline-block;
+  border-radius: 50px;
+  padding: .1em .45em;
+  font-style: normal;
+  white-space: nowrap;
+  color: #fff;
+  margin: 0 4px;
+}
+
+.cierre-pill--fucsia { background: var(--fucsia); }
+.cierre-pill--rosa   { background: var(--rosa); color: var(--bg); }
+
 /* ── FOOTER ── */
 .footer {
   background: #1a0a22;
