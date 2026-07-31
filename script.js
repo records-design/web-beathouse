@@ -891,3 +891,28 @@
   window.addEventListener('resize', onScroll)
   update()
 })();
+
+
+// ── ZIL CAROUSEL ──
+(function () {
+  var carousel = document.getElementById('zilCarousel')
+  if (!carousel) return
+
+  var cards = carousel.querySelectorAll('.zil-card')
+  if (!cards.length) return
+
+  var current = 0
+  var CARD_H = 90 // card height + gap in px
+  var VISIBLE_CENTER = 110 // px offset so active card centers in mask
+
+  function goTo(idx) {
+    cards[current].classList.remove('active')
+    current = (idx + cards.length) % cards.length
+    cards[current].classList.add('active')
+    var offset = -(current * CARD_H) + VISIBLE_CENTER
+    carousel.style.transform = 'translateY(' + offset + 'px)'
+  }
+
+  goTo(0)
+  setInterval(function () { goTo(current + 1) }, 2500)
+})();
