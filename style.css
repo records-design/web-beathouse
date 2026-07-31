@@ -1408,56 +1408,67 @@ body {
   color: rgba(255,255,255,0.55);
 }
 
-/* ── FLOATING PILL CHIPS (Zil ecosistema style) ── */
-.nos-pills {
+/* ── FLOATING PHOTO SQUARES ── */
+.nos-fotos {
   position: relative;
-  height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 460px;
 }
 
-.nos-pill {
+.nos-foto {
   position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: rgba(30,7,32,0.75);
-  border: 1px solid rgba(230,0,126,0.25);
-  backdrop-filter: blur(12px);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  white-space: nowrap;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-  opacity: 0;
-  transform: scale(0.7) translateY(12px);
-  animation: pillPopIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards, pillFloat ease-in-out infinite;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(230,0,126,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 }
-.nos-pill svg {
-  width: 18px; height: 18px;
-  stroke: var(--fucsia);
-  flex-shrink: 0;
+.nos-foto img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.05);
 }
 
-@keyframes pillPopIn {
-  to { opacity: 1; transform: scale(1) translateY(0); }
+@keyframes floatA {
+  0%, 100% { transform: translateY(0)   rotate(-3deg); }
+  50%       { transform: translateY(-12px) rotate(-3deg); }
 }
-@keyframes pillFloat {
-  0%, 100% { translate: 0 0; }
-  50%       { translate: 0 -8px; }
+@keyframes floatB {
+  0%, 100% { transform: translateY(0)  rotate(2deg); }
+  50%       { transform: translateY(-16px) rotate(2deg); }
+}
+@keyframes floatC {
+  0%, 100% { transform: translateY(0)   rotate(-1.5deg); }
+  50%       { transform: translateY(-10px) rotate(-1.5deg); }
+}
+@keyframes floatD {
+  0%, 100% { transform: translateY(0)  rotate(3.5deg); }
+  50%       { transform: translateY(-14px) rotate(3.5deg); }
 }
 
-/* Position + stagger each pill */
-.nos-pill--1 { top: 5%;  left: 15%; animation-delay: 0.1s, 0.6s; animation-duration: 0.5s, 3.8s; }
-.nos-pill--2 { top: 18%; right: 5%; animation-delay: 0.25s, 0.75s; animation-duration: 0.5s, 4.2s; }
-.nos-pill--3 { top: 36%; left: 0%;  animation-delay: 0.4s, 0.9s;  animation-duration: 0.5s, 3.5s; }
-.nos-pill--4 { top: 50%; right: 8%; animation-delay: 0.55s, 1.05s; animation-duration: 0.5s, 4.6s; }
-.nos-pill--5 { top: 65%; left: 12%; animation-delay: 0.7s, 1.2s;  animation-duration: 0.5s, 3.9s; }
-.nos-pill--6 { top: 78%; right: 2%; animation-delay: 0.85s, 1.35s; animation-duration: 0.5s, 4.1s; }
-.nos-pill--7 { top: 88%; left: 30%; animation-delay: 1.0s, 1.5s;  animation-duration: 0.5s, 3.6s; }
+.nos-foto--1 {
+  top: 0; left: 5%;
+  transform: rotate(-3deg);
+  animation: floatA 4.2s ease-in-out infinite;
+}
+.nos-foto--2 {
+  top: 30px; right: 5%;
+  transform: rotate(2deg);
+  animation: floatB 3.8s ease-in-out infinite;
+  animation-delay: .6s;
+}
+.nos-foto--3 {
+  bottom: 20px; left: 20%;
+  transform: rotate(-1.5deg);
+  animation: floatC 4.6s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+.nos-foto--4 {
+  bottom: 0; right: 10%;
+  transform: rotate(3.5deg);
+  animation: floatD 3.5s ease-in-out infinite;
+  animation-delay: .3s;
+}
 
 /* Stats */
 .nosotros-stats {
@@ -2726,7 +2737,8 @@ body {
   .servicios-cta-banner-inner { flex-direction: column; text-align: center; }
   .nosotros { padding: 70px 24px; }
   .nosotros-inner { grid-template-columns: 1fr; gap: 48px; }
-  .nos-pills { height: 360px; }
+  .nos-fotos { height: 360px; }
+  .nos-foto { width: 150px; height: 150px; }
 }
 
 @media (max-width: 560px) {
@@ -3463,7 +3475,8 @@ body.modal-open { overflow: hidden; }
   /* Nosotros */
   .nosotros { padding: 56px 24px; }
   .nosotros-inner { grid-template-columns: 1fr; gap: 40px; }
-  .nos-pills { height: 320px; }
+  .nos-fotos { height: 280px; }
+  .nos-foto { width: 130px; height: 130px; }
   .nosotros-locations { flex-direction: column; gap: 12px; margin-top: 24px; }
   .nos-loc + .nos-loc { border-left: none; padding-left: 0; }
 
