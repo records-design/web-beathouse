@@ -2402,12 +2402,16 @@ body {
 }
 
 .zil-card-icon {
-  font-size: 22px;
   flex-shrink: 0;
   width: 44px; height: 44px;
   border-radius: 50%;
   background: rgba(230,0,126,0.12);
   display: flex; align-items: center; justify-content: center;
+  color: var(--fucsia);
+}
+.zil-card-icon svg {
+  width: 20px; height: 20px;
+  stroke: currentColor;
 }
 
 .dif-panel-mock {
