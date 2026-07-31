@@ -1408,41 +1408,97 @@ body {
   color: rgba(255,255,255,0.55);
 }
 
-/* ── FLOATING PILL CHIPS ── */
-.nos-pills {
+/* ── STUDIO PHOTO + PILLS OVERLAY ── */
+.nos-visual {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  justify-content: center;
-  padding: 20px 0;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-/* Each row alternates indent to create scattered feel */
-.nos-pill {
-  display: inline-flex;
-  align-items: center;
+.nos-estudio {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.nos-estudio img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.1) contrast(1.05);
+}
+.nos-estudio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(18,4,28,0.75) 0%,
+    rgba(18,4,28,0.15) 55%,
+    rgba(18,4,28,0.05) 100%
+  );
+}
+
+/* Pills sit at the bottom over the photo */
+.nos-pills {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  padding: 13px 22px;
-  border-radius: 999px;
-  background: rgba(30,7,32,0.8);
-  border: 1px solid rgba(230,0,126,0.22);
-  backdrop-filter: blur(14px);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  white-space: nowrap;
-  width: fit-content;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+
+/* ── PILL CARDS ── */
+.nos-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.nos-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(18,4,28,0.72);
+  border: 1px solid rgba(230,0,126,0.2);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateX(32px);
   animation: pillSlideIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards,
              pillDrift ease-in-out infinite;
 }
-.nos-pill svg {
-  width: 17px; height: 17px;
-  stroke: var(--fucsia);
+
+.nos-pill-icon {
+  width: 40px; height: 40px;
   flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(230,0,126,0.12);
+  border-radius: 50%;
+  color: var(--fucsia);
+}
+.nos-pill-icon svg { width: 20px; height: 20px; stroke: currentColor; }
+
+.nos-pill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nos-pill-text strong {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.nos-pill-text span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
 }
 
 @keyframes pillSlideIn {
@@ -1453,15 +1509,9 @@ body {
   50%       { translate: 0 -6px; }
 }
 
-/* Stagger delays + horizontal offsets for scattered rows */
-.nos-pill--1 { margin-left: 0;    animation-delay: 0.05s, 0.55s; animation-duration: 0.5s, 4.1s; }
-.nos-pill--2 { margin-left: 40px; animation-delay: 0.15s, 0.65s; animation-duration: 0.5s, 3.7s; }
-.nos-pill--3 { margin-left: 12px; animation-delay: 0.25s, 0.75s; animation-duration: 0.5s, 4.5s; }
-.nos-pill--4 { margin-left: 56px; animation-delay: 0.35s, 0.85s; animation-duration: 0.5s, 3.9s; }
-.nos-pill--5 { margin-left: 8px;  animation-delay: 0.45s, 0.95s; animation-duration: 0.5s, 4.3s; }
-.nos-pill--6 { margin-left: 32px; animation-delay: 0.55s, 1.05s; animation-duration: 0.5s, 3.6s; }
-.nos-pill--7 { margin-left: 20px; animation-delay: 0.65s, 1.15s; animation-duration: 0.5s, 4.7s; }
-.nos-pill--8 { margin-left: 48px; animation-delay: 0.75s, 1.25s; animation-duration: 0.5s, 3.8s; }
+.nos-pill--1 { margin-left: 0;    animation-delay: 0.1s,  0.6s;  animation-duration: 0.5s, 4.2s; }
+.nos-pill--2 { margin-left: 32px; animation-delay: 0.25s, 0.75s; animation-duration: 0.5s, 3.8s; }
+.nos-pill--3 { margin-left: 12px; animation-delay: 0.4s,  0.9s;  animation-duration: 0.5s, 4.6s; }
 
 /* Stats */
 .nosotros-stats {
