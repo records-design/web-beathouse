@@ -1867,6 +1867,12 @@ body {
   padding: 80px 0 0;
 }
 
+.lanz-section-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 48px;
+}
+
 /* Layout: lista izquierda + spotlight derecha */
 .lanz-layout {
   display: grid;
