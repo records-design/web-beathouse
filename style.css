@@ -2588,8 +2588,8 @@ body {
   margin: 0 3px;
 }
 
-.cierre-pill--fucsia { background: rgba(230,0,126,0.15); color: var(--fucsia); border: 1px solid rgba(230,0,126,0.3); }
-.cierre-pill--rosa   { background: rgba(255,182,225,0.12); color: var(--rosa); border: 1px solid rgba(255,182,225,0.3); }
+.cierre-pill--fucsia { background: var(--fucsia); color: #fff; }
+.cierre-pill--rosa   { background: var(--rosa); color: var(--bg); }
 
 /* ── FOOTER ── */
 .footer {
