@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=17" />
+  <link rel="stylesheet" href="style.css?v=18" />
 </head>
 <body>
 
@@ -721,18 +721,40 @@
         <p>Sin información confusa. Solo datos claros para que puedas tomar decisiones reales sobre tu carrera.</p>
       </div>
       <div class="dif-block-visual reveal-right reveal-delay-2">
-        <div class="dif-panel-mock">
-          <div class="dif-panel-header">
-            <span class="dif-panel-dot"></span><span class="dif-panel-dot"></span><span class="dif-panel-dot"></span>
-            <span class="dif-panel-title">Control Panel</span>
+        <div class="dif-orbital" aria-hidden="true">
+          <!-- Rings -->
+          <div class="orb-ring orb-ring--1"></div>
+          <div class="orb-ring orb-ring--2"></div>
+          <div class="orb-ring orb-ring--3"></div>
+          <!-- Center -->
+          <div class="orb-center">
+            <span class="orb-center-logo">BH</span>
+            <span class="orb-center-sub">Panel</span>
           </div>
-          <div class="dif-panel-rows">
-            <div class="dif-panel-row"><span>Reproducciones totales</span><span class="dif-panel-val dif-count" data-target="12400000" data-suffix="M" data-divisor="1000000" data-decimals="1">0</span></div>
-            <div class="dif-panel-row"><span>Regalías del mes</span><span class="dif-panel-val dif-val--green dif-count" data-target="4280" data-prefix="$" data-suffix="" data-divisor="1" data-decimals="0">$0</span></div>
-            <div class="dif-panel-row"><span>Plataformas activas</span><span class="dif-panel-val dif-count" data-target="150" data-suffix="+" data-divisor="1" data-decimals="0">0</span></div>
-            <div class="dif-panel-row"><span>Splits editoriales</span><span class="dif-panel-val dif-val--green">✓ OK</span></div>
-            <div class="dif-panel-row"><span>Campañas activas</span><span class="dif-panel-val dif-val--pink dif-count" data-target="3" data-suffix="" data-divisor="1" data-decimals="0">0</span></div>
-            <div class="dif-panel-row dif-panel-row--live"><span>Nuevo stream detectado</span><span class="dif-panel-val dif-val--green dif-live-badge">● LIVE</span></div>
+          <!-- Orbiting pills — positioned via CSS custom props -->
+          <div class="orb-pill orb-pill--1">
+            <span class="orb-pill-val">12.4M</span>
+            <span class="orb-pill-label">Reproducciones</span>
+          </div>
+          <div class="orb-pill orb-pill--2">
+            <span class="orb-pill-val">150+</span>
+            <span class="orb-pill-label">Plataformas</span>
+          </div>
+          <div class="orb-pill orb-pill--3">
+            <span class="orb-pill-val">100%</span>
+            <span class="orb-pill-label">Regalías tuyas</span>
+          </div>
+          <div class="orb-pill orb-pill--4">
+            <span class="orb-pill-val">● LIVE</span>
+            <span class="orb-pill-label">Streams en tiempo real</span>
+          </div>
+          <div class="orb-pill orb-pill--5">
+            <span class="orb-pill-val">✓</span>
+            <span class="orb-pill-label">Splits editoriales</span>
+          </div>
+          <div class="orb-pill orb-pill--6">
+            <span class="orb-pill-val">$</span>
+            <span class="orb-pill-label">Pagos mensuales</span>
           </div>
         </div>
       </div>
