@@ -1978,8 +1978,7 @@ body {
 /* ── SPOTLIGHT ── */
 .lanz-spotlight {
   position: relative;
-  display: flex;
-  align-items: center;
+  min-height: 540px;
   overflow: hidden;
 }
 
@@ -2008,9 +2007,9 @@ body {
 }
 
 .lanz-spot-inner {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
-  width: 100%;
   padding: 52px 52px;
   display: flex;
   flex-direction: column;
@@ -2018,6 +2017,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity .4s ease;
+  justify-content: center;
 }
 .lanz-spot-inner.active {
   opacity: 1;
