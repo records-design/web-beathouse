@@ -2209,7 +2209,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   width: 100%;
 }
@@ -2233,27 +2233,27 @@ body {
 }
 
 .dif-title {
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: clamp(36px, 4vw, 64px);
   font-weight: 900;
   color: var(--white);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .dif-block-text p {
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  margin-bottom: 12px;
+  line-height: 1.75;
+  margin-bottom: 14px;
 }
 
 /* Panel mock */
 /* ── ZIL-STYLE VERTICAL CAROUSEL ── */
 .dif-zil {
   position: relative;
-  width: 440px;
-  height: 440px;
+  width: 540px;
+  height: 540px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -2269,15 +2269,15 @@ body {
   transform: translate(-50%,-50%);
   pointer-events: none;
 }
-.zil-ring--1 { width: 160px; height: 160px; border-color: rgba(230,0,126,0.4); }
-.zil-ring--2 { width: 300px; height: 300px; }
-.zil-ring--3 { width: 430px; height: 430px; border-color: rgba(230,0,126,0.12); }
+.zil-ring--1 { width: 200px; height: 200px; border-color: rgba(230,0,126,0.4); }
+.zil-ring--2 { width: 370px; height: 370px; }
+.zil-ring--3 { width: 530px; height: 530px; border-color: rgba(230,0,126,0.12); }
 
 /* Carousel mask — clips above/below */
 .zil-carousel-mask {
   position: relative;
-  width: 280px;
-  height: 340px;
+  width: 340px;
+  height: 400px;
   overflow: hidden;
   z-index: 2;
   /* fade top/bottom */
@@ -2324,7 +2324,7 @@ body {
 }
 
 .zil-card-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
