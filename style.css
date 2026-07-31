@@ -1408,72 +1408,60 @@ body {
   color: rgba(255,255,255,0.55);
 }
 
-/* ── ZIL-STYLE ASYMMETRIC PHOTO GRID ── */
-.nos-fotos {
+/* ── FLOATING PILL CHIPS ── */
+.nos-pills {
   position: relative;
-}
-
-.nos-foto-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 10px;
-  height: 480px;
-}
-
-.nos-foto-tall {
-  border-radius: 16px;
-  overflow: hidden;
-  height: 100%;
-}
-.nos-foto-tall img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: saturate(1.15) contrast(1.05);
-  transition: transform .8s ease;
-}
-.nos-foto-tall:hover img { transform: scale(1.04); }
-
-.nos-foto-stack {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 100%;
+  gap: 14px;
+  justify-content: center;
+  padding: 20px 0;
 }
-.nos-foto-small {
-  flex: 1;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.nos-foto-small img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: saturate(1.1) contrast(1.05);
-  transition: transform .8s ease;
-}
-.nos-foto-small:hover img { transform: scale(1.05); }
 
-/* Floating badge */
-.nos-badge {
-  position: absolute;
-  bottom: -18px;
-  left: -18px;
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--fucsia);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 32px rgba(230,0,126,0.45);
-  animation: badgePulse 3s ease-in-out infinite;
-  z-index: 2;
+/* Each row alternates indent to create scattered feel */
+.nos-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: rgba(30,7,32,0.8);
+  border: 1px solid rgba(230,0,126,0.22);
+  backdrop-filter: blur(14px);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+  width: fit-content;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translateX(40px);
+  animation: pillSlideIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards,
+             pillDrift ease-in-out infinite;
 }
-.nos-badge svg {
-  width: 28px; height: 28px;
-  stroke: #fff;
+.nos-pill svg {
+  width: 17px; height: 17px;
+  stroke: var(--fucsia);
+  flex-shrink: 0;
 }
-@keyframes badgePulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 8px 32px rgba(230,0,126,0.45); }
-  50%       { transform: scale(1.08); box-shadow: 0 12px 40px rgba(230,0,126,0.65); }
+
+@keyframes pillSlideIn {
+  to { opacity: 1; transform: translateX(0); }
 }
+@keyframes pillDrift {
+  0%, 100% { translate: 0 0; }
+  50%       { translate: 0 -6px; }
+}
+
+/* Stagger delays + horizontal offsets for scattered rows */
+.nos-pill--1 { margin-left: 0;    animation-delay: 0.05s, 0.55s; animation-duration: 0.5s, 4.1s; }
+.nos-pill--2 { margin-left: 40px; animation-delay: 0.15s, 0.65s; animation-duration: 0.5s, 3.7s; }
+.nos-pill--3 { margin-left: 12px; animation-delay: 0.25s, 0.75s; animation-duration: 0.5s, 4.5s; }
+.nos-pill--4 { margin-left: 56px; animation-delay: 0.35s, 0.85s; animation-duration: 0.5s, 3.9s; }
+.nos-pill--5 { margin-left: 8px;  animation-delay: 0.45s, 0.95s; animation-duration: 0.5s, 4.3s; }
+.nos-pill--6 { margin-left: 32px; animation-delay: 0.55s, 1.05s; animation-duration: 0.5s, 3.6s; }
+.nos-pill--7 { margin-left: 20px; animation-delay: 0.65s, 1.15s; animation-duration: 0.5s, 4.7s; }
+.nos-pill--8 { margin-left: 48px; animation-delay: 0.75s, 1.25s; animation-duration: 0.5s, 3.8s; }
 
 /* Stats */
 .nosotros-stats {
