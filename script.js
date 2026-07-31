@@ -967,3 +967,24 @@
   goTo(0)
   setInterval(function () { goTo(current + 1) }, 2500)
 })();
+
+// ── LANZAMIENTOS SWITCHER ──
+(function () {
+  var items = document.querySelectorAll('.lanz-list-item')
+  var slides = document.querySelectorAll('.lanz-spot-inner')
+  var bgs = document.querySelectorAll('.lanz-spot-bg')
+  if (!items.length) return
+
+  function activate(idx) {
+    items.forEach(function (el) { el.classList.remove('active') })
+    slides.forEach(function (el) { el.classList.remove('active') })
+    bgs.forEach(function (el) { el.classList.remove('active') })
+    items[idx].classList.add('active')
+    slides[idx].classList.add('active')
+    bgs[idx].classList.add('active')
+  }
+
+  items.forEach(function (item, i) {
+    item.addEventListener('click', function () { activate(i) })
+  })
+})();
