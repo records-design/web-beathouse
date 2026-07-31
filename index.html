@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=29" />
+  <link rel="stylesheet" href="style.css?v=30" />
 </head>
 <body>
 
@@ -662,6 +662,18 @@
           </button>
         </div>
 
+        <div class="nos-tab-panels">
+          <div class="nos-tab-panel active" data-panel="0">
+            <p>Desarrollamos identidad, concepto y posicionamiento musical.</p>
+          </div>
+          <div class="nos-tab-panel" data-panel="1">
+            <p>Cuidamos cada detalle del sonido, la imagen y el desarrollo audiovisual.</p>
+          </div>
+          <div class="nos-tab-panel" data-panel="2">
+            <p>Conectamos talento con oportunidades y crecimiento en la industria.</p>
+          </div>
+        </div>
+
         <div class="nosotros-locations">
           <div class="nos-loc">
             <span class="nos-loc-dot"></span>
@@ -680,47 +692,16 @@
         </div>
       </div>
 
-      <!-- RIGHT: número editorial grande + descripción + filmstrip -->
+      <!-- RIGHT: fotos del estudio con crossfade -->
       <div class="nos-visual reveal-right">
-
-        <!-- Display editorial: número + título + desc -->
-        <div class="nos-display">
-          <div class="nos-display-panel active" data-panel="0">
-            <span class="nos-display-num">01</span>
-            <strong class="nos-display-title">Dirección artística</strong>
-            <p class="nos-display-desc">Desarrollamos identidad, concepto y posicionamiento musical.</p>
-          </div>
-          <div class="nos-display-panel" data-panel="1">
-            <span class="nos-display-num">02</span>
-            <strong class="nos-display-title">Producción integral</strong>
-            <p class="nos-display-desc">Cuidamos cada detalle del sonido, la imagen y el desarrollo audiovisual.</p>
-          </div>
-          <div class="nos-display-panel" data-panel="2">
-            <span class="nos-display-num">03</span>
-            <strong class="nos-display-title">Estrategia global</strong>
-            <p class="nos-display-desc">Conectamos talento con oportunidades y crecimiento en la industria.</p>
+        <div class="nos-photo-stack">
+          <img class="nos-photo active" data-photo="0" src="imagenes/foto-estudio.png" alt="Estudio BeatHouse" />
+          <img class="nos-photo" data-photo="1" src="imagenes/foto estudio 2.png" alt="Estudio BeatHouse" />
+          <div class="nos-photo-overlay"></div>
+          <div class="nos-progress">
+            <div class="nos-progress-bar"></div>
           </div>
         </div>
-
-        <!-- Filmstrip de fotos cuadradas -->
-        <div class="nos-filmstrip">
-          <div class="nos-film-track">
-            <div class="nos-film-item"><img src="imagenes/foto-estudio.png" alt="Estudio BeatHouse" /></div>
-            <div class="nos-film-item"><img src="imagenes/foto estudio 2.png" alt="Estudio BeatHouse" /></div>
-            <div class="nos-film-item"><img src="imagenes/foto-estudio.png" alt="Estudio BeatHouse" /></div>
-            <div class="nos-film-item"><img src="imagenes/foto estudio 2.png" alt="Estudio BeatHouse" /></div>
-            <div class="nos-film-item" aria-hidden="true"><img src="imagenes/foto-estudio.png" alt="" /></div>
-            <div class="nos-film-item" aria-hidden="true"><img src="imagenes/foto estudio 2.png" alt="" /></div>
-            <div class="nos-film-item" aria-hidden="true"><img src="imagenes/foto-estudio.png" alt="" /></div>
-            <div class="nos-film-item" aria-hidden="true"><img src="imagenes/foto estudio 2.png" alt="" /></div>
-          </div>
-        </div>
-
-        <!-- Progress bar -->
-        <div class="nos-progress">
-          <div class="nos-progress-bar"></div>
-        </div>
-
       </div>
 
     </div>

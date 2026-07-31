@@ -896,10 +896,12 @@
 // ── NOSOTROS TABS ──
 (function () {
   var tabs = document.querySelectorAll('.nos-tab')
-  var panels = document.querySelectorAll('.nos-display-panel')
+  var panels = document.querySelectorAll('.nos-tab-panel')
+  var photos = document.querySelectorAll('.nos-photo')
   var progressBar = document.querySelector('.nos-progress-bar')
   if (!tabs.length) return
 
+  var photoMap = [0, 1, 0]
   var INTERVAL = 4000
   var timer = null
   var currentTab = 0
@@ -907,8 +909,10 @@
   function activateTab(idx) {
     tabs.forEach(function (t) { t.classList.remove('active') })
     panels.forEach(function (p) { p.classList.remove('active') })
+    photos.forEach(function (p) { p.classList.remove('active') })
     tabs[idx].classList.add('active')
     panels[idx].classList.add('active')
+    photos[photoMap[idx]].classList.add('active')
     currentTab = idx
     if (progressBar) {
       progressBar.style.transition = 'none'
