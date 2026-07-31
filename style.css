@@ -1872,6 +1872,9 @@ body {
   margin: 0 auto;
   padding: 0 40px 48px;
 }
+.lanz-section-header .section-title {
+  color: var(--rosa);
+}
 
 /* Layout: lista izquierda + spotlight derecha */
 .lanz-layout {
