@@ -968,3 +968,16 @@
   setInterval(function () { goTo(current + 1) }, 2500)
 })();
 
+// ── CIERRE WORD ANIMATION ──
+(function () {
+  var cierre = document.getElementById('cierreSection')
+  if (!cierre) return
+  var obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      cierre.classList.add('in-view')
+      obs.disconnect()
+    }
+  }, { threshold: 0.3 })
+  obs.observe(cierre)
+})();
+

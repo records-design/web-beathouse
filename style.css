@@ -2448,14 +2448,25 @@ body {
   font-size: clamp(18px, 2.2vw, 32px);
   font-weight: 500;
   color: rgba(255,255,255,0.7);
-  line-height: 1.7;
+  line-height: 1.8;
   max-width: 680px;
   margin: 0;
   letter-spacing: .01em;
 }
 
-.cierre-pill {
+.cierre-word {
   display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+  transition-delay: calc(var(--i, 0) * 0.08s);
+}
+.cierre.in-view .cierre-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cierre-pill {
   border-radius: 50px;
   padding: .05em .5em;
   font-style: normal;
