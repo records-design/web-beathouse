@@ -2074,16 +2074,16 @@ body {
 
 /* ── DIFERENCIAL NUEVO ── */
 .diferencial {
-  padding: 100px 60px;
+  padding: 52px 60px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
 }
 
 .dif-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
   max-width: 1300px;
   margin: 0 auto;
@@ -2438,7 +2438,7 @@ body {
 /* ── PROJECT TICKER ── */
 .pt-wrap {
   overflow: hidden;
-  padding: 28px 0;
+  padding: 16px 0;
   background: transparent;
   border-top: 1px solid rgba(230,0,126,.18);
   border-bottom: 1px solid rgba(230,0,126,.18);
