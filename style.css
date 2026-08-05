@@ -2098,6 +2098,107 @@ body {
 }
 .lanz-other-btn:hover { color: var(--fucsia); }
 
+/* ── PRÓXIMOS LANZAMIENTOS ── */
+.proximos {
+  padding: 80px 60px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.proximos-header {
+  margin-bottom: 56px;
+}
+.proximos-title {
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-top: 16px;
+}
+.proximos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.std-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(230,0,126,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+.std-card:hover {
+  border-color: rgba(230,0,126,0.55);
+  transform: translateY(-4px);
+}
+.std-cover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.std-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: saturate(1.1);
+  transition: transform .5s ease;
+}
+.std-card:hover .std-cover img {
+  transform: scale(1.04);
+}
+.std-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--fucsia);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+.std-info {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.std-date {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--fucsia);
+}
+.std-artist {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.std-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+.std-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+@media (max-width: 640px) {
+  .proximos-grid { grid-template-columns: 1fr; }
+  .proximos { padding: 60px 20px 80px; }
+}
+
 /* ── DIFERENCIAL NUEVO ── */
 .diferencial {
   padding: 52px 60px;
