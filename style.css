@@ -1569,6 +1569,8 @@ body {
   gap: 12px;
   flex: 1;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .nos-gallery-col img {
@@ -1578,22 +1580,23 @@ body {
   border-radius: 12px;
   filter: saturate(1.1) contrast(1.05);
   flex-shrink: 0;
+  display: block;
 }
 
 .nos-gallery-col--up {
-  animation: galleryUp 18s linear infinite;
+  animation: galleryUp 24s linear infinite;
 }
 .nos-gallery-col--down {
-  animation: galleryDown 22s linear infinite;
+  animation: galleryDown 30s linear infinite;
 }
 
 @keyframes galleryUp {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, -50%, 0); }
 }
 @keyframes galleryDown {
-  from { transform: translateY(-50%); }
-  to   { transform: translateY(0); }
+  from { transform: translate3d(0, -50%, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 
 .nos-gallery:hover .nos-gallery-col {
