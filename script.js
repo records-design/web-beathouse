@@ -968,35 +968,6 @@
   setInterval(function () { goTo(current + 1) }, 2500)
 })();
 
-// ── PROJECT TICKER ──
-(function () {
-  var wrap = document.getElementById('ptWrap')
-  if (!wrap) return
-  var imgWrap = document.getElementById('ptImgWrap')
-  var img = document.getElementById('ptImg')
-  var items = wrap.querySelectorAll('.pt-item')
-  var preloaded = {}
-
-  items.forEach(function (item) {
-    var src = item.dataset.img
-    if (src && !preloaded[src]) {
-      var i = new Image(); i.src = src; preloaded[src] = true
-    }
-    item.addEventListener('mouseenter', function () {
-      item.classList.add('active')
-      var src = item.dataset.img
-      if (src) {
-        img.src = src
-        imgWrap.classList.add('visible')
-      }
-    })
-    item.addEventListener('mouseleave', function () {
-      item.classList.remove('active')
-      imgWrap.classList.remove('visible')
-    })
-  })
-})();
-
 // ── DIFERENCIADORES ANIMATION ──
 (function () {
   var cards = document.querySelectorAll('.dif2-card')
