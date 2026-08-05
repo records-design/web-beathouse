@@ -968,16 +968,44 @@
   setInterval(function () { goTo(current + 1) }, 2500)
 })();
 
-// ── CIERRE WORD ANIMATION ──
+// ── CIERRE ANIMATION ──
 (function () {
   var cierre = document.getElementById('cierreSection')
   if (!cierre) return
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Trigger animations on scroll
   var obs = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) {
       cierre.classList.add('in-view')
       obs.disconnect()
     }
-  }, { threshold: 0.3 })
-  obs.observe(cierre)
+  }, { threshold: 0.35 })
+
+  if (reduced) {
+    cierre.classList.add('in-view')
+  } else {
+    obs.observe(cierre)
+  }
+
+  // Mouse parallax for background orbs (desktop only)
+  var isTouch = window.matchMedia('(pointer: coarse)').matches
+  if (!isTouch && !reduced) {
+    var orb1 = cierre.querySelector('.cierre-orb--1')
+    var orb2 = cierre.querySelector('.cierre-orb--2')
+    var rafId = null
+
+    document.addEventListener('mousemove', function (e) {
+      if (rafId) return
+      rafId = requestAnimationFrame(function () {
+        rafId = null
+        var mx = (e.clientX / window.innerWidth - 0.5)
+        var my = (e.clientY / window.innerHeight - 0.5)
+        if (orb1) orb1.style.transform = 'translate(' + (mx * 22) + 'px,' + (my * 14) + 'px)'
+        if (orb2) orb2.style.transform = 'translate(' + (-mx * 16) + 'px,' + (-my * 10) + 'px)'
+      })
+    }, { passive: true })
+  }
 })();
 

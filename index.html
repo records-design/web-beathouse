@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=47" />
+  <link rel="stylesheet" href="style.css?v=49" />
 </head>
 <body>
 
@@ -838,20 +838,38 @@
 
 
   <!-- CIERRE -->
-  <section class="cierre" id="cierreSection">
-    <p class="cierre-frase">
-      <span class="cierre-word" style="--i:0">Convertimos</span>
-      <span class="cierre-word" style="--i:1">talento</span>
-      <span class="cierre-word" style="--i:2">en</span>
-      <span class="cierre-word" style="--i:3">carreras</span>
-      <span class="cierre-word" style="--i:4">con</span>
-      <span class="cierre-word cierre-pill cierre-pill--fucsia" style="--i:5">dirección</span>
-      <span class="cierre-word cierre-pill cierre-pill--rosa" style="--i:6">sonido</span>
-      <span class="cierre-word" style="--i:7">y</span>
-      <span class="cierre-word cierre-pill cierre-pill--fucsia" style="--i:8">proyección</span>
-      <span class="cierre-word" style="--i:9">que</span>
-      <span class="cierre-word" style="--i:10">trascienden.</span>
-    </p>
+  <section class="cierre" id="cierreSection" aria-label="Cierre">
+    <div class="cierre-orb cierre-orb--1" aria-hidden="true"></div>
+    <div class="cierre-orb cierre-orb--2" aria-hidden="true"></div>
+
+    <div class="cierre-inner">
+
+      <div class="cierre-l1">Convertimos talento en carreras con</div>
+
+      <div class="cierre-l2">
+        <span class="cierre-hero cierre-hero--fucsia" data-role="dir">
+          <span class="cierre-hero-text">dirección</span>
+          <span class="cierre-underline" aria-hidden="true"></span>
+        </span>
+
+        <span class="cierre-hero cierre-hero--rosa" data-role="son">
+          <span class="cierre-hero-text">sonido</span>
+          <svg class="cierre-wave" viewBox="0 0 96 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 5 C8 1,16 9,24 5 S40 1,48 5 S64 9,72 5 S88 1,96 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+
+        <span class="cierre-y" aria-hidden="true">y</span>
+
+        <span class="cierre-hero cierre-hero--fucsia" data-role="pro">
+          <span class="cierre-hero-text">proyección</span>
+          <span class="cierre-sweep" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <div class="cierre-l3">que trascienden.</div>
+
+    </div>
   </section>
 
   <!-- FOOTER -->
