@@ -1523,18 +1523,22 @@ body {
 }
 
 .nos-tab-panels {
+  display: grid;
   padding: 24px 20px 20px;
-  min-height: 90px;
 }
 
 .nos-tab-panel {
-  display: none;
+  grid-area: 1 / 1;
   font-size: 15px;
   color: rgba(255,255,255,0.6);
   line-height: 1.75;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
 }
 .nos-tab-panel.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
   animation: tabFadeIn .35s ease;
 }
 
