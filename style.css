@@ -1317,6 +1317,13 @@ body {
   border-radius: 2px;
 }
 
+.nosotros-heading-wrap {
+  width: fit-content;
+}
+.nosotros-heading-wrap .nosotros-lead {
+  max-width: 100%;
+  width: 100%;
+}
 .nosotros-title {
   font-size: clamp(32px, 3.8vw, 52px);
   font-weight: 900;
