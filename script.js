@@ -899,7 +899,7 @@
   var panels = document.querySelectorAll('.nos-tab-panel')
   if (!tabs.length) return
 
-  var INTERVAL = 4000
+  var INTERVAL = 7000
   var timer = null
   var currentTab = 0
 
