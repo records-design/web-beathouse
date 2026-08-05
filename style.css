@@ -1576,8 +1576,14 @@ body {
   aspect-ratio: 3/4;
   object-fit: cover;
   border-radius: 12px;
-  filter: saturate(1.1) contrast(1.05);
+  filter: saturate(1.2) contrast(1.08);
   flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(230,0,126,0.25), 0 0 18px rgba(230,0,126,0.18), 0 0 40px rgba(230,0,126,0.08);
+  transition: box-shadow .4s ease, filter .4s ease;
+}
+.nos-gallery-col img:hover {
+  box-shadow: 0 0 0 1px rgba(230,0,126,0.6), 0 0 28px rgba(230,0,126,0.45), 0 0 60px rgba(230,0,126,0.2);
+  filter: saturate(1.4) contrast(1.1);
 }
 
 .nos-gallery-col--up {
