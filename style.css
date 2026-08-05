@@ -1260,7 +1260,11 @@ body {
 /* ── NOSOTROS ── */
 /* ── NOSOTROS ── */
 .nosotros {
-  padding: 90px 60px;
+  padding: 60px 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   background:
@@ -1552,7 +1556,7 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 560px;
+  height: clamp(380px, calc(100vh - 200px), 560px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
