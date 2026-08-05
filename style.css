@@ -2435,6 +2435,47 @@ body {
 }
 .contacto-btn:hover { opacity: 0.85; }
 
+/* ── MANTRA TICKER ── */
+.mantra-ticker {
+  overflow: hidden;
+  padding: 22px 0;
+  border-top: 1px solid rgba(230,0,126,.18);
+  border-bottom: 1px solid rgba(230,0,126,.18);
+  background: rgba(230,0,126,.04);
+}
+.mantra-track {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  white-space: nowrap;
+  animation: mantraSpin 18s linear infinite;
+  width: max-content;
+}
+.mantra-track span {
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 500;
+  color: rgba(200,185,215,.65);
+  letter-spacing: .01em;
+  flex-shrink: 0;
+}
+.mantra-track span em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--fucsia);
+}
+.mantra-sep {
+  font-size: 10px !important;
+  color: rgba(230,0,126,.4) !important;
+  font-weight: 400 !important;
+}
+@keyframes mantraSpin {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mantra-track { animation: none; }
+}
+
 /* ── DIFERENCIADORES ── */
 .diferenciadores {
   padding: 100px 40px 120px;
