@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=52" />
+  <link rel="stylesheet" href="style.css?v=53" />
 </head>
 <body>
 
@@ -665,21 +665,49 @@
 
   </section>
 
-  <!-- MANTRA TICKER -->
-  <div class="mantra-ticker" aria-hidden="true">
-    <div class="mantra-track">
-      <span><em>Impactamos</em> con música.</span>
-      <span class="mantra-sep">◆</span>
-      <span><em>Conectamos</em> con audiencias.</span>
-      <span class="mantra-sep">◆</span>
-      <span><em>Entregamos</em> resultados.</span>
-      <span class="mantra-sep">◆</span>
-      <span><em>Impactamos</em> con música.</span>
-      <span class="mantra-sep">◆</span>
-      <span><em>Conectamos</em> con audiencias.</span>
-      <span class="mantra-sep">◆</span>
-      <span><em>Entregamos</em> resultados.</span>
-      <span class="mantra-sep">◆</span>
+  <!-- PROJECT TICKER -->
+  <div class="pt-wrap" id="ptWrap">
+    <!-- imagen central que aparece en hover -->
+    <div class="pt-img-wrap" id="ptImgWrap" aria-hidden="true">
+      <img class="pt-img" id="ptImg" src="" alt="">
+    </div>
+
+    <!-- fila 1: derecha -->
+    <div class="pt-row">
+      <div class="pt-track pt-track--right">
+        <span class="pt-item" data-img="imagenes/foto-crash.jpeg">IMPACTAMOS CON MÚSICA</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-tomas-gimenez.jpg">CONECTAMOS CON AUDIENCIAS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-maga.jpg">ENTREGAMOS RESULTADOS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <!-- duplicado para loop continuo -->
+        <span class="pt-item" data-img="imagenes/foto-crash.jpeg">IMPACTAMOS CON MÚSICA</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-tomas-gimenez.jpg">CONECTAMOS CON AUDIENCIAS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-maga.jpg">ENTREGAMOS RESULTADOS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+      </div>
+    </div>
+
+    <!-- fila 2: izquierda -->
+    <div class="pt-row">
+      <div class="pt-track pt-track--left">
+        <span class="pt-item" data-img="imagenes/foto-maga.jpg">ENTREGAMOS RESULTADOS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-crash.jpeg">IMPACTAMOS CON MÚSICA</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-tomas-gimenez.jpg">CONECTAMOS CON AUDIENCIAS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <!-- duplicado -->
+        <span class="pt-item" data-img="imagenes/foto-maga.jpg">ENTREGAMOS RESULTADOS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-crash.jpeg">IMPACTAMOS CON MÚSICA</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+        <span class="pt-item" data-img="imagenes/foto-tomas-gimenez.jpg">CONECTAMOS CON AUDIENCIAS</span>
+        <span class="pt-dot" aria-hidden="true">·</span>
+      </div>
     </div>
   </div>
 
