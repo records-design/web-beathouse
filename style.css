@@ -1423,7 +1423,6 @@ body {
   backdrop-filter: blur(10px);
   overflow: hidden;
   transition: border-color .25s, background .25s, transform .2s;
-  cursor: default;
 }
 .nos-loc-card:hover {
   border-color: rgba(230,0,126,0.6);
