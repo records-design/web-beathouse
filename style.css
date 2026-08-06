@@ -2652,54 +2652,34 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+@keyframes cardSettle {
+  0%   { opacity: 0; transform: translateY(36px) rotate(var(--tilt, -2deg)) scale(.96); }
+  60%  { opacity: 1; transform: translateY(-4px) rotate(calc(var(--tilt, -2deg) * .15)) scale(1.01); }
+  80%  { transform: translateY(2px) rotate(0deg) scale(.995); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
 .dif2-card {
-  perspective: 1000px;
   border-radius: 16px;
   min-height: 220px;
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity .6s ease calc(var(--di, 0) * .1s),
-    transform .6s ease calc(var(--di, 0) * .1s);
-  cursor: default;
-}
-.dif2-card.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-.dif2-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 220px;
-  transform-style: preserve-3d;
-  transition: transform .55s cubic-bezier(.4,0,.2,1);
-  border-radius: 16px;
-}
-.dif2-card:hover .dif2-inner {
-  transform: rotateY(180deg);
-}
-.dif2-front,
-.dif2-back {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
   padding: 28px 24px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-.dif2-front {
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.07);
+  transition: border-color .3s, background .3s;
+  opacity: 0;
+  cursor: default;
 }
-.dif2-back {
-  background: linear-gradient(135deg, rgba(230,0,126,.18) 0%, rgba(66,25,74,.6) 100%);
-  border: 1px solid rgba(230,0,126,.35);
-  transform: rotateY(180deg);
-  justify-content: center;
+.dif2-card:nth-child(odd)  { --tilt: -1.5deg; }
+.dif2-card:nth-child(even) { --tilt:  1.5deg; }
+.dif2-card.in-view {
+  animation: cardSettle .65s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: calc(var(--di, 0) * .09s);
+}
+.dif2-card:hover {
+  background: rgba(230,0,126,.06);
+  border-color: rgba(230,0,126,.25);
 }
 .dif2-num {
   font-size: 11px;
@@ -2723,22 +2703,9 @@ body {
   color: #fff;
   line-height: 1.3;
 }
-.dif2-back-num {
-  font-size: 32px;
-  font-weight: 900;
-  color: rgba(230,0,126,.25);
-  line-height: 1;
-  letter-spacing: -.02em;
-}
-.dif2-back-title {
-  font-size: clamp(16px, 1.4vw, 20px);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-}
-.dif2-back-desc {
+.dif2-desc {
   font-size: clamp(13px, 1.1vw, 15px);
-  color: rgba(255,220,240,.7);
+  color: rgba(255,220,240,.6);
   line-height: 1.6;
   margin-top: 4px;
 }
