@@ -1902,9 +1902,9 @@ body {
   text-transform: lowercase;
 }
 .lanz-subtitle {
-  font-size: 15px;
+  font-size: clamp(16px, 1.6vw, 22px);
   color: rgba(255,255,255,0.45);
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: center;
 }
 
