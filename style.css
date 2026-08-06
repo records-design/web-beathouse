@@ -1898,6 +1898,14 @@ body {
 }
 .lanz-header .section-title {
   color: var(--rosa);
+  font-family: 'Poppins', sans-serif;
+  text-transform: lowercase;
+}
+.lanz-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* Featured */
