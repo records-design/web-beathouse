@@ -3806,7 +3806,7 @@ body.modal-open { overflow: hidden; }
     aspect-ratio: 4/5;
     border-radius: 16px;
   }
-  .rcard-photo img { filter: grayscale(1) brightness(0.82); }
+  .rcard-photo img { filter: none; }
   .rcard-info { display: none; }
   .rcard-hover {
     opacity: 1 !important;
