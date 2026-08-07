@@ -1603,10 +1603,10 @@ body {
 }
 
 .nos-gallery-col--up {
-  animation: galleryUp 24s linear infinite;
+  animation: galleryUp 12s linear infinite;
 }
 .nos-gallery-col--down {
-  animation: galleryDown 30s linear infinite;
+  animation: galleryDown 15s linear infinite;
 }
 
 @keyframes galleryUp {
