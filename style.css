@@ -1943,6 +1943,8 @@ body {
   font-size: clamp(16px, 1.4vw, 20px);
   color: rgba(255,255,255,0.55);
   margin-bottom: 0;
+  max-width: none;
+  white-space: nowrap;
 }
 
 /* Featured */
