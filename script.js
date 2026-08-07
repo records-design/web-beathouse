@@ -1171,24 +1171,27 @@
     cards.forEach(function (c) { trackEl.appendChild(c) })
     grid.appendChild(trackEl)
 
-    // Counter
-    var counter = document.createElement('div')
-    counter.className = 'roster-slider-counter'
-    grid.parentNode.insertBefore(counter, grid.nextSibling)
+    // Controls bar below grid
+    var controls = document.createElement('div')
+    controls.className = 'roster-slider-controls'
 
-    // Buttons
     var btnPrev = document.createElement('button')
-    btnPrev.className = 'roster-slider-btn roster-slider-btn--prev'
+    btnPrev.className = 'roster-slider-btn'
     btnPrev.setAttribute('aria-label', 'Anterior')
     btnPrev.innerHTML = '&#8592;'
 
+    var counter = document.createElement('div')
+    counter.className = 'roster-slider-counter'
+
     var btnNext = document.createElement('button')
-    btnNext.className = 'roster-slider-btn roster-slider-btn--next'
+    btnNext.className = 'roster-slider-btn'
     btnNext.setAttribute('aria-label', 'Siguiente')
     btnNext.innerHTML = '&#8594;'
 
-    grid.appendChild(btnPrev)
-    grid.appendChild(btnNext)
+    controls.appendChild(btnPrev)
+    controls.appendChild(counter)
+    controls.appendChild(btnNext)
+    grid.parentNode.insertBefore(controls, grid.nextSibling)
 
     function go (n) {
       idx = (n + total) % total
