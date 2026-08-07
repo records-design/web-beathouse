@@ -3786,16 +3786,62 @@ body.modal-open { overflow: hidden; }
   .serv-card-list { align-self: auto; }
   .serv-card-list li { padding: 9px 0; font-size: 13px; }
   .serv-card-title { font-size: 20px; }
-  .serv-card-desc { font-size: 13px; line-height: 1.5; }
+  .serv-card-desc { font-size: 13px; line-height: 1.5; max-width: 100%; }
+  .serv-card-arrow { display: none; }
   .serv-card-bignum { font-size: 52px; right: 14px; top: 8px; }
   .serv-card-icon { width: 38px; height: 38px; border-radius: 10px; }
   .serv-card-icon svg { width: 17px; height: 17px; }
 
   /* Nosotros */
   .nosotros-inner { grid-template-columns: 1fr; gap: clamp(24px,5vw,48px); }
-  .nos-foto-grid { height: 320px; }
-  .nosotros-locations { flex-direction: column; gap: 12px; margin-top: 24px; }
-  .nos-loc + .nos-loc { border-left: none; padding-left: 0; }
+  .nos-foto-grid { display: none; }
+  /* Galería artistas → ticker horizontal sin repetición */
+  .nos-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    height: 200px !important;
+    padding-bottom: 4px !important;
+    scrollbar-width: none !important;
+    animation: none !important;
+  }
+  .nos-gallery::-webkit-scrollbar { display: none; }
+  .nos-gallery-col {
+    flex: 0 0 140px !important;
+    scroll-snap-align: start !important;
+    height: 200px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    animation: none !important;
+    gap: 0 !important;
+    flex-direction: row !important;
+  }
+  .nos-gallery-col img {
+    width: 140px !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+  .nosotros-locations {
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin-top: 20px !important;
+  }
+  .nos-loc-card {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 12px !important;
+    gap: 10px !important;
+    border-radius: 12px !important;
+  }
+  .nos-loc-info strong { font-size: 11px; }
+  .nos-loc-info span { font-size: 9px; }
+  .nos-loc-maps { display: none; }
 
   /* Lanzamientos */
   .section-title {
@@ -3803,6 +3849,8 @@ body.modal-open { overflow: hidden; }
     display: block !important;
     width: 100% !important;
   }
+  .lanzamientos { padding-left: 16px; padding-right: 16px; }
+  .lanz-header { text-align: center; }
   .lanz-featured {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -3810,7 +3858,13 @@ body.modal-open { overflow: hidden; }
   }
   .lanz-featured-title { font-size: clamp(38px, 12vw, 64px); }
   .lanz-countdown { flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
-  .lanz-card { flex-direction: column; border-radius: 16px; }
+  .lanz-card {
+    flex-direction: column;
+    border-radius: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
   .lanz-card-cover { flex: none; height: 220px; }
   .lanz-card-body { padding: 20px 18px 18px; }
 
@@ -3818,6 +3872,19 @@ body.modal-open { overflow: hidden; }
   .diferencial { padding: clamp(40px,6vw,80px) clamp(16px,4vw,32px); gap: 48px; }
   .dif-block { grid-template-columns: 1fr; gap: 28px; }
   .dif-block--ecosistema { direction: ltr; }
+  /* Transparencia: fix overflow y escalar animación */
+  .dif-title { font-size: clamp(28px, 8vw, 40px); white-space: normal; word-break: break-word; }
+  .dif-block-text p { font-size: 14px; }
+  .dif-zil {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 320px !important;
+    margin: 0 auto !important;
+  }
+  .zil-ring--3 { display: none; }
+  .zil-ring--2 { width: 260px !important; height: 260px !important; }
+  .zil-ring--1 { width: 140px !important; height: 140px !important; }
+  .zil-carousel-mask { width: 280px !important; height: 300px !important; }
 
   /* Contacto */
   .contacto { padding: 56px 20px; }
@@ -3827,10 +3894,10 @@ body.modal-open { overflow: hidden; }
   /* Footer */
   .footer { padding: 48px 20px 0; }
   .footer-main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 28px;
   }
-  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand { grid-column: auto; }
   .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
 
   /* Artist modal */
