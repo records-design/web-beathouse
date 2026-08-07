@@ -265,15 +265,13 @@ body {
 
 .ring-wobble {
   transform-style: preserve-3d;
-  animation: ringWobble 16s ease-in-out infinite;
+  animation: ringWobble 12s ease-in-out infinite;
 }
 
 @keyframes ringWobble {
-  0%   { transform: rotateX(14deg) rotateZ(1.5deg); }
-  25%  { transform: rotateX(4deg)  rotateZ(-1deg); }
-  50%  { transform: rotateX(18deg) rotateZ(1.5deg); }
-  75%  { transform: rotateX(4deg)  rotateZ(-1deg); }
-  100% { transform: rotateX(14deg) rotateZ(1.5deg); }
+  0%   { transform: rotateX(12deg) rotateZ(1deg); }
+  50%  { transform: rotateX(5deg)  rotateZ(-0.8deg); }
+  100% { transform: rotateX(12deg) rotateZ(1deg); }
 }
 
 .ring-track {
@@ -281,7 +279,7 @@ body {
   width: 158px;
   height: 222px;
   transform-style: preserve-3d;
-  animation: ringSpin 18s linear infinite;
+  animation: ringSpin 14s linear infinite;
 }
 
 @keyframes ringSpin {
@@ -299,7 +297,7 @@ body {
   inset: 0;
   border-radius: 28px;
   overflow: hidden;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(330px);
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.10) inset,
     0 2px 0 rgba(255,255,255,0.08) inset,
