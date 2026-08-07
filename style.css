@@ -495,7 +495,7 @@ body {
 .ticker-wrap {
   background: transparent;
   overflow: hidden;
-  padding: 12px 0;
+  padding: 7px 0;
   border-top: 1px solid rgba(230,0,126,0.3);
   border-bottom: 1px solid rgba(230,0,126,0.3);
 }
