@@ -3744,15 +3744,19 @@ body.modal-open { overflow: hidden; }
   .btn-contacto { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* Hero: single col, artist strip debajo */
+  /* Hero: ocupa exactamente el primer viewport en mobile */
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    min-height: auto;
-    padding: 68px 0 24px;
+    justify-content: space-between;
+    /* 100svh = viewport sin barra del navegador (Safari/Chrome mobile safe) */
+    min-height: 100svh;
+    min-height: 100dvh; /* dvh = dynamic viewport height, el más moderno */
+    height: 100svh;
+    height: 100dvh;
+    padding: 0 0 0;
     gap: 0;
+    box-sizing: border-box;
   }
   .hero-copy {
     display: flex;
@@ -3762,13 +3766,20 @@ body.modal-open { overflow: hidden; }
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+    flex: 1;
+    justify-content: center;
+    /* Empuja el contenido hacia el centro del espacio disponible,
+       debajo de la navbar fija (~68px) */
+    padding-top: 72px;
+    padding-bottom: 20px;
   }
-  .hero-tag { margin-top: 44px; margin-bottom: 16px; }
-  .hero-headline { font-size: clamp(20px,5.5vw,28px); line-height: 1.15; margin-bottom: 12px; }
+  .hero-tag { margin-top: 0; margin-bottom: 14px; }
+  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.15; margin-bottom: 14px; }
   .hero-headline em { font-size: inherit; }
-  .hero-sub { width: 100%; max-width: 100%; font-size: 11px; line-height: 1.55; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; }
+  .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.55; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
   .hero-headline span { white-space: normal !important; }
-  .hero-sub { font-size: 12px; line-height: 1.5; white-space: normal; overflow-wrap: break-word; color: rgba(255,255,255,0.45); }
+  /* Ticker se ancla al fondo del hero */
+  .ticker-wrap { margin-top: auto; flex-shrink: 0; }
 
   /* Ticker artistas mobile */
   .ticker-wrap { background: transparent; padding: 7px 0; }
