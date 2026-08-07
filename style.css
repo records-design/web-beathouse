@@ -3892,6 +3892,21 @@ body.modal-open { overflow: hidden; }
   }
   .lanz-featured-title { font-size: clamp(38px, 12vw, 64px); }
   .lanz-countdown { flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+  .lanz-featured-card {
+    flex-direction: column;
+    border-radius: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .lanz-featured-cover {
+    width: 100% !important;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px 14px 0 0;
+    height: auto;
+  }
+  .lanz-featured-cover img { border-radius: 14px 14px 0 0; }
+  .lanz-featured-info { padding: 20px 18px 22px; gap: 8px; }
   .lanz-card {
     flex-direction: column;
     border-radius: 16px;
