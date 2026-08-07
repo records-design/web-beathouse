@@ -4066,8 +4066,7 @@ body.modal-open { overflow: hidden; }
   .contacto-img { display: none; }
 
   /* Footer */
-  .footer { padding: 48px 16px 0; border-top: none; position: relative; }
-  .footer::before { content: ''; display: block; position: absolute; top: -60px; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, #1a0a22); pointer-events: none; }
+  .footer { padding: 48px 16px 0; border-top: none; background: linear-gradient(to bottom, transparent 0px, #1a0a22 64px); }
   .footer-main {
     grid-template-columns: 1fr;
     gap: 28px;
