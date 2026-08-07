@@ -1932,12 +1932,11 @@ body {
   display: flex;
   align-items: stretch;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.09);
   border-radius: 24px;
-  transition: border-color .3s;
+  transition: box-shadow .3s;
 }
 .lanz-featured-card:hover {
-  border-color: rgba(230,0,126,0.3);
+  box-shadow: 0 0 0 1px rgba(230,0,126,0.3);
 }
 
 .lanz-featured-cover {
