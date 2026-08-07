@@ -2739,7 +2739,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: rgba(255,255,255,.04);
+  background: rgba(30, 7, 35, 0.88);
   border: 1px solid rgba(255,255,255,.07);
   transition: border-color .3s, background .3s;
   opacity: 0;
