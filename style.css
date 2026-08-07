@@ -45,9 +45,14 @@ body {
   transform: translateY(-100%);
 }
 
+.nav-logo {
+  text-decoration: none;
+  cursor: pointer;
+}
 .nav-logo img {
   height: 82px;
   width: auto;
+  display: block;
 }
 
 .nav-links {
