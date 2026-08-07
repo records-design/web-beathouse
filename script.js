@@ -1014,3 +1014,22 @@
   }
 })();
 
+
+// ── GALLERY SEAMLESS LOOP ──
+(function () {
+  function initGallery () {
+    document.querySelectorAll('.nos-gallery-col').forEach(function (col) {
+      var imgs = col.querySelectorAll('img')
+      var half = imgs.length / 2
+      var setH = 0
+      var gap = 12
+      for (var i = 0; i < half; i++) {
+        setH += imgs[i].getBoundingClientRect().height + gap
+      }
+      col.style.setProperty('--set-h', setH + 'px')
+    })
+  }
+  // Run after images load
+  window.addEventListener('load', initGallery)
+  window.addEventListener('resize', initGallery)
+})();
