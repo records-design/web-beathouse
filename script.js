@@ -1152,3 +1152,62 @@
     if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1)
   }, { passive: true })
 })();
+
+// ── ROSTER SLIDER (mobile) ──
+(function () {
+  function init () {
+    if (window.innerWidth > 768) return
+    var grid = document.querySelector('.roster-grid')
+    if (!grid || grid.dataset.sliderDone) return
+    grid.dataset.sliderDone = '1'
+
+    var cards = Array.from(grid.querySelectorAll('.rcard'))
+    var total = cards.length
+    var idx = 0
+
+    // Wrap cards in a track
+    var trackEl = document.createElement('div')
+    trackEl.className = 'roster-grid-track'
+    cards.forEach(function (c) { trackEl.appendChild(c) })
+    grid.appendChild(trackEl)
+
+    // Counter
+    var counter = document.createElement('div')
+    counter.className = 'roster-slider-counter'
+    grid.parentNode.insertBefore(counter, grid.nextSibling)
+
+    // Buttons
+    var btnPrev = document.createElement('button')
+    btnPrev.className = 'roster-slider-btn roster-slider-btn--prev'
+    btnPrev.setAttribute('aria-label', 'Anterior')
+    btnPrev.innerHTML = '&#8592;'
+
+    var btnNext = document.createElement('button')
+    btnNext.className = 'roster-slider-btn roster-slider-btn--next'
+    btnNext.setAttribute('aria-label', 'Siguiente')
+    btnNext.innerHTML = '&#8594;'
+
+    grid.appendChild(btnPrev)
+    grid.appendChild(btnNext)
+
+    function go (n) {
+      idx = (n + total) % total
+      trackEl.style.transform = 'translateX(-' + idx * 100 + '%)'
+      counter.textContent = (idx + 1) + ' / ' + total
+    }
+
+    btnPrev.addEventListener('click', function () { go(idx - 1) })
+    btnNext.addEventListener('click', function () { go(idx + 1) })
+
+    // Swipe
+    var startX = 0
+    trackEl.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX }, { passive: true })
+    trackEl.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - startX
+      if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1)
+    }, { passive: true })
+
+    go(0)
+  }
+  window.addEventListener('load', init)
+})();
