@@ -3900,7 +3900,7 @@ body.modal-open { overflow: hidden; }
   .nosotros-inner { grid-template-columns: 1fr; gap: 20px; }
   .nos-foto-grid { display: none; }
   .nos-gallery { display: none !important; }
-  .nosotros { padding-top: 32px; padding-bottom: 28px; }
+  .nosotros { padding-top: 32px; padding-bottom: 12px; }
   .nosotros-text { gap: 14px; }
   .nosotros-title { font-size: clamp(24px, 7vw, 36px); margin-bottom: 8px; }
   .nos-tabs { gap: 6px; }
