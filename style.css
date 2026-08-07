@@ -1931,7 +1931,7 @@ body {
 .lanz-header .section-title {
   color: var(--rosa);
   font-family: 'Poppins', sans-serif;
-  text-transform: lowercase;
+  text-transform: none;
 }
 .lanz-subtitle {
   font-size: clamp(16px, 1.6vw, 22px);
