@@ -2956,7 +2956,8 @@ body {
   align-items: center;
   gap: 8px;
 }
-.footer-col ul li a:hover { color: var(--white); }
+.footer-col ul li a:hover,
+a.footer-contact-item:hover { color: var(--white); cursor: pointer; }
 
 .footer-contact-item svg { flex-shrink: 0; opacity: 0.5; }
 
