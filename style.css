@@ -1945,7 +1945,7 @@ body {
 .lanz-featured-card {
   display: flex;
   align-items: stretch;
-  background: rgba(255,255,255,0.04);
+  background: #1c0820;
   border-radius: 24px;
   transition: box-shadow .3s;
 }
