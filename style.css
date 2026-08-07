@@ -3879,15 +3879,18 @@ body.modal-open { overflow: hidden; }
 
   /* Lanzamientos */
   .section-title {
-    left: 0 !important;
     display: block !important;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
     width: 100% !important;
+    text-align: center !important;
   }
   .lanzamientos { padding-left: 16px; padding-right: 16px; }
   .lanz-header { text-align: center; }
   .lanz-header .section-title,
   .lanz-header .section-sub,
-  .lanz-subtitle { text-align: center; width: 100%; }
+  .lanz-subtitle { text-align: center; width: 100%; max-width: 100%; padding: 0 8px; box-sizing: border-box; }
   .lanz-featured {
     grid-template-columns: 1fr;
     gap: 28px;
