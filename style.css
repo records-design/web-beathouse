@@ -3746,16 +3746,16 @@ body.modal-open { overflow: hidden; }
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: auto;
-    min-height: 100svh;
-    padding: 96px 0 40px;
-    gap: 24px;
+    min-height: auto;
+    padding: 72px 0 24px;
+    gap: 16px;
   }
   .hero-copy {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     padding: 0 clamp(16px,5vw,24px);
     max-width: 100%;
   }
@@ -3767,11 +3767,11 @@ body.modal-open { overflow: hidden; }
   .ring-scene { display: none !important; }
 
   /* Roster */
-  .roster { padding: 56px 16px 16px; }
+  .roster { padding: 32px 16px 16px; }
   .roster-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 
   /* Servicios */
-  .servicios { padding: 56px 16px; }
+  .servicios { padding: 32px 16px; }
   .servicios-header {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -3798,7 +3798,7 @@ body.modal-open { overflow: hidden; }
   .nosotros-inner { grid-template-columns: 1fr; gap: 20px; }
   .nos-foto-grid { display: none; }
   .nos-gallery { display: none !important; }
-  .nosotros { padding-top: 56px; padding-bottom: 40px; }
+  .nosotros { padding-top: 32px; padding-bottom: 28px; }
   .nosotros-text { gap: 14px; }
   .nosotros-title { font-size: clamp(24px, 7vw, 36px); margin-bottom: 8px; }
   .nos-tabs { gap: 6px; }
@@ -3903,7 +3903,7 @@ body.modal-open { overflow: hidden; }
     overflow-wrap: break-word !important;
     margin-bottom: 28px !important;
   }
-  .lanzamientos { padding-left: 16px; padding-right: 16px; }
+  .lanzamientos { padding: 32px 16px; }
   .lanz-header { text-align: center; }
   .lanz-header .section-title,
   .lanz-header .section-sub,
@@ -3941,7 +3941,7 @@ body.modal-open { overflow: hidden; }
   .lanz-card-body { padding: 20px 18px 18px; }
 
   /* Diferencial */
-  .diferencial { padding: clamp(40px,6vw,80px) clamp(16px,4vw,32px); gap: 48px; }
+  .diferencial { padding: 32px 16px; gap: 32px; }
   .dif-block { grid-template-columns: 1fr; gap: 28px; }
   .dif-block--ecosistema { direction: ltr; }
   /* Transparencia: fix overflow y escalar animación */
@@ -3959,7 +3959,7 @@ body.modal-open { overflow: hidden; }
   .zil-carousel-mask { width: 280px !important; height: 300px !important; }
 
   /* Contacto */
-  .contacto { padding: 56px 20px; }
+  .contacto { padding: 32px 20px; }
   .contacto-inner { grid-template-columns: 1fr; gap: 32px; }
   .contacto-img { display: none; }
 
