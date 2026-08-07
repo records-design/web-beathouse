@@ -3749,7 +3749,7 @@ body.modal-open { overflow: hidden; }
     justify-content: flex-start;
     height: auto;
     min-height: auto;
-    padding: 80px 0 28px;
+    padding: 68px 0 24px;
     gap: 0;
   }
   .hero-copy {
@@ -3759,8 +3759,8 @@ body.modal-open { overflow: hidden; }
     padding: 0 clamp(16px,5vw,24px);
     max-width: 100%;
   }
-  .hero-tag { margin-bottom: 20px; }
-  .hero-headline { font-size: clamp(28px,8vw,44px); margin-bottom: 20px; }
+  .hero-tag { margin-bottom: 14px; }
+  .hero-headline { font-size: clamp(28px,8vw,44px); margin-bottom: 14px; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub { font-size: clamp(14px,4vw,16px); white-space: normal; overflow-wrap: break-word; }
 
