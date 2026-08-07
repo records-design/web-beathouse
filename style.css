@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 800;
 }
 
@@ -23,7 +23,7 @@ body {
   background: linear-gradient(160deg, #1E0720 0%, #250B23 40%, #42194A 70%, #1E0720 100%);
   background-attachment: fixed;
   color: var(--white);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   overflow-x: clip;
 }
 
@@ -1546,7 +1546,7 @@ body {
   text-align: left;
   cursor: pointer;
   color: rgba(255,255,255,0.35);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   transition: color .25s, border-left-color .25s, background .25s;
   border-radius: 0 8px 8px 0;
 }
@@ -1782,7 +1782,7 @@ body {
   position: absolute;
   top: 4px;
   right: 28px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: clamp(80px, 10vw, 140px);
   font-weight: 900;
   line-height: 1;
@@ -1942,7 +1942,7 @@ body {
 }
 .lanz-header .section-title {
   color: var(--rosa);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   text-transform: none;
 }
 .lanz-subtitle {
@@ -2650,7 +2650,7 @@ body {
   to   { transform: translateX(-50%); }
 }
 .pt-item {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: clamp(22px, 2.8vw, 38px);
   font-weight: 900;
   letter-spacing: -.01em;
