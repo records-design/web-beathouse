@@ -3777,10 +3777,13 @@ body.modal-open { overflow: hidden; }
 
   /* Dots de fondo mobile: más chicos y menos opacidad */
   .hero::after,
-  .nosotros::after,
-  .diferenciadores-wrap::after {
+  .nosotros::after {
     background-image: radial-gradient(rgba(255,255,255,0.05) 0.5px, transparent 0.5px) !important;
     background-size: 20px 20px !important;
+  }
+  .diferenciadores-wrap::after {
+    background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px) !important;
+    background-size: 22px 22px !important;
   }
 
   /* Ring scene → oculto en mobile hero */
