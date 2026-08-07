@@ -3804,19 +3804,19 @@ body.modal-open { overflow: hidden; }
     padding-top: 0;
     margin-top: 0;
     overflow: visible;
-    perspective: 420px;
-    perspective-origin: 50% 50%;
+    perspective: 650px;
+    perspective-origin: 50% 45%;
     align-items: center;
     justify-content: center;
   }
   .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: 90px !important;
-    height: 128px !important;
+    width: 160px !important;
+    height: 225px !important;
   }
   .ring-card {
-    border-radius: 12px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(100px) !important;
+    border-radius: 18px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(175px) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
