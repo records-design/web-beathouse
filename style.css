@@ -1904,6 +1904,20 @@ body {
 /* ── LANZAMIENTOS ── */
 .lanzamientos {
   padding: 80px 40px 100px;
+  position: relative;
+}
+.lanzamientos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.lanzamientos > * {
+  position: relative;
+  z-index: 1;
 }
 
 .lanz-header {
