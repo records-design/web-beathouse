@@ -3759,8 +3759,9 @@ body.modal-open { overflow: hidden; }
     padding: 0 clamp(16px,5vw,24px);
     max-width: 100%;
   }
-  .hero-tag { margin-bottom: 14px; }
-  .hero-headline { font-size: clamp(28px,8vw,44px); margin-bottom: 14px; }
+  .hero-tag { margin-top: 20px; margin-bottom: 16px; }
+  .hero-headline { font-size: clamp(22px,6.5vw,34px); line-height: 1.15; margin-bottom: 12px; }
+  .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub { font-size: 12px; line-height: 1.5; white-space: normal; overflow-wrap: break-word; color: rgba(255,255,255,0.45); }
 
