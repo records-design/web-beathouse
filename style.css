@@ -3748,35 +3748,30 @@ body.modal-open { overflow: hidden; }
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* 100svh = viewport sin barra del navegador (Safari/Chrome mobile safe) */
+    justify-content: flex-start;
     min-height: 100svh;
-    min-height: 100dvh; /* dvh = dynamic viewport height, el más moderno */
+    min-height: 100dvh;
     height: 100svh;
     height: 100dvh;
-    padding: 0 0 0;
+    padding: 0;
     gap: 0;
     box-sizing: border-box;
   }
+  /* Copy: arriba, justo debajo de la navbar */
   .hero-copy {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 16px;
+    padding: 80px 16px 16px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
-    flex: 1;
-    justify-content: center;
-    /* Empuja el contenido hacia el centro del espacio disponible,
-       debajo de la navbar fija (~68px) */
-    padding-top: 72px;
-    padding-bottom: 20px;
+    flex-shrink: 0;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 14px; }
-  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.15; margin-bottom: 14px; }
+  .hero-tag { margin-top: 0; margin-bottom: 12px; }
+  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.15; margin-bottom: 12px; }
   .hero-headline em { font-size: inherit; }
-  .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.55; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
+  .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.5; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
   .hero-headline span { white-space: normal !important; }
   /* Ticker se ancla al fondo del hero */
   .ticker-wrap { margin-top: auto; flex-shrink: 0; }
@@ -3802,22 +3797,25 @@ body.modal-open { overflow: hidden; }
   /* Ring scene → oculto en mobile hero */
   .ring-scene {
     display: flex !important;
-    height: 220px;
+    flex: 1;
+    min-height: 0;
+    height: auto;
     max-height: none;
     padding-top: 0;
-    margin-top: 16px;
-    flex-shrink: 0;
+    margin-top: 0;
     overflow: hidden;
     perspective: 500px;
-    perspective-origin: 50% 42%;
+    perspective-origin: 50% 50%;
+    align-items: center;
+    justify-content: center;
   }
   .ring-track {
-    width: 100px !important;
-    height: 140px !important;
+    width: 110px !important;
+    height: 155px !important;
   }
   .ring-card {
     border-radius: 14px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(130px) !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px) !important;
   }
 
   /* Roster */
