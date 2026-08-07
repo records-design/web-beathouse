@@ -1071,3 +1071,43 @@
     start()
   })
 })();
+
+// ── LOGO TICKER RAF ──
+(function () {
+  var track = document.getElementById('logoTickerTrack')
+  if (!track) return
+
+  // Clone all items for seamless loop
+  var origItems = Array.from(track.children)
+  origItems.forEach(function (item) {
+    var clone = item.cloneNode(true)
+    clone.setAttribute('aria-hidden', 'true')
+    track.appendChild(clone)
+  })
+
+  var pos = 0
+  var speed = 0.6
+  var setW = 0
+
+  function measure () {
+    // Width of one set (original items) including gaps
+    var gap = 60
+    setW = 0
+    origItems.forEach(function (el) {
+      setW += el.getBoundingClientRect().width + gap
+    })
+  }
+
+  function tick () {
+    pos -= speed
+    if (pos <= -setW) pos += setW
+    track.style.transform = 'translate3d(' + pos + 'px,0,0)'
+    requestAnimationFrame(tick)
+  }
+
+  window.addEventListener('load', function () {
+    measure()
+    requestAnimationFrame(tick)
+  })
+  window.addEventListener('resize', measure)
+})();

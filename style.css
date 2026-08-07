@@ -1241,19 +1241,18 @@ body {
   display: flex;
   gap: 60px;
   width: max-content;
-  animation: logoTickerScroll 10s linear infinite;
   align-items: center;
-}
-
-@keyframes logoTickerScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  will-change: transform;
 }
 
 .logo-ticker-track img {
   height: 56px;
   width: auto;
   opacity: 0.7;
+  flex-shrink: 0;
+}
+.logo-ticker-track img.logo-outline {
+  opacity: 0.35;
 }
 
 /* ── QUIENES SOMOS ── */
