@@ -2702,6 +2702,8 @@ body {
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
 }
 .diferenciadores {
   padding: clamp(56px,7vw,100px) clamp(20px,4vw,60px) clamp(64px,8vw,120px);
