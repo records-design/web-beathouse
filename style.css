@@ -1613,6 +1613,8 @@ body {
   mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
+.nos-mobile-slider { display: none; }
+
 .nos-gallery {
   display: flex;
   gap: 12px;
@@ -3795,38 +3797,53 @@ body.modal-open { overflow: hidden; }
   /* Nosotros */
   .nosotros-inner { grid-template-columns: 1fr; gap: clamp(24px,5vw,48px); }
   .nos-foto-grid { display: none; }
-  /* Galería artistas → ticker horizontal sin repetición */
-  .nos-gallery {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    height: 200px !important;
-    padding-bottom: 4px !important;
-    scrollbar-width: none !important;
-    animation: none !important;
+  .nos-gallery { display: none !important; }
+
+  /* Slider mobile de estudio */
+  .nos-mobile-slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    aspect-ratio: 4/3;
   }
-  .nos-gallery::-webkit-scrollbar { display: none; }
-  .nos-gallery-col {
-    flex: 0 0 140px !important;
-    scroll-snap-align: start !important;
-    height: 200px !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    animation: none !important;
-    gap: 0 !important;
-    flex-direction: row !important;
+  .nos-ms-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
   }
-  .nos-gallery-col img {
-    width: 140px !important;
-    height: 200px !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    flex-shrink: 0 !important;
-    margin: 0 !important;
+  .nos-ms-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
   }
+  .nos-ms-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30,7,32,0.65);
+    border: 1px solid rgba(230,0,126,0.35);
+    color: #fff;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    transition: background .2s, border-color .2s;
+  }
+  .nos-ms-btn:active { background: rgba(230,0,126,0.25); border-color: rgba(230,0,126,0.7); }
+  .nos-ms-btn--prev { left: 10px; }
+  .nos-ms-btn--next { right: 10px; }
   .nosotros-locations {
     flex-direction: row !important;
     gap: 8px !important;

@@ -1129,3 +1129,26 @@
   }
   window.addEventListener('load', setup)
 })();
+
+// ── NOSOTROS STUDIO SLIDER (mobile) ──
+(function () {
+  var track = document.getElementById('nosMsTrack')
+  var prev  = document.getElementById('nosMsPrev')
+  var next  = document.getElementById('nosMsNext')
+  if (!track || !prev || !next) return
+  var total = track.querySelectorAll('img').length
+  var idx   = 0
+  function go (n) {
+    idx = (n + total) % total
+    track.style.transform = 'translateX(-' + idx * 100 + '%)'
+  }
+  prev.addEventListener('click', function () { go(idx - 1) })
+  next.addEventListener('click', function () { go(idx + 1) })
+  // touch swipe
+  var startX = 0
+  track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX }, { passive: true })
+  track.addEventListener('touchend',   function (e) {
+    var dx = e.changedTouches[0].clientX - startX
+    if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1)
+  }, { passive: true })
+})();
