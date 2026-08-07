@@ -1165,29 +1165,17 @@
     var total = cards.length
     var idx = 0
 
-    // Wrap cards in a track
-    var trackEl = document.createElement('div')
-    trackEl.className = 'roster-grid-track'
-    cards.forEach(function (c) { trackEl.appendChild(c) })
-    grid.appendChild(trackEl)
-
-    // Controls bar below grid
+    // Controls
     var controls = document.createElement('div')
     controls.className = 'roster-slider-controls'
-
     var btnPrev = document.createElement('button')
     btnPrev.className = 'roster-slider-btn'
-    btnPrev.setAttribute('aria-label', 'Anterior')
     btnPrev.innerHTML = '&#8592;'
-
     var counter = document.createElement('div')
     counter.className = 'roster-slider-counter'
-
     var btnNext = document.createElement('button')
     btnNext.className = 'roster-slider-btn'
-    btnNext.setAttribute('aria-label', 'Siguiente')
     btnNext.innerHTML = '&#8594;'
-
     controls.appendChild(btnPrev)
     controls.appendChild(counter)
     controls.appendChild(btnNext)
@@ -1195,20 +1183,18 @@
 
     function go (n) {
       idx = (n + total) % total
-      trackEl.style.transform = 'translateX(-' + idx * 100 + '%)'
+      grid.scrollTo({ left: idx * grid.offsetWidth, behavior: 'smooth' })
       counter.textContent = (idx + 1) + ' / ' + total
     }
 
     btnPrev.addEventListener('click', function () { go(idx - 1) })
     btnNext.addEventListener('click', function () { go(idx + 1) })
 
-    // Swipe
-    var startX = 0
-    trackEl.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX }, { passive: true })
-    trackEl.addEventListener('touchend', function (e) {
-      var dx = e.changedTouches[0].clientX - startX
-      if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1)
-    }, { passive: true })
+    // Sync counter on manual swipe
+    grid.addEventListener('scrollend', function () {
+      idx = Math.round(grid.scrollLeft / grid.offsetWidth)
+      counter.textContent = (idx + 1) + ' / ' + total
+    })
 
     go(0)
   }
