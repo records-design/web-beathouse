@@ -89,6 +89,9 @@ body {
 }
 
 /* ── HERO ── */
+/* hero-main is a mobile-only wrapper; on desktop it must be invisible to the grid */
+.hero-main { display: contents; }
+
 .hero {
   position: relative;
   height: 100vh;
@@ -3744,25 +3747,33 @@ body.modal-open { overflow: hidden; }
   .btn-contacto { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* Hero: ocupa exactamente el primer viewport en mobile */
+  /* Hero: min-height viewport, flex column, texto+ring arriba, ticker abajo */
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     min-height: 100svh;
     min-height: 100dvh;
-    height: 100svh;
-    height: 100dvh;
     padding: 0;
     gap: 0;
     box-sizing: border-box;
   }
-  /* Copy: arriba, justo debajo de la navbar */
+  /* hero-main: bloque único texto + carrusel, centrado verticalmente */
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 0 16px;
+    min-height: 0;
+  }
+  /* Copy dentro de hero-main */
   .hero-copy {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 80px 16px 16px;
+    padding: 0 16px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -3773,8 +3784,8 @@ body.modal-open { overflow: hidden; }
   .hero-headline em { font-size: inherit; }
   .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.5; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
   .hero-headline span { white-space: normal !important; }
-  /* Ticker se ancla al fondo del hero */
-  .ticker-wrap { margin-top: auto; flex-shrink: 0; }
+  /* Ticker al pie del hero con aire propio */
+  .ticker-wrap { flex-shrink: 0; margin-top: 0; padding: 10px 0; }
 
   /* Ticker artistas mobile */
   .ticker-wrap { background: transparent; padding: 7px 0; }
@@ -3797,9 +3808,8 @@ body.modal-open { overflow: hidden; }
   /* Ring scene → oculto en mobile hero */
   .ring-scene {
     display: flex !important;
-    flex: 1;
-    min-height: 0;
-    height: auto;
+    flex-shrink: 0;
+    height: 250px;
     max-height: none;
     padding-top: 0;
     margin-top: 0;
