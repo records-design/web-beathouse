@@ -3789,6 +3789,29 @@ body.modal-open { overflow: hidden; }
   .roster-footer { display: none; }
   .roster-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 
+  /* Cards roster mobile: estado hover permanente */
+  .rcard-photo img {
+    filter: grayscale(1) brightness(0.82);
+  }
+  .rcard-info { display: none; }
+  .rcard-hover {
+    opacity: 1 !important;
+    padding: 12px 10px 12px;
+  }
+  .rcard-hover-name {
+    font-size: 12px !important;
+    letter-spacing: .03em;
+    margin-bottom: 6px;
+  }
+  .rcard-hover-genre { font-size: 8px; margin-bottom: 4px; }
+  .rcard-hover-line { margin-bottom: 6px; }
+  .rcard-hover-bio { font-size: 10px; -webkit-line-clamp: 2; margin-bottom: 8px; }
+  .rcard-hover-actions { flex-wrap: wrap; gap: 6px; }
+  .rcard-btn-listen { font-size: 9px; padding: 5px 10px; }
+  .rcard-btn-disabled { font-size: 9px; padding: 5px 10px; }
+  .rcard-btn-social { width: 24px; height: 24px; }
+  .rcard-btn-social svg { width: 10px; height: 10px; }
+
   /* Servicios */
   .servicios { padding: 32px 16px; }
   .servicios-header {
