@@ -3782,8 +3782,10 @@ body.modal-open { overflow: hidden; }
     background-size: 20px 20px !important;
   }
   .diferenciadores-wrap::after {
-    background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px) !important;
+    background-image: radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px) !important;
     background-size: 22px 22px !important;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%) !important;
   }
 
   /* Ring scene → oculto en mobile hero */
