@@ -3762,7 +3762,7 @@ body.modal-open { overflow: hidden; }
   .hero-tag { margin-bottom: 14px; }
   .hero-headline { font-size: clamp(28px,8vw,44px); margin-bottom: 14px; }
   .hero-headline span { white-space: normal !important; }
-  .hero-sub { font-size: clamp(14px,4vw,16px); white-space: normal; overflow-wrap: break-word; }
+  .hero-sub { font-size: 12px; line-height: 1.5; white-space: normal; overflow-wrap: break-word; color: rgba(255,255,255,0.45); }
 
   /* Ring scene → oculto en mobile hero */
   .ring-scene { display: none !important; }
