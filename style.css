@@ -3795,9 +3795,26 @@ body.modal-open { overflow: hidden; }
   .serv-card-icon svg { width: 17px; height: 17px; }
 
   /* Nosotros */
-  .nosotros-inner { grid-template-columns: 1fr; gap: clamp(24px,5vw,48px); }
+  .nosotros-inner { grid-template-columns: 1fr; gap: 20px; }
   .nos-foto-grid { display: none; }
   .nos-gallery { display: none !important; }
+  .nosotros { padding-top: 56px; padding-bottom: 40px; }
+  .nosotros-text { gap: 14px; }
+  .nosotros-title { font-size: clamp(24px, 7vw, 36px); margin-bottom: 8px; }
+  .nos-tabs { gap: 6px; }
+  .nos-tab { padding: 8px 12px; }
+  .nos-tab-label { font-size: 12px; }
+  .nos-tab-panels { margin-top: 10px; }
+  .nos-tab-panel p { font-size: 13px; line-height: 1.55; }
+  /* ocultar ubicaciones originales en mobile, se muestran las del slider */
+  .nosotros-locations:not(.nos-locations-mobile) { display: none; }
+  .nos-locations-mobile { display: none; }
+
+  /* Ubicaciones bajo el slider */
+  .nos-locations-mobile {
+    display: flex !important;
+    margin-top: 12px !important;
+  }
 
   /* Slider mobile de estudio */
   .nos-mobile-slider {
