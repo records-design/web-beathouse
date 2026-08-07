@@ -3803,20 +3803,23 @@ body.modal-open { overflow: hidden; }
     max-height: none;
     padding-top: 0;
     margin-top: 0;
-    overflow: hidden;
-    perspective: 500px;
+    overflow: visible;
+    perspective: 420px;
     perspective-origin: 50% 50%;
     align-items: center;
     justify-content: center;
   }
+  .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: 110px !important;
-    height: 155px !important;
+    width: 90px !important;
+    height: 128px !important;
   }
   .ring-card {
-    border-radius: 14px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px) !important;
+    border-radius: 12px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(100px) !important;
   }
+  .ring-label { display: none !important; }
+  .ring-floor-glow, .ring-floor-shadow { display: none !important; }
 
   /* Roster */
   .roster { padding: 32px 16px 16px; }
