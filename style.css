@@ -1602,21 +1602,7 @@ body {
   display: block;
 }
 
-.nos-gallery-col--up {
-  animation: galleryUp 12s linear infinite;
-}
-.nos-gallery-col--down {
-  animation: galleryDown 15s linear infinite;
-}
-
-@keyframes galleryUp {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(0, calc(-1 * var(--set-h, 50%)), 0); }
-}
-@keyframes galleryDown {
-  from { transform: translate3d(0, calc(-1 * var(--set-h, 50%)), 0); }
-  to   { transform: translate3d(0, 0, 0); }
-}
+/* gallery animated via RAF in script.js */
 
 .nos-gallery:hover .nos-gallery-col {
   animation-play-state: paused;

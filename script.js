@@ -1017,19 +1017,57 @@
 
 // ── GALLERY SEAMLESS LOOP ──
 (function () {
-  function initGallery () {
-    document.querySelectorAll('.nos-gallery-col').forEach(function (col) {
+  var cols = []
+  var raf = null
+  var paused = false
+
+  function measureCols () {
+    cols = []
+    document.querySelectorAll('.nos-gallery-col').forEach(function (col, i) {
       var imgs = col.querySelectorAll('img')
-      var half = imgs.length / 2
-      var setH = 0
+      var half = Math.floor(imgs.length / 2)
       var gap = 12
-      for (var i = 0; i < half; i++) {
-        setH += imgs[i].getBoundingClientRect().height + gap
+      var setH = 0
+      for (var j = 0; j < half; j++) {
+        setH += imgs[j].getBoundingClientRect().height + gap
       }
-      col.style.setProperty('--set-h', setH + 'px')
+      cols.push({
+        el: col,
+        setH: setH,
+        pos: i % 2 === 0 ? 0 : -setH,
+        speed: i % 2 === 0 ? 0.4 : 0.35
+      })
+      col.style.animation = 'none'
+      col.style.transform = 'translate3d(0,0,0)'
     })
   }
-  // Run after images load
-  window.addEventListener('load', initGallery)
-  window.addEventListener('resize', initGallery)
+
+  function tick () {
+    if (!paused) {
+      cols.forEach(function (c) {
+        c.pos -= c.speed
+        if (c.pos <= -c.setH) c.pos += c.setH
+        c.el.style.transform = 'translate3d(0,' + c.pos + 'px,0)'
+      })
+    }
+    raf = requestAnimationFrame(tick)
+  }
+
+  function start () {
+    measureCols()
+    if (raf) cancelAnimationFrame(raf)
+    raf = requestAnimationFrame(tick)
+  }
+
+  var gallery = document.querySelector('.nos-gallery')
+  if (gallery) {
+    gallery.addEventListener('mouseenter', function () { paused = true })
+    gallery.addEventListener('mouseleave', function () { paused = false })
+  }
+
+  window.addEventListener('load', start)
+  window.addEventListener('resize', function () {
+    cancelAnimationFrame(raf)
+    start()
+  })
 })();
