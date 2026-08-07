@@ -493,9 +493,9 @@ body {
 
 /* ── TICKER ARTISTAS ── */
 .ticker-wrap {
-  background: transparent;
+  background: #120819;
   overflow: hidden;
-  padding: 7px 0;
+  padding: 14px 0;
   border-top: 1px solid rgba(230,0,126,0.3);
   border-bottom: 1px solid rgba(230,0,126,0.3);
 }
@@ -514,17 +514,16 @@ body {
 }
 
 .ticker-track span {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
-  font-family: 'Poppins';
   color: var(--fucsia);
   white-space: nowrap;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 .ticker-track .dot {
   color: var(--rosa);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 /* ── SECCIONES GENERALES ── */
@@ -3766,6 +3765,19 @@ body.modal-open { overflow: hidden; }
   .hero-sub { max-width: 100%; padding-right: clamp(16px,5vw,24px); box-sizing: border-box; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub { font-size: 12px; line-height: 1.5; white-space: normal; overflow-wrap: break-word; color: rgba(255,255,255,0.45); }
+
+  /* Ticker artistas mobile */
+  .ticker-wrap { background: transparent; padding: 7px 0; }
+  .ticker-track span { font-size: 11px; letter-spacing: 0.1em; font-family: 'Poppins'; }
+  .ticker-track .dot { font-size: 14px; }
+
+  /* Dots de fondo mobile: más chicos y menos opacidad */
+  .hero::after,
+  .nosotros::after,
+  .diferenciadores-wrap::after {
+    background-image: radial-gradient(rgba(255,255,255,0.05) 0.5px, transparent 0.5px) !important;
+    background-size: 20px 20px !important;
+  }
 
   /* Ring scene → oculto en mobile hero */
   .ring-scene { display: none !important; }
