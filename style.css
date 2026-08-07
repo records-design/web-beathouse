@@ -3800,7 +3800,19 @@ body.modal-open { overflow: hidden; }
   }
 
   /* Ring scene → oculto en mobile hero */
-  .ring-scene { display: none !important; }
+  .ring-scene {
+    display: flex !important;
+    height: auto;
+    max-height: none;
+    padding-top: 0;
+    margin-top: 20px;
+    flex-shrink: 0;
+    /* Scale down the whole 3D scene to fit mobile width */
+    transform: scale(0.45);
+    transform-origin: center top;
+    /* Compensate the visual height after scaling so it doesn't leave a gap */
+    margin-bottom: calc((280px * 0.45 - 280px) * 0.5 - 40px);
+  }
 
   /* Roster */
   .roster { padding: 32px 16px 16px; }
