@@ -1944,6 +1944,7 @@ body {
 .lanz-featured {
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .lanz-featured-card {
@@ -1966,7 +1967,7 @@ body {
 
 .lanz-featured-cover {
   flex-shrink: 0;
-  width: clamp(180px, 20vw, 240px);
+  width: clamp(220px, 28vw, 380px);
   border-radius: 22px;
   overflow: hidden;
 }
@@ -1982,8 +1983,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 28px 36px;
+  padding: 36px 52px;
   justify-content: center;
+  flex: 1;
 }
 
 .lanz-featured-eyebrow {
@@ -2003,7 +2005,7 @@ body {
 }
 
 .lanz-featured-title {
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 4vw, 60px);
   font-weight: 900;
   color: var(--white);
   line-height: 1;
@@ -2017,10 +2019,10 @@ body {
 }
 
 .lanz-featured-desc {
-  font-size: 14px;
+  font-size: clamp(14px, 1.1vw, 17px);
   color: rgba(255,255,255,0.52);
   line-height: 1.6;
-  max-width: 46ch;
+  max-width: 52ch;
   margin: 0;
 }
 
