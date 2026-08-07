@@ -3885,6 +3885,9 @@ body.modal-open { overflow: hidden; }
   }
   .lanzamientos { padding-left: 16px; padding-right: 16px; }
   .lanz-header { text-align: center; }
+  .lanz-header .section-title,
+  .lanz-header .section-sub,
+  .lanz-subtitle { text-align: center; width: 100%; }
   .lanz-featured {
     grid-template-columns: 1fr;
     gap: 28px;
