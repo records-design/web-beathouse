@@ -4136,7 +4136,11 @@ body.modal-open { overflow: hidden; }
   .lanz-featured-cover { width: 100%; }
 
   .dif2-grid { gap: 12px; }
-  .dif2-card { padding: 20px 16px; min-height: 0; }
+  .dif2-card { padding: 14px 14px; min-height: 0; gap: 6px; }
+  .dif2-icon { width: 24px; height: 24px; }
+  .dif2-num { font-size: 10px; }
+  .dif2-title { font-size: 14px; }
+  .dif2-desc { font-size: 12px; }
 
   .footer-main { gap: 20px; }
 }
