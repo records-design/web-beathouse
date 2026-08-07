@@ -1111,3 +1111,21 @@
   })
   window.addEventListener('resize', measure)
 })();
+
+// ── MOBILE ARTIST TICKER (hero) ──
+(function () {
+  function setup () {
+    var track = document.getElementById('ringTrack')
+    if (!track) return
+    if (window.innerWidth > 768) return
+    if (track.dataset.tickerDone) return
+    track.dataset.tickerDone = '1'
+    var cards = Array.from(track.querySelectorAll('.ring-card'))
+    cards.forEach(function (card) {
+      var clone = card.cloneNode(true)
+      clone.setAttribute('aria-hidden', 'true')
+      track.appendChild(clone)
+    })
+  }
+  window.addEventListener('load', setup)
+})();
