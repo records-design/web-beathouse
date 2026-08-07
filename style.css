@@ -2692,6 +2692,15 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+.diferenciadores-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
 .diferenciadores {
   padding: clamp(56px,7vw,100px) clamp(20px,4vw,60px) clamp(64px,8vw,120px);
   max-width: 1200px;
