@@ -779,7 +779,7 @@ body {
   border-radius: 5px;
   padding: 7px 14px;
   cursor: pointer;
-  font-family: var(--font-sans);
+  font-family: 'Poppins';
   text-decoration: none;
   display: inline-block;
   transition: background .2s;
