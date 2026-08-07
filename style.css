@@ -3884,13 +3884,30 @@ body.modal-open { overflow: hidden; }
     left: auto !important;
     transform: none !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     text-align: center !important;
+    font-size: clamp(18px, 5.5vw, 28px) !important;
+    letter-spacing: .04em !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    padding: 0 16px !important;
+  }
+  .section-sub {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+    font-size: 13px !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    margin-bottom: 28px !important;
   }
   .lanzamientos { padding-left: 16px; padding-right: 16px; }
   .lanz-header { text-align: center; }
   .lanz-header .section-title,
   .lanz-header .section-sub,
-  .lanz-subtitle { text-align: center; width: 100%; max-width: 100%; padding: 0 8px; box-sizing: border-box; }
+  .lanz-subtitle { text-align: center; }
   .lanz-featured {
     grid-template-columns: 1fr;
     gap: 28px;
