@@ -3762,7 +3762,7 @@ body.modal-open { overflow: hidden; }
   .hero-tag { margin-top: 44px; margin-bottom: 16px; }
   .hero-headline { font-size: clamp(20px,5.5vw,28px); line-height: 1.15; margin-bottom: 12px; }
   .hero-headline em { font-size: inherit; }
-  .hero-sub { max-width: 100%; padding-right: 0; box-sizing: border-box; }
+  .hero-sub { width: 100%; max-width: 100%; padding-right: 0; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub { font-size: 12px; line-height: 1.5; white-space: normal; overflow-wrap: break-word; color: rgba(255,255,255,0.45); }
 
