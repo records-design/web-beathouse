@@ -276,8 +276,8 @@ body {
 
 .ring-track {
   position: relative;
-  width: 158px;
-  height: 222px;
+  width: 200px;
+  height: 280px;
   transform-style: preserve-3d;
   animation: ringSpin 14s linear infinite;
 }
