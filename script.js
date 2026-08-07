@@ -1171,29 +1171,47 @@
     var btnPrev = document.createElement('button')
     btnPrev.className = 'roster-slider-btn'
     btnPrev.innerHTML = '&#8592;'
-    var counter = document.createElement('div')
-    counter.className = 'roster-slider-counter'
+
+    // Avatar dots
+    var dotsWrap = document.createElement('div')
+    dotsWrap.className = 'roster-slider-dots'
+    var dots = cards.map(function (card, i) {
+      var img = card.querySelector('.rcard-photo img')
+      var dot = document.createElement('button')
+      dot.className = 'roster-slider-dot'
+      dot.setAttribute('aria-label', 'Artista ' + (i + 1))
+      if (img) {
+        var av = document.createElement('img')
+        av.src = img.src
+        av.alt = ''
+        dot.appendChild(av)
+      }
+      dot.addEventListener('click', function () { go(i) })
+      dotsWrap.appendChild(dot)
+      return dot
+    })
+
     var btnNext = document.createElement('button')
     btnNext.className = 'roster-slider-btn'
     btnNext.innerHTML = '&#8594;'
+
     controls.appendChild(btnPrev)
-    controls.appendChild(counter)
+    controls.appendChild(dotsWrap)
     controls.appendChild(btnNext)
     grid.parentNode.insertBefore(controls, grid.nextSibling)
 
     function go (n) {
       idx = (n + total) % total
       grid.scrollTo({ left: idx * grid.offsetWidth, behavior: 'smooth' })
-      counter.textContent = (idx + 1) + ' / ' + total
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === idx) })
     }
 
     btnPrev.addEventListener('click', function () { go(idx - 1) })
     btnNext.addEventListener('click', function () { go(idx + 1) })
 
-    // Sync counter on manual swipe
     grid.addEventListener('scrollend', function () {
       idx = Math.round(grid.scrollLeft / grid.offsetWidth)
-      counter.textContent = (idx + 1) + ' / ' + total
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === idx) })
     })
 
     go(0)
