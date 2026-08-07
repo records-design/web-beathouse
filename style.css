@@ -3779,7 +3779,7 @@ body.modal-open { overflow: hidden; }
     box-sizing: border-box;
     flex-shrink: 0;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 12px; }
+  .hero-tag { margin-top: 0; margin-bottom: 10px; font-size: 9px; letter-spacing: .1em; padding: 4px 10px; }
   .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.15; margin-bottom: 12px; }
   .hero-headline em { font-size: inherit; }
   .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.5; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
@@ -3821,12 +3821,12 @@ body.modal-open { overflow: hidden; }
   }
   .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: 160px !important;
-    height: 225px !important;
+    width: 130px !important;
+    height: 185px !important;
   }
   .ring-card {
-    border-radius: 18px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(175px) !important;
+    border-radius: 14px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(210px) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
