@@ -2668,10 +2668,27 @@ body {
 }
 
 /* ── DIFERENCIADORES ── */
+.diferenciadores-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.diferenciadores-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 20%, rgba(66,25,74,0.75) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 50% at 85% 75%, rgba(90,20,90,0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(110,15,80,0.25) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
 .diferenciadores {
   padding: 100px 40px 120px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .dif2-header {
   text-align: left;
