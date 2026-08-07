@@ -3758,7 +3758,8 @@ body.modal-open { overflow: hidden; }
     gap: 0;
     padding: 0 16px;
     max-width: 100%;
-    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
   .hero-tag { margin-top: 44px; margin-bottom: 16px; }
   .hero-headline { font-size: clamp(20px,5.5vw,28px); line-height: 1.15; margin-bottom: 12px; }
