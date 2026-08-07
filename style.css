@@ -3843,14 +3843,15 @@ body.modal-open { overflow: hidden; }
   .roster-slider-btn:active { background: rgba(230,0,126,0.3); border-color: rgba(230,0,126,0.8); }
   .roster-slider-dots {
     display: flex;
-    gap: 6px;
+    gap: 5px;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex: 1;
     justify-content: center;
-    max-width: calc(100% - 100px);
   }
   .roster-slider-dot {
-    width: 28px; height: 28px;
+    width: 24px; height: 24px;
     border-radius: 50%;
     border: 2px solid rgba(255,255,255,0.15);
     overflow: hidden;
