@@ -3768,7 +3768,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     flex: 1;
     min-height: 0;
-    padding: 76px 0 0;
+    padding: 100px 0 0;
     gap: 0;
   }
   /* Copy: tamaño natural, no crece */
