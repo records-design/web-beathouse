@@ -298,7 +298,7 @@ body {
   perspective: 900px;
   perspective-origin: 50% 42%;
   overflow: visible;
-  padding-top: 0;
+  padding-top: clamp(72px,7vw,96px);
 }
 
 .ring-wobble {
