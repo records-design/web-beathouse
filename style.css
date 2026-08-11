@@ -3750,28 +3750,28 @@ body.modal-open { overflow: hidden; }
   .btn-contacto { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* Hero: min-height viewport, flex column, texto+ring arriba, ticker abajo */
+  /* Hero: columna, altura exacta del viewport */
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100svh;
-    min-height: 100dvh;
+    height: 100svh;
+    height: 100dvh;
+    min-height: 0;
     padding: 0;
     gap: 0;
     box-sizing: border-box;
+    overflow: hidden;
   }
-  /* hero-main: texto arriba, carrusel abajo con espacio equilibrado */
+  /* hero-main: ocupa todo el espacio entre el borde superior y el ticker */
   .hero-main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: flex-start;
-    gap: 32px;
-    padding: 88px 0 20px;
     min-height: 0;
+    padding: 76px 0 0;
+    gap: 0;
   }
-  /* Copy dentro de hero-main */
+  /* Copy: tamaño natural, no crece */
   .hero-copy {
     display: flex;
     flex-direction: column;
@@ -3782,19 +3782,22 @@ body.modal-open { overflow: hidden; }
     box-sizing: border-box;
     flex-shrink: 0;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 10px; font-size: 9px; letter-spacing: .1em; padding: 4px 10px; }
-  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.15; margin-bottom: 12px; }
+  .hero-tag { margin-top: 0; margin-bottom: 8px; font-size: 9px; letter-spacing: .1em; padding: 4px 10px; }
+  .hero-headline { font-size: clamp(20px,5.8vw,28px); line-height: 1.12; margin-bottom: 8px; }
   .hero-headline em { font-size: inherit; }
-  .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.5; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
+  .hero-sub {
+    width: 100%; max-width: 100%; font-size: 11.5px; line-height: 1.45;
+    box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
+    color: rgba(255,255,255,0.45); margin-bottom: 0;
+  }
   .hero-headline span { white-space: normal !important; }
-  /* Ticker al pie del hero con aire propio */
-  /* Ticker artistas mobile: sin fondo ni bordes */
+  /* Ticker al pie del hero */
   .ticker-wrap {
     flex-shrink: 0;
     background: transparent !important;
     border-top: none !important;
     border-bottom: none !important;
-    padding: 10px 0;
+    padding: 8px 0;
     margin-top: 0;
   }
   .ticker-track span { font-size: 11px; letter-spacing: 0.1em; font-family: 'Poppins'; }
@@ -3813,17 +3816,18 @@ body.modal-open { overflow: hidden; }
     mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%) !important;
   }
 
-  /* Ring scene → oculto en mobile hero */
+  /* Ring scene: crece para llenar el espacio disponible entre copy y ticker */
   .ring-scene {
     display: flex !important;
-    flex-shrink: 0;
-    height: 250px;
+    flex: 1;
+    min-height: 0;
+    height: auto !important;
     max-height: none;
+    margin-top: 16px;
     padding-top: 0;
-    margin-top: 0;
     overflow: visible;
     perspective: 650px;
-    perspective-origin: 50% 45%;
+    perspective-origin: 50% 50%;
     align-items: center;
     justify-content: center;
   }
