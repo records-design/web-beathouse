@@ -3816,29 +3816,30 @@ body.modal-open { overflow: hidden; }
     mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%) !important;
   }
 
-  /* Ring scene: crece para llenar el espacio disponible entre copy y ticker */
+  /* Ring scene: crece, ring anclado arriba para eliminar gap entre subtitle y cards */
   .ring-scene {
     display: flex !important;
     flex: 1;
     min-height: 0;
     height: auto !important;
     max-height: none;
-    margin-top: 16px;
-    padding-top: 0;
+    margin-top: 12px;
+    padding-top: 12px;
     overflow: visible;
-    perspective: 650px;
-    perspective-origin: 50% 50%;
-    align-items: center;
+    perspective: 700px;
+    perspective-origin: 50% 30%;
+    align-items: flex-start;
     justify-content: center;
   }
   .ring-wobble { transform-style: preserve-3d; }
+  /* Cards más grandes → perspectiva CSS las proyecta enormes → llenan el espacio vertical */
   .ring-track {
-    width: 130px !important;
-    height: 185px !important;
+    width: 155px !important;
+    height: 260px !important;
   }
   .ring-card {
-    border-radius: 14px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(210px) !important;
+    border-radius: 18px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(220px) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
