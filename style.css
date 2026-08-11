@@ -3785,10 +3785,15 @@ body.modal-open { overflow: hidden; }
   .hero-sub { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.5; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; color: rgba(255,255,255,0.45); }
   .hero-headline span { white-space: normal !important; }
   /* Ticker al pie del hero con aire propio */
-  .ticker-wrap { flex-shrink: 0; margin-top: 0; padding: 10px 0; }
-
-  /* Ticker artistas mobile */
-  .ticker-wrap { background: transparent; padding: 7px 0; }
+  /* Ticker artistas mobile: sin fondo ni bordes */
+  .ticker-wrap {
+    flex-shrink: 0;
+    background: transparent !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    padding: 10px 0;
+    margin-top: 0;
+  }
   .ticker-track span { font-size: 11px; letter-spacing: 0.1em; font-family: 'Poppins'; }
   .ticker-track .dot { font-size: 14px; }
 
