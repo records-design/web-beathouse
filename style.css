@@ -3734,7 +3734,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     height: 100dvh;
     min-height: 0;
-    padding: 0;
+    padding: 0 0 max(12px, env(safe-area-inset-bottom));
     gap: 0;
     box-sizing: border-box;
     overflow: hidden;
@@ -3744,7 +3744,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     flex: 1;
     min-height: 0;
-    padding: 100px 0 0;
+    padding: 76px 0 0;
     gap: 0;
   }
   .hero-copy {
