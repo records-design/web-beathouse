@@ -3782,11 +3782,11 @@ body.modal-open { overflow: hidden; }
     box-sizing: border-box;
     flex-shrink: 0;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 14px; font-size: 10px; letter-spacing: .12em; padding: 6px 14px; }
-  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.18; margin-bottom: 14px; }
+  .hero-tag { margin-top: 0; margin-bottom: 18px; font-size: 10px; letter-spacing: .13em; padding: 7px 16px; }
+  .hero-headline { font-size: clamp(22px,6vw,30px); line-height: 1.22; margin-bottom: 18px; }
   .hero-headline em { font-size: inherit; }
   .hero-sub {
-    width: 100%; max-width: 92%; font-size: 12px; line-height: 1.55;
+    width: 100%; max-width: 90%; font-size: 12.5px; line-height: 1.6;
     box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
     color: rgba(255,255,255,0.45); margin-bottom: 0;
   }
@@ -3823,7 +3823,7 @@ body.modal-open { overflow: hidden; }
     min-height: 0;
     height: auto !important;
     max-height: none;
-    margin-top: 20px;
+    margin-top: 16px;
     padding-top: 0;
     overflow: visible;
     perspective: 750px;
@@ -3833,12 +3833,12 @@ body.modal-open { overflow: hidden; }
   }
   .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: 145px !important;
-    height: 270px !important;
+    width: 135px !important;
+    height: 240px !important;
   }
   .ring-card {
-    border-radius: 18px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(220px) !important;
+    border-radius: 16px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
