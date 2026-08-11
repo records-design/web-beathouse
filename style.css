@@ -3761,14 +3761,14 @@ body.modal-open { overflow: hidden; }
     gap: 0;
     box-sizing: border-box;
   }
-  /* hero-main: bloque único texto + carrusel, centrado verticalmente */
+  /* hero-main: texto arriba, carrusel abajo con espacio equilibrado */
   .hero-main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: center;
-    gap: 20px;
-    padding: 80px 0 16px;
+    justify-content: flex-start;
+    gap: 32px;
+    padding: 88px 0 20px;
     min-height: 0;
   }
   /* Copy dentro de hero-main */
