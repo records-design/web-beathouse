@@ -594,11 +594,6 @@ body {
 
 .roster-header .section-title {
   margin-bottom: 20px;
-  display: block;
-  left: auto;
-  transform: none;
-  text-transform: none;
-  letter-spacing: normal;
   color: var(--rosa);
 }
 
@@ -1955,8 +1950,6 @@ body {
 }
 .lanz-header .section-title {
   color: var(--rosa);
-  font-family: 'Poppins';
-  text-transform: none;
 }
 .lanz-subtitle {
   font-size: clamp(16px, 1.6vw, 22px);
