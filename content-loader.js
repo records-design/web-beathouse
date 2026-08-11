@@ -21,7 +21,7 @@
   async function renderRoster() {
     const el = document.getElementById('rosterGrid');
     if (!el) return;
-    const data = await fetchJSON('/api/artists?section=roster');
+    const data = await fetchJSON('/php-api/artists.php?section=roster');
     if (!data || !data.length) return;
     el.innerHTML = data.map(a => {
       const focalStyle = `object-position: ${a.main_focal_x||50}% ${a.main_focal_y||20}%`;
@@ -51,7 +51,7 @@
   async function renderCarousel() {
     const el = document.getElementById('ringTrack');
     if (!el) return;
-    const data = await fetchJSON('/api/artists?section=carousel');
+    const data = await fetchJSON('/php-api/artists.php?section=carousel');
     if (!data || !data.length) return;
     el.innerHTML = data.map((a, i) => {
       const img = a.carousel_image || a.main_image;
@@ -67,7 +67,7 @@
   async function renderTicker() {
     const el = document.getElementById('tickerTrack');
     if (!el) return;
-    const data = await fetchJSON('/api/artists?section=ticker');
+    const data = await fetchJSON('/php-api/artists.php?section=ticker');
     if (!data || !data.length) return;
     const items = data.map(a => `<span>${a.name}</span><span class="dot">*</span>`).join('');
     el.innerHTML = items + items; // duplicate for continuous loop
@@ -77,7 +77,7 @@
   async function renderReleases() {
     const el = document.getElementById('lanzFeatured');
     if (!el) return;
-    const data = await fetchJSON('/api/releases');
+    const data = await fetchJSON('/php-api/releases.php');
     if (!data || !data.length) return;
     const r = data[0]; // featured/first
     const monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
