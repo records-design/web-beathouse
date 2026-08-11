@@ -501,6 +501,9 @@ body {
   padding: 14px 0;
   border-top: 1px solid rgba(230,0,126,0.3);
   border-bottom: 1px solid rgba(230,0,126,0.3);
+  /* Span full width when inside the hero grid */
+  grid-column: 1 / -1;
+  align-self: end;
 }
 
 .ticker-track {
