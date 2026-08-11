@@ -3756,13 +3756,15 @@ body.modal-open { overflow: hidden; }
     width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 18px; font-size: 10px; letter-spacing: .13em; padding: 7px 16px; }
-  .hero-headline { font-size: clamp(22px, 6vw, 30px); line-height: 1.22; margin-bottom: 18px; }
+  .hero-tag { margin-top: 0; margin-bottom: 14px; font-size: 10px; letter-spacing: .13em; padding: 7px 14px; align-self: flex-start; }
+  .hero-headline { font-size: clamp(20px, 5.5vw, 28px); line-height: 1.22; margin-bottom: 14px; }
   .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub {
-    width: 100%; max-width: 90%; font-size: 12.5px; line-height: 1.6;
+    width: 100%; max-width: 90%; font-size: 12px; line-height: 1.55;
     box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
     color: rgba(255,255,255,0.45); margin-bottom: 0;
   }
@@ -3794,25 +3796,27 @@ body.modal-open { overflow: hidden; }
   .ring-scene {
     display: flex !important;
     flex: 1;
-    min-height: 0;
+    min-height: 100px;
+    max-height: 340px;
     height: auto !important;
-    max-height: none;
-    margin-top: 16px;
+    margin-top: 12px;
     padding-top: 0;
     overflow: visible;
     perspective: 750px;
-    perspective-origin: 50% 45%;
+    perspective-origin: 50% 50%;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
   }
   .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: 135px !important;
-    height: 240px !important;
+    width: clamp(100px, 30vw, 130px) !important;
+    height: clamp(175px, 52vw, 230px) !important;
   }
   .ring-card {
-    border-radius: 16px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px) !important;
+    border-radius: 14px !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(clamp(160px, 48vw, 190px)) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
@@ -4263,3 +4267,18 @@ body.modal-open { overflow: hidden; }
 .rcard-btn-play:hover { background: #ff1a8c; transform: scale(1.1); }
 .rcard-btn-play svg { width: 13px; height: 13px; fill: #fff; margin-left: 2px; }
 
+
+/* ── Landscape / pantallas cortas en mobile ── */
+@media (max-width: 768px) and (max-height: 500px) {
+  .hero {
+    height: auto;
+    min-height: 100dvh;
+    padding-bottom: 0;
+  }
+  .hero-main {
+    padding-top: 70px;
+    flex: none;
+  }
+  .ring-scene { display: none !important; }
+  .ticker-wrap { padding: 10px 0; }
+}
