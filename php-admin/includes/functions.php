@@ -61,7 +61,7 @@ function renderLayout(string $title, string $content, array $user): string {
 <div class="admin-wrap">
   <aside class="sidebar">
     <div class="sidebar-brand">
-      <div class="brand-wordmark">BeatHouse</div>
+      <img src="/php-admin/assets/logo.png" alt="BeatHouse" class="brand-logo">
       <div class="brand-sub">Panel de administración</div>
     </div>
     <nav class="sidebar-nav">'.$nav.'</nav>

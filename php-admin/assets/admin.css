@@ -60,6 +60,11 @@ a:hover { color: var(--accent-hover); }
   flex-direction: column;
   gap: 3px;
 }
+.brand-logo {
+  width: 140px;
+  height: auto;
+  display: block;
+}
 .brand-wordmark {
   font-size: 18px;
   font-weight: 900;
@@ -659,7 +664,7 @@ input[type="file"] { display: none; }
   margin-bottom: 28px;
 }
 .login-logo { text-align: center; margin-bottom: 28px; }
-.login-logo h1 { font-size: 28px; font-weight: 900; color: var(--accent); letter-spacing: .06em; }
+.login-logo-img { width: 180px; height: auto; display: block; margin: 0 auto 10px; }
 .login-logo p  { font-size: 11px; color: var(--text-muted); margin-top: 5px; letter-spacing: .12em; text-transform: uppercase; }
 .login-form .form-group { margin-bottom: 16px; }
 .login-card .field { margin-bottom: 14px; }

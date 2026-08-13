@@ -55,7 +55,10 @@ $csrf = csrfToken();
 <body class="login-body">
 <div class="login-wrap">
   <div class="login-brand">
-    <div class="login-logo"><h1>BeatHouse</h1><p>Panel de administración</p></div>
+    <div class="login-logo">
+      <img src="/php-admin/assets/logo.png" alt="BeatHouse" class="login-logo-img">
+      <p>Panel de administración</p>
+    </div>
   </div>
   <?php if ($error): ?>
   <div class="flash flash-error"><?= h($error) ?></div>
