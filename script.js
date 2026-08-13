@@ -1035,7 +1035,7 @@
         el: col,
         setH: setH,
         pos: i % 2 === 0 ? 0 : -setH,
-        speed: i % 2 === 0 ? 0.9 : 0.8
+        speed: i % 2 === 0 ? 1.8 : 1.6
       })
       col.style.animation = 'none'
       col.style.transform = 'translate3d(0,0,0)'
