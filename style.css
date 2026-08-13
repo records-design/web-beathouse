@@ -515,10 +515,13 @@ body {
 
 .ticker-track {
   display: flex;
-  gap: 32px;
+  gap: 0;
   width: max-content;
   animation: tickerScroll 25s linear infinite;
   align-items: center;
+}
+.ticker-track > * {
+  margin-right: 32px;
 }
 
 @keyframes tickerScroll {
