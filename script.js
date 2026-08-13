@@ -684,7 +684,7 @@
 
 // ── SCROLL REVEAL ──
 (function () {
-  const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+  const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-top')
   if (!targets.length) return
   const obs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
