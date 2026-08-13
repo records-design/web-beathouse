@@ -3623,7 +3623,9 @@ body.modal-open { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 150;
-  background: var(--bg);
+  background: rgba(18, 4, 22, 0.72);
+  backdrop-filter: blur(32px) saturate(1.4);
+  -webkit-backdrop-filter: blur(32px) saturate(1.4);
   flex-direction: column;
   padding: 0 7vw 36px;
 }
