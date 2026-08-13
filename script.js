@@ -1035,7 +1035,8 @@
         el: col,
         setH: setH,
         pos: i % 2 === 0 ? 0 : -setH,
-        speed: i % 2 === 0 ? 1.8 : 1.6
+        speed: i % 2 === 0 ? 1.8 : 1.6,
+        dir: i % 2 === 0 ? -1 : 1
       })
       col.style.animation = 'none'
       col.style.transform = 'translate3d(0,0,0)'
@@ -1045,8 +1046,9 @@
   function tick () {
     if (!paused) {
       cols.forEach(function (c) {
-        c.pos -= c.speed
+        c.pos += c.speed * c.dir
         if (c.pos <= -c.setH) c.pos += c.setH
+        if (c.pos >= 0) c.pos -= c.setH
         c.el.style.transform = 'translate3d(0,' + c.pos + 'px,0)'
       })
     }
