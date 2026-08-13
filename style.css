@@ -2631,7 +2631,7 @@ body {
 /* ── PROJECT TICKER ── */
 .pt-wrap {
   overflow: hidden;
-  padding: 16px 0;
+  padding: 24px 0;
   margin-top: -32px;
   background: transparent;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
@@ -2659,7 +2659,7 @@ body {
   font-size: clamp(22px, 2.8vw, 38px);
   font-weight: 900;
   letter-spacing: -.01em;
-  line-height: 1;
+  line-height: 1.3;
   text-transform: lowercase;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(230,0,126,.5);
