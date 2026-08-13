@@ -3790,7 +3790,8 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     flex: 1;
     min-height: 0;
-    padding: 76px 0 0;
+    padding: 72px 0 0;
+    justify-content: space-between;
     gap: 0;
   }
   .hero-copy {
@@ -3798,6 +3799,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     gap: 0;
     padding-inline: var(--page-pad);
+    padding-top: 20px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -3805,12 +3807,12 @@ body.modal-open { overflow: hidden; }
     position: relative;
     z-index: 2;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 14px; font-size: 10px; letter-spacing: .13em; padding: 7px 14px; align-self: flex-start; }
-  .hero-headline { font-size: clamp(20px, 5.5vw, 28px); line-height: 1.22; margin-bottom: 14px; }
+  .hero-tag { margin-top: 0; margin-bottom: 12px; font-size: 10px; letter-spacing: .13em; padding: 7px 14px; align-self: flex-start; }
+  .hero-headline { font-size: clamp(22px, 6vw, 32px); line-height: 1.18; margin-bottom: 10px; }
   .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub {
-    width: 100%; max-width: 90%; font-size: 12px; line-height: 1.55;
+    width: 100%; max-width: 90%; font-size: 13px; line-height: 1.5;
     box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
     color: rgba(255,255,255,0.45); margin-bottom: 0;
   }
@@ -3819,7 +3821,7 @@ body.modal-open { overflow: hidden; }
     background: transparent !important;
     border-top: none !important;
     border-bottom: none !important;
-    padding: 8px 0;
+    padding: 6px 0;
     margin-top: 0;
   }
   .ticker-track span { font-size: 11px; letter-spacing: 0.1em; }
@@ -3838,9 +3840,9 @@ body.modal-open { overflow: hidden; }
     display: flex !important;
     flex: 1;
     min-height: 100px;
-    max-height: 340px;
+    max-height: 320px;
     height: auto !important;
-    margin-top: 12px;
+    margin-top: 0;
     padding-top: 0;
     overflow: visible;
     perspective: 750px;
