@@ -3776,21 +3776,18 @@ body.modal-open { overflow: hidden; }
 
   /* ── Hero ── */
   .hero {
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
-    min-height: 0;
-    padding: 0 0 max(12px, env(safe-area-inset-bottom));
-    gap: 0;
-    box-sizing: border-box;
-    overflow: hidden;
+    display: block;
+    height: auto;
+    min-height: auto;
+    padding: 0 0 60px;
+    overflow: visible;
   }
   .hero-main {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: none;
     min-height: 0;
-    padding: 68px 0 0;
+    padding: 76px 0 0;
     gap: 0;
   }
   .hero-copy {
@@ -3798,7 +3795,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     gap: 0;
     padding-inline: var(--page-pad);
-    padding-top: 14px;
+    padding-top: 20px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -3806,17 +3803,16 @@ body.modal-open { overflow: hidden; }
     position: relative;
     z-index: 2;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 8px; font-size: 9px; letter-spacing: .13em; padding: 5px 11px; align-self: flex-start; }
-  .hero-headline { font-size: clamp(20px, 6vw, 28px); line-height: 1.15; margin-bottom: 8px; }
+  .hero-tag { margin-top: 0; margin-bottom: 20px; font-size: 9px; letter-spacing: .13em; padding: 6px 12px; align-self: flex-start; }
+  .hero-headline { font-size: clamp(26px, 7vw, 36px); line-height: 1.12; margin-bottom: 20px; }
   .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub {
-    width: 100%; max-width: 88%; font-size: 12px; line-height: 1.45;
+    width: 100%; max-width: 88%; font-size: 13px; line-height: 1.5;
     box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
     color: rgba(255,255,255,0.45); margin-bottom: 0;
   }
   .ticker-wrap {
-    flex-shrink: 0;
     background: transparent !important;
     border-top: none !important;
     border-bottom: none !important;
@@ -3837,11 +3833,11 @@ body.modal-open { overflow: hidden; }
   /* ── Ring carousel ── */
   .ring-scene {
     display: flex !important;
-    flex: 1;
-    min-height: 180px;
-    max-height: 46vh;
-    height: auto !important;
-    margin-top: 8px;
+    flex: none;
+    min-height: 220px;
+    max-height: 300px;
+    height: 260px !important;
+    margin-top: 56px;
     padding-top: 0;
     overflow: visible;
     perspective: 750px;
