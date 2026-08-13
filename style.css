@@ -3419,6 +3419,15 @@ body.modal-open { overflow: hidden; }
   opacity: 1;
   transform: translateX(0);
 }
+.reveal-top {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-top.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
