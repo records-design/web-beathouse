@@ -1,8 +1,8 @@
 <?php
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'your_database_name');
-define('DB_USER', 'your_database_user');
-define('DB_PASS', 'your_database_password');
+define('DB_NAME', 'your_database_name');  // Reemplazar con el nombre de la DB en Hostinger
+define('DB_USER', 'your_database_user');  // Reemplazar con el usuario de la DB en Hostinger
+define('DB_PASS', 'your_database_password');  // Reemplazar con la contraseña de la DB en Hostinger
 define('DB_CHARSET', 'utf8mb4');
 
 function getDB() {
