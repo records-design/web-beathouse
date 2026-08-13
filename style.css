@@ -3776,18 +3776,21 @@ body.modal-open { overflow: hidden; }
 
   /* ── Hero ── */
   .hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: auto;
-    min-height: auto;
-    padding: 0 0 60px;
+    min-height: 100dvh;
+    padding: 0 0 0;
     overflow: visible;
+    box-sizing: border-box;
   }
   .hero-main {
     display: flex;
     flex-direction: column;
-    flex: none;
+    flex: 1;
     min-height: 0;
     padding: 76px 0 0;
+    justify-content: flex-start;
     gap: 0;
   }
   .hero-copy {
