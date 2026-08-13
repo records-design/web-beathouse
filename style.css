@@ -3790,7 +3790,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     flex: 1;
     min-height: 0;
-    padding: 72px 0 0;
+    padding: 68px 0 0;
     justify-content: space-between;
     gap: 0;
   }
@@ -3799,7 +3799,7 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     gap: 0;
     padding-inline: var(--page-pad);
-    padding-top: 20px;
+    padding-top: 16px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -3807,12 +3807,12 @@ body.modal-open { overflow: hidden; }
     position: relative;
     z-index: 2;
   }
-  .hero-tag { margin-top: 0; margin-bottom: 12px; font-size: 10px; letter-spacing: .13em; padding: 7px 14px; align-self: flex-start; }
-  .hero-headline { font-size: clamp(22px, 6vw, 32px); line-height: 1.18; margin-bottom: 10px; }
+  .hero-tag { margin-top: 0; margin-bottom: 10px; font-size: 10px; letter-spacing: .13em; padding: 6px 12px; align-self: flex-start; }
+  .hero-headline { font-size: clamp(24px, 7.5vw, 34px); line-height: 1.15; margin-bottom: 10px; }
   .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub {
-    width: 100%; max-width: 90%; font-size: 13px; line-height: 1.5;
+    width: 100%; max-width: 90%; font-size: 12px; line-height: 1.5;
     box-sizing: border-box; overflow-wrap: break-word; word-break: break-word;
     color: rgba(255,255,255,0.45); margin-bottom: 0;
   }
@@ -3839,8 +3839,8 @@ body.modal-open { overflow: hidden; }
   .ring-scene {
     display: flex !important;
     flex: 1;
-    min-height: 100px;
-    max-height: 320px;
+    min-height: 80px;
+    max-height: 260px;
     height: auto !important;
     margin-top: 0;
     padding-top: 0;
@@ -3854,12 +3854,12 @@ body.modal-open { overflow: hidden; }
   }
   .ring-wobble { transform-style: preserve-3d; }
   .ring-track {
-    width: clamp(100px, 30vw, 130px) !important;
-    height: clamp(175px, 52vw, 230px) !important;
+    width: clamp(80px, 24vw, 110px) !important;
+    height: clamp(140px, 42vw, 190px) !important;
   }
   .ring-card {
     border-radius: 14px !important;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(clamp(160px, 48vw, 190px)) !important;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(clamp(130px, 38vw, 160px)) !important;
   }
   .ring-label { display: none !important; }
   .ring-floor-glow, .ring-floor-shadow { display: none !important; }
