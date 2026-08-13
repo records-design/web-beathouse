@@ -3805,7 +3805,7 @@ body.modal-open { overflow: hidden; }
     z-index: 2;
   }
   .hero-tag { margin-top: 0; margin-bottom: 20px; font-size: 9px; letter-spacing: .13em; padding: 6px 12px; align-self: flex-start; }
-  .hero-headline { font-size: clamp(26px, 7vw, 36px); line-height: 1.12; margin-bottom: 20px; }
+  .hero-headline { font-size: clamp(22px, 5.8vw, 30px); line-height: 1.15; margin-bottom: 20px; }
   .hero-headline em { font-size: inherit; }
   .hero-headline span { white-space: normal !important; }
   .hero-sub {
@@ -3835,10 +3835,10 @@ body.modal-open { overflow: hidden; }
   .ring-scene {
     display: flex !important;
     flex: none;
-    min-height: 220px;
-    max-height: 300px;
-    height: 260px !important;
-    margin-top: 56px;
+    min-height: 180px;
+    max-height: 260px;
+    height: 220px !important;
+    margin-top: 36px;
     padding-top: 0;
     overflow: visible;
     perspective: 750px;
