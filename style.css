@@ -596,6 +596,8 @@ body {
   margin-bottom: 20px;
   color: var(--rosa);
   text-transform: none;
+  left: auto;
+  transform: none;
 }
 
 .roster-header .section-sub {
